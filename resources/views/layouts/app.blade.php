@@ -84,11 +84,12 @@
                 <div class="navigation">
                     <nav>
                     <ul class="nav topnav">
-                        <li class="dropdown active">
-                        <a href="{{route('home')}}"><i class="icon-home"></i> Home </a>
+                        <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
+                            <a href="{{ route('home') }}"><i class="icon-home"></i> Home </a>
                         </li>
-                        <li class="dropdown">
-                        <a href="{{route('about')}}">About </a>
+                        <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
+                            <a href="{{ route('about') }}">About</a>
+                        </li>                        
                         </li>
                         <li class="dropdown">
                         <a href="#">Portfolio <i class="icon-angle-down"></i></a>

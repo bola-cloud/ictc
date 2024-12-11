@@ -2992,3 +2992,43 @@ h3.title:hover::after {
 .partners-slider-unique .swiper-slide img:hover {
   filter: grayscale(0%);
 }
+/*  About blade  */ 
+.flyLeft {
+  animation: slideInLeft 1s ease-out;
+}
+
+.flyRight {
+  animation: slideInRight 1s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.solidline {
+  border-top: 2px solid #ddd;
+  margin: 20px 0;
+}
+
+.colored {
+  color: #007bff;
+  font-weight: bold;
+}

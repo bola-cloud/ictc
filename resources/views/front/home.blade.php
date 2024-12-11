@@ -12,10 +12,13 @@
                   <img src="img/slides/camera/slide1/img1.jpg" alt="Main Slide 1">
               </div>
               <div class="swiper-slide">
-                  <img src="img/slides/camera/slide2/img1.jpg" alt="Main Slide 2">
+                  <img src="img/slides/slider2.png" alt="Main Slide 2">
               </div>
               <div class="swiper-slide">
                   <img src="img/slides/camera/slide1/screen.png" alt="Main Slide 3">
+              </div>
+              <div class="swiper-slide">
+                <img src="img/slides/slider1.webp" alt="Main Slide 3">
               </div>
           </div>
       </div>
@@ -27,10 +30,13 @@
                   <img src="img/slides/camera/slide1/img1.jpg" alt="Thumb 1">
               </div>
               <div class="swiper-slide">
-                  <img src="img/slides/camera/slide2/img1.jpg" alt="Thumb 2">
+                  <img src="img/slides/slider2.png" alt="Thumb 2">
               </div>
               <div class="swiper-slide">
                   <img src="img/slides/camera/slide1/screen.png" alt="Thumb 3">
+              </div>
+              <div class="swiper-slide">
+                  <img src="img/slides/slider1.webp" alt="Thumb 3">
               </div>
           </div>
       </div>

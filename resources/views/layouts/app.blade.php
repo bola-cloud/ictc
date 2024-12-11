@@ -88,7 +88,7 @@
                         <a href="{{route('home')}}"><i class="icon-home"></i> Home </a>
                         </li>
                         <li class="dropdown">
-                        <a href="#">About <i class="icon-angle-down"></i></a>
+                        <a href="{{route('about')}}">About </a>
                         </li>
                         <li class="dropdown">
                         <a href="#">Portfolio <i class="icon-angle-down"></i></a>

@@ -179,14 +179,21 @@ img.img-polaroid {
 /* --- header -- */
 
 header {
-  background: #fff;
   margin: 0;
-  padding: 0 0 20px;
-  position: relative;
+  padding: 2vh 3vh;
+  width: 100%;
+  position: fixed;
   z-index: 2000;
-  -webkit-box-shadow: 0 2px 4px -2px #ddd;
-  -moz-box-shadow: 0 2px 4px -2px #ddd;
-  box-shadow: 0 2px 4px -2px #ddd;
+  background: transparent; /* Initially transparent */
+  box-shadow: none;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease, padding 0.3s ease;
+}
+
+/* Navbar Style on Scroll */
+header.scrolled {
+  background: #0000008c; /* Light dark background */
+  box-shadow: 0 2px 4px -2px #aaa;
+  padding: 1.5vh 3vh; /* Slightly reduce padding */
 }
 
 header .top {
@@ -207,7 +214,16 @@ header .top p.topcontact i {
 header .logo {
   float: left;
 }
-
+.slogan{
+  margin: 0 0 0 5px !important;
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+.d-flex{
+  display: flex;
+  text-decoration: none;
+}
 /* header .logo img {
   margin-bottom: 10px;
 } */
@@ -289,7 +305,7 @@ header ul.nav li a {
 
 .navbar .nav>li>a {
   font-size: 13px;
-  color: #444;
+  color: white;
   text-shadow: none;
 }
 
@@ -2776,7 +2792,7 @@ ul.the-icons {
 /* Style for the main gallery */
 .swiper-container.main-gallery {
   width: 100%;
-  height: 500px;
+  height: 75vh;
 }
 
 .swiper-slide img {
@@ -2784,7 +2800,9 @@ ul.the-icons {
   height: 100%;
   object-fit: cover;
 }
-
+/* .swiper-slide.swiper-slide-active {
+  width: 100% !important;
+} */
 /* Style for the thumbnails */
 .swiper-container.thumbs-gallery {
   width: 100%;
@@ -3031,4 +3049,171 @@ h3.title:hover::after {
 .colored {
   color: #007bff;
   font-weight: bold;
+}
+
+/**************** Section Hero ***************/
+
+header .logo img {
+  height: 53px;
+  width: 73px;
+}
+#hero {
+  position: relative;
+  height: 90vh; /* 90% of the viewport height */
+  overflow: hidden;
+}
+
+#hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#hero .hero-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffb700;
+  height: 100%;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+/* Swiper Navigation and Pagination */
+.swiper-button-next, .swiper-button-prev {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Custom Pagination Indicators */
+/* Swiper Pagination Indicators */
+.swiper-pagination {
+  bottom: 20px;
+}
+
+.custom-bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 10px;
+  height: 10px;
+  margin: 0 6px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.custom-bullet-active {
+  background-color: #FFB700;
+  width: 12px;
+  height: 12px;
+}
+
+/* Text Centering */
+.text-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-slider h2 {
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin: 0;
+  font-size: 3rem;
+  color: white;
+}
+.carousel-indicators{
+  align-items: flex-end !important;
+}
+.overlay{
+  background-color: rgba(4, 23, 46, 0.55);
+}
+.head-video{
+  position: relative; height: 100vh; overflow: hidden;
+}
+@media screen and (max-width: 992px) {
+  .head-video{
+      height: 50vh;
+  }
+}
+
+/**************** Share icon links ***************/
+/* Share Container - Bottom Left */
+.share-container {
+position: fixed;
+bottom: 20px;
+left: 20px;
+z-index: 1000;
+}
+
+/* Share Button */
+.share__button {
+width: 60px;
+height: 60px;
+background-color: #ff5722;
+color: #fff;
+border: none;
+border-radius: 50%;
+font-size: 24px;
+cursor: pointer;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+transition: transform 0.5s ease-in-out;
+}
+
+.share__button:hover {
+transform: scale(1.1);
+}
+
+/* Social Icons */
+.share__icons {
+position: absolute;
+bottom: 0;
+left: 0;
+list-style: none;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 0;
+width: 0;
+}
+
+.share__icons li {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0);
+opacity: 0;
+transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out; /* Slower animation */
+}
+
+.share__icons a {
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+text-decoration: none;
+font-size: 14px;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+background-color: var(--bgColor);
+}
+
+/* Active State - Expanding Effect */
+.share-container.active .share__icons li {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1) rotate(var(--rotate)) translateY(-70px); /* Reduced translateY */
+}
+
+.share-container.active .share__button {
+transform: scale(0.9);
 }

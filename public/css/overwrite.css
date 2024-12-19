@@ -804,63 +804,44 @@ a.btn.btn-theme,.btn.btn-theme,a.btn.btn-theme i,a.btn.btn-primary i ,a.btn.btn-
   border-right:none;
   border-left:none;
 }
-
+/* Navbar Button Styling */
 .navbar .nav > li > a {
   float: none;
-  font-size:13px;
-  margin-left:10px;
-  margin-right:0;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-right: 0;
   text-decoration: none;
   text-shadow: none;
-  border-right:none;
-  border-left:none;
   color: #fff;
-  border:2px solid transparent;
-  padding:4px 10px 4px 10px;
-
-  background-image: none;
-   background: none;
+  /* background: #2f2f2f; 
+  border: 2px solid #2f2f2f;  */
+  padding: 8px 15px; /* Adjust padding for a better button look */
+  border-radius: 25px; /* Fully rounded corners */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+  background: #ff5722 !important;
 }
 
+/* Hover & Focus States */
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
-  color: #dddddd;
-   background-color: none;
-  background-image: none;
-  background-repeat: repeat-x;
-  filter: none; 
+  color: #fff;
+  background: #ff6f3e; /* Highlight background */
+  border-color: #ff6f3e; /* Border color matches hover background */
   text-decoration: none;
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;	
-  padding:4px 10px 4px 10px;
-   background: #343434;
-	-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-			border-radius: 3px;
-   -moz-box-shadow:    none;
-   -webkit-box-shadow: none;
-   box-shadow:        none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
 }
+
+/* Active State */
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
   color: #fff;
-  padding:4px 10px 4px 10px;
-
-  background-image: none;
-   background: #343434;
-  filter: none;  
+  background: #ff6f3e; /* Active background color */
+  border-color: #ff6f3e;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-decoration: none;
-  -webkit-box-shadow: none;
-     -moz-box-shadow: none;
-          box-shadow: none;
-	-webkit-border-radius: 3px;
-		-moz-border-radius: 3px;
-			border-radius: 3px;
-   -moz-box-shadow:    none;
-   -webkit-box-shadow: none;
-   box-shadow:        none;
 }
 
 .navbar .nav  > a i[class^="icon-"]{

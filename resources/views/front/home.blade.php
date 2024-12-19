@@ -2,45 +2,92 @@
 
 @section('content')
 
-  <!-- section featured -->
-  <section id="featured">
+  <!-- Hero Section -->
+  <section class="head-video">
+    <!-- Video Background -->
+    <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-      <!-- Main Swiper Gallery -->
-      <div class="swiper-container main-gallery">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                  <img src="img/slides/camera/slide1/img1.jpg" alt="Main Slide 1">
-              </div>
-              <div class="swiper-slide">
-                  <img src="img/slides/slider2.png" alt="Main Slide 2">
-              </div>
-              <div class="swiper-slide">
-                  <img src="img/slides/camera/slide1/screen.png" alt="Main Slide 3">
-              </div>
-              <div class="swiper-slide">
-                <img src="img/slides/slider1.webp" alt="Main Slide 3">
-              </div>
-          </div>
-      </div>
+    <!-- Carousel Content Overlay -->
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;">
+        <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
+           
 
-      <!-- Thumbnail Swiper Gallery -->
-      <div class="swiper-container thumbs-gallery">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                  <img src="img/slides/camera/slide1/img1.jpg" alt="Thumb 1">
+            <!-- Carousel Items -->
+            <div class="carousel-inner h-100">
+                <!-- Slide 1 -->
+                <div class="carousel-item active h-100">
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col-8">
+                                <h1 class="text-light display-3 fw-bold text-center">تطوير حلول تكنولوجية للتعليم</h1>
+                            </div>
+                            <div class="col-4 text-center">
+                                <i class="fa-solid fa-laptop-file fa-7x text-warning"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item h-100">
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col-8">
+                                <h1 class="text-light display-3 fw-bold text-center">تقديم خدمات تنمية المجتمع</h1>
+                            </div>
+                            <div class="col-4 text-center">
+                                <i class="fa-solid fa-people-roof fa-7x text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="carousel-item h-100">
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col-8">
+                                <h1 class="text-light display-3 fw-bold text-center">مشاريع دعم الطفولة المبكرة</h1>
+                            </div>
+                            <div class="col-4 text-center">
+                                <i class="fa-solid fa-hands-holding-child fa-7x text-danger"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="carousel-item h-100">
+                    <div class="container h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col-8">
+                                <h1 class="text-light display-3 fw-bold text-center">التعليم الفني والتدريب المهني</h1>
+                            </div>
+                            <div class="col-4 text-center">
+                                <i class="fa-solid fa-helmet-safety fa-7x text-success"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Pagination Indicators -->
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
               </div>
-              <div class="swiper-slide">
-                  <img src="img/slides/slider2.png" alt="Thumb 2">
-              </div>
-              <div class="swiper-slide">
-                  <img src="img/slides/camera/slide1/screen.png" alt="Thumb 3">
-              </div>
-              <div class="swiper-slide">
-                  <img src="img/slides/slider1.webp" alt="Thumb 3">
-              </div>
-          </div>
-      </div>
-
+            <!-- Navigation Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
   </section>
 
   <!-- About Us Section -->
@@ -48,14 +95,14 @@
     <div class="container">
       <div class="row">
         <!-- Image Section -->
-        <div class="span5 animate-fade-in-left">
+        <div class="col-md-5 animate-fade-in-left">
           <div class="about-image">
             <img src="img/dummies/blog/img1.jpg" alt="About ICTC" class="img-fluid" />
           </div>
         </div>
   
         <!-- Text Content Section -->
-        <div class="span7 animate-fade-in-right">
+        <div class="col-md-7 animate-fade-in-right">
           <div class="about-text">
             <h3>Who Are We?</h3>
             <p>
@@ -66,11 +113,11 @@
             <div class="about-features">
               <div class="feature-item">
                 <i class="icon-bullhorn"></i>
-                <span><strong>Innovative Solutions</strong><br>Tailored strategies to drive growth and sustainability.</span>
+                <span><p>Innovative Solutions</p><br>Tailored strategies to drive growth and sustainability.</span>
               </div>
               <div class="feature-item">
                 <i class="icon-sitemap"></i>
-                <span><strong>Community Focused</strong><br>Empowering communities with impactful initiatives.</span>
+                <span><p>Community Focused</p><br>Empowering communities with impactful initiatives.</span>
               </div>
             </div>
           </div>
@@ -88,13 +135,13 @@
             </div>
             <div class="row">
               <!-- Service 1: Website -->
-              <div class="span4">
+              <div class="col-md-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdark icon-desktop icon-3x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Website</strong></h4>
+                    <h4><p>Website</p></h4>
                     <p>
                       We provide high-quality web development services tailored to your needs.
                     </p>
@@ -104,13 +151,13 @@
               </div>
     
               <!-- Service 2: Education -->
-              <div class="span4">
+              <div class="col-md-4">
                   <div class="box">
                   <div class="icon">
                       <i class="icon-circled icon-bgsuccess icon-briefcase icon-3x"></i> <!-- Correct icon class -->
                   </div>
                   <div class="text">
-                      <h4><strong>Education</strong></h4>
+                      <h4><p>Education</p></h4>
                       <p>
                       Offering education services with a focus on capacity building and skill development.
                       </p>
@@ -120,13 +167,13 @@
               </div>
 
               <!-- Service 3: Community Research and Project Evaluation -->
-              <div class="span4">
+              <div class="col-md-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdanger icon-search icon-3x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Community Research & Project Evaluation</strong></h4>
+                    <h4><p>Community Research & Project Evaluation</p></h4>
                     <p>
                       We conduct in-depth research and evaluations to help your projects thrive.
                     </p>
@@ -138,13 +185,13 @@
     
             <div class="row">
               <!-- Service 4: Technological Solutions -->
-              <div class="span4">
+              <div class="col-md-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bglight icon-cogs icon-3x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Technological Solutions</strong></h4>
+                    <h4><p>Technological Solutions</p></h4>
                     <p>
                       Providing cutting-edge tech solutions to optimize your business operations.
                     </p>
@@ -154,15 +201,15 @@
               </div>
     
               <!-- Service 5: Training and Capacity Building -->
-              <div class="span4">
+              <div class="col-md-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgsuccess icon-briefcase icon-3x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Training & Capacity Building</strong></h4>
+                    <h4><p>Training & Capacity Building</p></h4>
                     <p>
-                      Our training programs help enhance skills and build strong professional capacities.
+                      Our training programs help enhance skills and build p professional capacities.
                     </p>
                     <a href="#">Learn More</a>
                   </div>
@@ -170,13 +217,13 @@
               </div>
     
               <!-- Service 6: Institutional Development -->
-              <div class="span4">
+              <div class="col-md-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdark icon-building icon-3x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Institutional Development</strong></h4>
+                    <h4><p>Institutional Development</p></h4>
                     <p>
                       Strengthening organizational structures to improve performance and sustainability.
                     </p>
@@ -188,13 +235,13 @@
     
             <div class="row">
               <!-- Service 7: Implementation of Development Projects -->
-              <div class="span4">
+              <div class="col-md-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdanger icon-cogs icon-3x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Implementation of Development Projects</strong></h4>
+                    <h4><p>Implementation of Development Projects</p></h4>
                     <p>
                       We specialize in executing development projects from concept to completion.
                     </p>
@@ -204,13 +251,13 @@
               </div>
     
               <!-- Service 8: Economic Development -->
-              <div class="span4">
+              <div class="col-md-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgprimary icon-money icon-3x"></i>
                   </div>
                   <div class="text">
-                    <h4><strong>Economic Development</strong></h4>
+                    <h4><p>Economic Development</p></h4>
                     <p>
                       We offer strategies to foster sustainable economic growth and community prosperity.
                     </p>
@@ -329,5 +376,4 @@
     </div>
   </section>
    
-
 @endsection

@@ -30,10 +30,9 @@
     <link rel="shortcut icon" href="{{asset('img/ictc.jpeg')}}" />
 
     <style>
-        header .logo img {
-            height: 53px;
-            width: 73px;
-        }
+
+
+
     </style>
     <!-- =======================================================
         Theme Name: Eterna
@@ -46,145 +45,166 @@
 <body>
 
     <div id="wrapper">
-
         <!-- start header -->
         <header>
-        <div class="top">
             <div class="container">
-            <div class="row">
-                <div class="span6">
-                <p class="topcontact"><i class="icon-phone"></i> +20100100000</p>
-                </div>
-                <div class="span6">
-
-                <ul class="social-network">
-                    <li><a href="#" data-placement="bottom" title="Facebook"><i class="icon-facebook icon-white"></i></a></li>
-                    <li><a href="#" data-placement="bottom" title="Twitter"><i class="icon-twitter icon-white"></i></a></li>
-                    <li><a href="#" data-placement="bottom" title="Linkedin"><i class="icon-linkedin icon-white"></i></a></li>
-                    <li><a href="#" data-placement="bottom" title="Pinterest"><i class="icon-pinterest  icon-white"></i></a></li>
-                    <li><a href="#" data-placement="bottom" title="Google +"><i class="icon-google-plus icon-white"></i></a></li>
-                    <li><a href="#" data-placement="bottom" title="Dribbble"><i class="icon-dribbble icon-white"></i></a></li>
-                </ul>
-
+                <div class="row nomargin">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <a href="{{route('home')}}" class="d-flex">
+                                <img src="{{asset('img/ictc.jpeg')}}" alt="" />
+                                <h3 class="slogan">
+                                    <strong>ICTC</strong>
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="navbar navbar-static-top">
+                        <div class="navigation">
+                            <nav>
+                                <ul class="nav topnav" style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0;">
+                                  <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
+                                    <a href="{{ route('home') }}" class="nav-btn {{ request()->routeIs('home') ? 'btn-highlight' : '' }}">
+                                      <i class="icon-home"></i> Home
+                                    </a>
+                                  </li>
+                                  <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
+                                    <a href="{{ route('about') }}" class="nav-btn {{ request()->routeIs('about') ? 'btn-highlight' : '' }}">
+                                      About
+                                    </a>
+                                  </li>
+                                  <li class="dropdown">
+                                    <a href="#" class="nav-btn">Portfolio <i class="icon-angle-down"></i></a>
+                                  </li>
+                                  <li class="dropdown">
+                                    <a href="#" class="nav-btn">Blog <i class="icon-angle-down"></i></a>
+                                  </li>
+                                  <li>
+                                    <a href="#" class="nav-btn">Contact</a>
+                                  </li>
+                                </ul>
+                            </nav>                              
+                        </div>
+                        <!-- end navigation -->
+                        </div>
+                    </div>
+                    <div class="col-md-1 d-flex align-items-center justify-content-end">
+                        <!-- Language Dropdown -->
+                        <div class="dropdown">
+                            <button class="btn btn-light dropdown-toggle p-2" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fa-solid fa-globe"></i> En
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px;">
+                                <li><a class="dropdown-item" href="#">English</a></li>
+                                <li><a class="dropdown-item" href="#">العربية</a></li>
+                            </ul>
+                        </div>
+                    </div>                                     
                 </div>
             </div>
-            </div>
-        </div>
-        <div class="container">
-
-
-            <div class="row nomargin">
-            <div class="span4">
-                <div class="logo">
-                <a href="{{route('home')}}"><img src="{{asset('img/ictc.jpeg')}}" alt="" /></a>
-                </div>
-            </div>
-            <div class="span8">
-                <div class="navbar navbar-static-top">
-                <div class="navigation">
-                    <nav>
-                    <ul class="nav topnav">
-                        <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
-                            <a href="{{ route('home') }}"><i class="icon-home"></i> Home </a>
-                        </li>
-                        <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
-                            <a href="{{ route('about') }}">About</a>
-                        </li>                        
-                        </li>
-                        <li class="dropdown">
-                        <a href="#">Portfolio <i class="icon-angle-down"></i></a>
-                        </li>
-                        <li class="dropdown">
-                        <a href="#">Blog <i class="icon-angle-down"></i></a>
-                        </li>
-                        <li>
-                        <a href="#">Contact </a>
-                        </li>
-                    </ul>
-                    </nav>
-                </div>
-                <!-- end navigation -->
-                </div>
-            </div>
-            </div>
-        </div>
         </header>
         <!-- end header -->
         <div>
             @yield('content')
         </div>
-        <footer>
+        <div class="share-container">
+            <!-- Share Icon -->
+            <button class="share__button">
+                <i class="fa-solid fa-share-nodes"></i>
+            </button>
+        
+            <!-- Social Icons -->
+            <ul class="share__icons">
+                <!-- Facebook -->
+                <li style="--rotate: -18deg;">
+                    <a href="#" style="background-color: #1877F2;">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </li>
+                <!-- TikTok -->
+                <li style="--rotate: 27deg;">
+                    <a href="#" style="background-color: #000;">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </li>
+                <!-- WhatsApp -->
+                <li style="--rotate: 72deg;">
+                    <a href="#" style="background-color: #25D366;">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </li>
+                <!-- YouTube -->
+                <li style="--rotate: 117deg;">
+                    <a href="#" style="background-color: #FF0000;">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        
+        
+        <footer style="background-color:#1a2333; color: #fff; padding: 40px 0;">
             <div class="container">
-            <div class="row">
-                <div class="span4">
-                <div class="widget">
-                    <h5 class="widgetheading">Browse pages</h5>
-                    <ul class="link-list">
-                    <li><a href="#">Our company</a></li>
-                    <li><a href="#">Terms and conditions</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                    <li><a href="#">Press release</a></li>
-                    <li><a href="#">What we have done</a></li>
-                    <li><a href="#">Our support forum</a></li>
-                    </ul>
-    
-                </div>
-                </div>
-                <div class="span4">
-                <div class="widget">
-                    <h5 class="widgetheading">Get in touch</h5>
-                    <address>
-                                <strong>Eterna company Inc.</strong><br>
-                                Somestreet 200 VW, Suite Village A.001<br>
-                                Jakarta 13426 Indonesia
-                            </address>
-                    <p>
-                    <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                    <i class="icon-envelope-alt"></i> email@domainname.com
+              <div class="row">
+          
+                <!-- Left Column: Logo and Description -->
+                <div class="col-md-4">
+                  <div>
+                    <img src="{{asset('img/ictc.jpeg')}}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
+                    <p style="margin: 0;">
+                      ICTC for Development and Technological Solutions for Education
                     </p>
+                  </div>
                 </div>
+          
+                <!-- Center Column: Useful Links -->
+                <div class="col-md-4">
+                  <h5 style="color: #fff; font-weight: bold;">Useful Links</h5>
+                  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <a href="#" style="color: #fff; background-color: #ff6f3e; border-radius: 20px; padding: 5px 15px; text-decoration: none;">About Us</a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Directors Board</a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Partners</a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Projects</a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Media</a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Latest News</a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Fields Of Works</a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Contact Us</a>
+                  </div>
                 </div>
-                <div class="span4">
-                <div class="widget">
-                    <h5 class="widgetheading">Subscribe newsletter</h5>
-                    <p>
-                    Keep updated for new releases and freebies. Enter your e-mail and subscribe to our newsletter.
-                    </p>
-                    <form class="subscribe">
-                    <div class="input-append">
-                        <input class="span2" id="appendedInputButton" type="text">
-                        <button class="btn btn-theme" type="submit">Subscribe</button>
-                    </div>
-                    </form>
+          
+                <!-- Right Column: Contact Info -->
+                <div class="col-md-4">
+                  <h5 style="color: #fff; font-weight: bold;">Contact Us</h5>
+                  <p>
+                    <i class="fa fa-phone"></i> Support : 020000000<br>
+                    <i class="fa fa-envelope"></i> Email : contact@ictc-egy.com
+                  </p>
+                  <div style="display: flex; gap: 10px;">
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                      <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                      <i class="fa fa-whatsapp"></i>
+                    </a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                      <i class="fa fa-envelope"></i>
+                    </a>
+                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                      <i class="fa fa-linkedin"></i>
+                    </a>
+                  </div>
                 </div>
-                </div>
-            </div>
-            </div>
-            <div id="sub-footer">
-            <div class="container">
-                <div class="row">
-                <div class="span6">
-                    <div class="copyright">
-                    <p><span>&copy; ICTC. All right reserved</span></p>
-                    </div>
-    
-                </div>
-    
-                <div class="span6">
-                    <div class="credits">
-                    <!--
-                        All the links in the footer should remain intact.
-                        You can delete the links only if you purchased the pro version.
-                        Licensing information: https://bootstrapmade.com/license/
-                        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Eterna
-                    -->
-                    Designed by <a href="#">Eng:Bola Eshaq</a>
-                    </div>
-                </div>
-                </div>
-            </div>
+              </div>
+          
+              <!-- Footer Bottom -->
+              <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
+                <p style="margin: 0; color: #ccc;">Copyright © 2023 ICTC</p>
+              </div>
             </div>
         </footer>
+          
     </div>
     <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i></a>
   
@@ -252,8 +272,56 @@
             allowTouchMove: false, // Disable manual swiping
         });
         });
+        //share__button 
+        document.addEventListener("DOMContentLoaded", () => {
+            const shareButton = document.querySelector(".share__button");
+            const shareContainer = document.querySelector(".share-container");
+
+            shareButton.addEventListener("click", () => {
+                shareContainer.classList.toggle("active");
+            });
+        });
+        
+
+
     </script>
-      
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const header = document.querySelector("header");
+            window.addEventListener("scroll", function () {
+                if (window.scrollY > 50) {
+                    header.classList.add("scrolled"); // Add class when scrolling
+                } else {
+                    header.classList.remove("scrolled"); // Remove class when at the top
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var textSwiper = new Swiper('.text-slider', {
+                loop: true,
+                autoplay: {
+                    delay: 4000, // Auto-slide every 4 seconds
+                    disableOnInteraction: false,
+                },
+                effect: 'fade', // Smooth fade effect
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    bulletClass: 'swiper-pagination-bullet',
+                    bulletActiveClass: 'swiper-pagination-bullet-active',
+                },
+                allowTouchMove: false, // Disable manual swipe
+            });
+        });
+    </script>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+         
 </body>
 </html>
   

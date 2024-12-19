@@ -135,7 +135,7 @@
             </div>
             <div class="row">
               <!-- Service 1: Website -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdark icon-desktop icon-3x"></i>
@@ -151,7 +151,7 @@
               </div>
     
               <!-- Service 2: Education -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                   <div class="box">
                   <div class="icon">
                       <i class="icon-circled icon-bgsuccess icon-briefcase icon-3x"></i> <!-- Correct icon class -->
@@ -167,7 +167,7 @@
               </div>
 
               <!-- Service 3: Community Research and Project Evaluation -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdanger icon-search icon-3x"></i>
@@ -185,7 +185,7 @@
     
             <div class="row">
               <!-- Service 4: Technological Solutions -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bglight icon-cogs icon-3x"></i>
@@ -201,7 +201,7 @@
               </div>
     
               <!-- Service 5: Training and Capacity Building -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgsuccess icon-briefcase icon-3x"></i>
@@ -217,7 +217,7 @@
               </div>
     
               <!-- Service 6: Institutional Development -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdark icon-building icon-3x"></i>
@@ -235,7 +235,7 @@
     
             <div class="row">
               <!-- Service 7: Implementation of Development Projects -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgdanger icon-cogs icon-3x"></i>
@@ -251,7 +251,7 @@
               </div>
     
               <!-- Service 8: Economic Development -->
-              <div class="col-md-4">
+              <div class="col-md-4 mt-4">
                 <div class="box">
                   <div class="icon">
                     <i class="ico icon-circled icon-bgprimary icon-money icon-3x"></i>

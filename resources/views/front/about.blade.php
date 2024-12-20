@@ -30,7 +30,7 @@
         <div class="inner-heading">
           <ul class="breadcrumb">
             <li><a href="{{ route('home') }}">Home</a> <i class="icon-angle-right"></i></li>
-            <li class="active">About</li>
+            <li class="active"> &nbsp;  About</li>
           </ul>
           <h2>About Us</h2>
         </div>

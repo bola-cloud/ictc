@@ -3003,7 +3003,7 @@ h3.title:hover::after {
   max-height: 80px;
   margin: 0 auto;
   display: block;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
   transition: filter 0.3s ease-in-out;
 }
 
@@ -3217,3 +3217,56 @@ background-color: var(--bgColor);
 .share-container.active .share__button {
 transform: scale(0.9);
 }
+
+
+/* gallery */
+/* Gallery Section */
+/* Gallery Section */
+#gallery .gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gallery .gallery-item img {
+  width: 100%;
+  height: 250px;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+
+#gallery .gallery-item:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#gallery .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+}
+
+#gallery .gallery-item:hover .overlay {
+  opacity: 1;
+}
+
+#gallery .overlay h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+

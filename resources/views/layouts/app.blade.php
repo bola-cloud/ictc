@@ -200,7 +200,7 @@
           
               <!-- Footer Bottom -->
               <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
-                <p style="margin: 0; color: #ccc;">Copyright © 2023 ICTC</p>
+                <p style="margin: 0; color: #ccc;">Copyright © 2025 ICTC</p>
               </div>
             </div>
         </footer>

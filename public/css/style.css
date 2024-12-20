@@ -590,7 +590,7 @@ select.selectmenu {
   letter-spacing: -1.5px;
 }
 
-.box:hover .text h4 {}
+/* .box:hover .text h4 {} */
 
 .box .icon {
   float: left;
@@ -1193,7 +1193,7 @@ form#commentform textarea {
   filter: alpha(opacity=100);
 }
 
-.item-thumbs .hover-wrap .overlay-img-thumb.font-icon-plus {}
+/* .item-thumbs .hover-wrap .overlay-img-thumb.font-icon-plus {} */
 
 .item-thumbs .hover-wrap .overlay-img-thumb.font-icon-link {
   margin: -16px 0 0 20px;
@@ -2509,7 +2509,7 @@ ul.the-icons {
   }
 }
 
-@media (max-width: 360px) {}
+/* @media (max-width: 360px) {} */
 
 /* ============== options panel for live preview ======================= */
 

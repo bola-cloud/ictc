@@ -113,11 +113,17 @@
             <div class="about-features">
               <div class="feature-item">
                 <i class="icon-bullhorn"></i>
-                <span><p>Innovative Solutions</p><br>Tailored strategies to drive growth and sustainability.</span>
+                <span>
+                  <h5>Innovative Solutions</h5>
+                  <p>Tailored strategies to drive growth and sustainability.</p>
+                </span>
               </div>
               <div class="feature-item">
                 <i class="icon-sitemap"></i>
-                <span><p>Community Focused</p><br>Empowering communities with impactful initiatives.</span>
+                <span>
+                  <h5>Community Focused</h5>
+                  <p>Empowering communities with impactful initiatives.</p>
+                </span>
               </div>
             </div>
           </div>
@@ -168,7 +174,6 @@
         </div>
     </div>
   </section>
-
 
   <section id="content">
       <div class="container">

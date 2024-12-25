@@ -52,10 +52,7 @@
                     <div class="col-md-4">
                         <div class="logo">
                             <a href="{{route('home')}}" class="d-flex">
-                                <img src="{{asset('img/ictc.jpeg')}}" alt="" />
-                                <h3 class="slogan">
-                                    <strong>ICTC</strong>
-                                </h3>
+                                <img src="{{asset('img/461161.png')}}" alt="" />
                             </a>
                         </div>
                     </div>

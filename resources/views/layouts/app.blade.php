@@ -30,54 +30,7 @@
     <link rel="shortcut icon" href="{{asset('img/ictc.jpeg')}}" />
 
     <style>
-
-        /* Grow Pulse Spinner */
-        .spinner-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1050; /* Ensure it stays above other content */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            transition: visibility 0.3s, opacity 0.3s;
-        }
-
-        .spinner-overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .grow-pulse {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 255, 1.0);
-            border-radius: 50%;
-            animation: grow-pulse 1.5s ease-out infinite;
-        }
-
-        @keyframes grow-pulse {
-            0% {
-                transform: scale(0.1);
-                opacity: 0;
-            }
-            30% {
-                opacity: 0.5;
-            }
-            60% {
-                transform: scale(1.2);
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
+        
     </style>
     <!-- =======================================================
         Theme Name: Eterna

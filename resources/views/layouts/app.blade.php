@@ -135,6 +135,9 @@ i.fa.fa-bars {
     .navigation {
         display: none; /* Hide desktop navigation */
     }
+    .lang{
+        display: none !important;
+    }
 
     .hamburger-menu {
         display: block; /* Show hamburger menu */
@@ -169,6 +172,7 @@ i.fa.fa-bars {
                             <a href="{{route('home')}}" class="d-flex">
                                 <img src="{{asset('img/461161.png')}}" alt="" />
                             </a>
+                            
                         </div>
                     </div>
                     <div class="col-md-7 d-none d-md-flex">
@@ -199,7 +203,7 @@ i.fa.fa-bars {
                             </nav>
                         </div>
                     </div>
-                    <div class="col-md-1 d-flex align-items-center justify-content-end">
+                    <div class="col-md-1 d-flex align-items-center justify-content-end lang">
                         <!-- Language Dropdown -->
                         <div class="dropdown">
                             <button class="btn btn-light dropdown-toggle p-2" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -238,9 +242,21 @@ i.fa.fa-bars {
                         <li class="dropdown">
                             <a href="#">Blog</a>
                         </li>
-                        <li>
+                        <li class="dropdown">
                             <a href="#">Contact</a>
                         </li>
+                        <div class="">
+                            <!-- Language Dropdown -->
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle p-2" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-globe"></i> En
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-130px, 75px);" data-popper-placement="bottom-end">
+                                    <li><a class="dropdown-item" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">العربية</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </ul>
                 </nav>
             </div>

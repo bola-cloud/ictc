@@ -2,6 +2,11 @@
 
 @section('content')
 
+<style>
+
+
+</style>
+
   <!-- Hero Section -->
   <section class="head-video">
     <!-- Video Background -->

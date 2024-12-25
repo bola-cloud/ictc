@@ -183,7 +183,7 @@
   <section id="content">
       <div class="container">
         <div class="row">
-          <div class="span12">
+          <div class="col-md-12">
             <div class="title-container">
               <h3 class="title">Our <strong>Services</strong></h3>
             </div>
@@ -329,13 +329,13 @@
   <section id="works">
     <div class="container">
       <div class="row">
-        <div class="span12">
+        <div class="col-md-12">
           <div class="title-container">
             <h3 class="title">Recent <strong>Works</strong></h3>
           </div>
           <div class="row">
-            <div class="grid cs-style-4">
-              <div class="span3">
+            <div class="grid cs-style-4 d-flex">
+              <div class="col-md-3 m-3">
                 <div class="item">
                   <figure>
                     <div><img src="img/dummies/works/1.jpg" alt="" /></div>
@@ -352,7 +352,7 @@
                   </figure>
                 </div>
               </div>
-              <div class="span3">
+              <div class="col-md-3 m-3">
                 <div class="item">
                   <figure>
                     <div><img src="img/dummies/works/2.jpg" alt="" /></div>
@@ -369,7 +369,7 @@
                   </figure>
                 </div>
               </div>
-              <div class="span3">
+              <div class="col-md-3 m-3">
                 <div class="item">
                   <figure>
                     <div><img src="img/dummies/works/3.jpg" alt="" /></div>
@@ -386,7 +386,7 @@
                   </figure>
                 </div>
               </div>
-              <div class="span3">
+              <div class="col-md-3 m-3">
                 <div class="item">
                   <figure>
                     <div><img src="img/dummies/works/4.jpg" alt="" /></div>

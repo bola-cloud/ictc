@@ -10,8 +10,8 @@
 
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
-    <link href="{{asset('css/bootstrap-responsive.css')}}" rel="stylesheet" />
+    {{-- <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/bootstrap-responsive.css')}}" rel="stylesheet" /> --}}
     <link href="{{asset('css/flexslider.css')}}" rel="stylesheet" />
     <link href="{{asset('css/prettyPhoto.css')}}" rel="stylesheet" />
     <link href="{{asset('css/camera.css')}}" rel="stylesheet" />
@@ -31,7 +31,52 @@
 
     <style>
 
+        /* Grow Pulse Spinner */
+        .spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1050; /* Ensure it stays above other content */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s;
+        }
 
+        .spinner-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .grow-pulse {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 1.0);
+            border-radius: 50%;
+            animation: grow-pulse 1.5s ease-out infinite;
+        }
+
+        @keyframes grow-pulse {
+            0% {
+                transform: scale(0.1);
+                opacity: 0;
+            }
+            30% {
+                opacity: 0.5;
+            }
+            60% {
+                transform: scale(1.2);
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
 
     </style>
     <!-- =======================================================
@@ -105,6 +150,9 @@
             </div>
         </header>
         <!-- end header -->
+        <div class="spinner-overlay" id="loadingSpinner">
+            <div class="grow-pulse"></div>
+        </div>
         <div>
             @yield('content')
         </div>
@@ -238,86 +286,135 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script>
         // Initialize the thumbs gallery first
-        var swiperThumbs = new Swiper('.thumbs-gallery', {
-            spaceBetween: 10,
-            slidesPerView: 5,
-            freeMode: true,
-            watchSlidesVisibility: true,
-            watchSlidesProgress: true,
+        document.addEventListener("DOMContentLoaded", () => {
+            const swiperThumbs = new Swiper(".thumbs-gallery", {
+                spaceBetween: 10,
+                slidesPerView: 5,
+                freeMode: true,
+                watchSlidesVisibility: true,
+                watchSlidesProgress: true,
+            });
+    
+            // Initialize the main gallery, linking to the thumbs gallery
+            const swiperMain = new Swiper(".main-gallery", {
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                    swiper: swiperThumbs, // Link the thumbs swiper here
+                },
+            });
         });
-
-        // Initialize the main gallery, linking to the thumbs gallery
-        var swiperMain = new Swiper('.main-gallery', {
-            spaceBetween: 10,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            thumbs: {
-                swiper: swiperThumbs, // Link the thumbs swiper here
-            }
+    
+        // Partners slider
+        document.addEventListener("DOMContentLoaded", () => {
+            const partnersSwiper = new Swiper(".partners-slider-unique", {
+                slidesPerView: 5, // Show 5 logos at a time
+                spaceBetween: 20, // Space between slides
+                loop: true, // Infinite loop
+                autoplay: {
+                    delay: 0, // Continuous scrolling
+                    disableOnInteraction: false,
+                },
+                speed: 5000, // Speed of scrolling (higher = slower)
+                allowTouchMove: false, // Disable manual swiping
+            });
         });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        var partnersSwiper = new Swiper(".partners-slider-unique", {
-            slidesPerView: 5, // Show 5 logos at a time
-            spaceBetween: 20, // Space between slides
-            loop: true, // Infinite loop
-            autoplay: {
-            delay: 0, // Continuous scrolling
-            disableOnInteraction: false,
-            },
-            speed: 5000, // Speed of scrolling (higher = slower)
-            allowTouchMove: false, // Disable manual swiping
-        });
-        });
-        //share__button 
+    
+        // Share button toggle
         document.addEventListener("DOMContentLoaded", () => {
             const shareButton = document.querySelector(".share__button");
             const shareContainer = document.querySelector(".share-container");
-
-            shareButton.addEventListener("click", () => {
-                shareContainer.classList.toggle("active");
-            });
+    
+            if (shareButton && shareContainer) {
+                shareButton.addEventListener("click", () => {
+                    shareContainer.classList.toggle("active");
+                });
+            }
         });
-        
-
-
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
+    
+        // Header scroll effect
+        document.addEventListener("DOMContentLoaded", () => {
             const header = document.querySelector("header");
-            window.addEventListener("scroll", function () {
+            window.addEventListener("scroll", () => {
                 if (window.scrollY > 50) {
-                    header.classList.add("scrolled"); // Add class when scrolling
+                    header.classList.add("scrolled");
                 } else {
-                    header.classList.remove("scrolled"); // Remove class when at the top
+                    header.classList.remove("scrolled");
                 }
             });
         });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var textSwiper = new Swiper('.text-slider', {
+    
+        // Text slider
+        document.addEventListener("DOMContentLoaded", () => {
+            const textSwiper = new Swiper(".text-slider", {
                 loop: true,
                 autoplay: {
                     delay: 4000, // Auto-slide every 4 seconds
                     disableOnInteraction: false,
                 },
-                effect: 'fade', // Smooth fade effect
+                effect: "fade", // Smooth fade effect
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: ".swiper-pagination",
                     clickable: true,
-                    bulletClass: 'swiper-pagination-bullet',
-                    bulletActiveClass: 'swiper-pagination-bullet-active',
+                    bulletClass: "swiper-pagination-bullet",
+                    bulletActiveClass: "swiper-pagination-bullet-active",
                 },
                 allowTouchMove: false, // Disable manual swipe
             });
         });
-    </script>
-
     
+        // Photo Gallery Lightbox
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Swiper
+            const swiper = new Swiper('.swiper-container', {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // Open modal and navigate to the clicked image
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const modal = document.getElementById('lightbox-modal');
+            const modalInstance = new bootstrap.Modal(modal);
+
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    swiper.slideTo(index, 0); // Go to the clicked image
+                    modalInstance.show(); // Open the modal
+                });
+            });
+        });
+
+                // Show spinner on page load
+                document.addEventListener('DOMContentLoaded', () => {
+            const spinner = document.getElementById('loadingSpinner');
+            spinner.classList.add('active');
+
+            // Hide spinner after page loads
+            window.addEventListener('load', () => {
+                spinner.classList.remove('active');
+            });
+        });
+
+        // Show spinner on route changes for SPAs (if applicable)
+        if (window.history.pushState) {
+            document.addEventListener('click', (e) => {
+                const target = e.target.closest('a');
+                if (target && target.href && target.target !== '_blank') {
+                    const spinner = document.getElementById('loadingSpinner');
+                    spinner.classList.add('active');
+                }
+            });
+        }
+    </script>
+    
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

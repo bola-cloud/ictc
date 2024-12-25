@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('front.about');
 })->name('about');
+Route::get('/image-gallery', function () {
+    return view('front.image-gallery');
+})->name('image-gallery');
+
+Route::get('/video-gallery', function () {
+    return view('front.video-gallery');
+})->name('video-gallery');

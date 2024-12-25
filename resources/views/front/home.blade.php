@@ -179,7 +179,7 @@
     </div>
   </section>
 
-  <section id="content">
+  {{-- <section id="content">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -323,8 +323,79 @@
           </div>
         </div>
       </div>
-  </section>
+  </section> --}}
 
+  <section id="content" style="padding: 60px 0; background-color: #f9f9f9;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Our <strong>Services</strong></h2>
+        <p style="font-size: 1.1rem; color: #666;">Explore the wide range of professional services we offer to help you achieve your goals.</p>
+      </div>
+      <div class="row g-4">
+        <!-- Service Card Template -->
+        <!-- Service 1: Website -->
+        <div class="col-md-4">
+          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <i class="ico icon-circled icon-bgdark icon-desktop icon-4x mb-3"></i>
+            <h4 class="fw-bold mb-3" style="color: #333;">Website</h4>
+            <p style="color: #555;">We provide high-quality web development services tailored to your needs.</p>
+            <a href="#" class="btn btn-primary mt-3" style="background-color: #007bff; border: none;">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Service 2: Education -->
+        <div class="col-md-4">
+          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <i class="icon-circled icon-bgsuccess icon-briefcase icon-4x mb-3"></i>
+            <h4 class="fw-bold mb-3" style="color: #333;">Education</h4>
+            <p style="color: #555;">Offering education services with a focus on capacity building and skill development.</p>
+            <a href="#" class="btn btn-success mt-3" style="background-color: #28a745; border: none;">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Service 3: Community Research -->
+        <div class="col-md-4">
+          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <i class="ico icon-circled icon-bgdanger icon-search icon-4x mb-3"></i>
+            <h4 class="fw-bold mb-3" style="color: #333;">Community Research & Project Evaluation</h4>
+            <p style="color: #555;">We conduct in-depth research and evaluations to help your projects thrive.</p>
+            <a href="#" class="btn btn-danger mt-3" style="background-color: #dc3545; border: none;">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Service 4: Technological Solutions -->
+        <div class="col-md-4">
+          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <i class="ico icon-circled icon-bglight icon-cogs icon-4x mb-3"></i>
+            <h4 class="fw-bold mb-3" style="color: #333;">Technological Solutions</h4>
+            <p style="color: #555;">Providing cutting-edge tech solutions to optimize your business operations.</p>
+            <a href="#" class="btn btn-secondary mt-3" style="background-color: #6c757d; border: none;">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Service 5: Training and Capacity Building -->
+        <div class="col-md-4">
+          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <i class="icon-circled icon-bgsuccess icon-briefcase icon-4x mb-3"></i>
+            <h4 class="fw-bold mb-3" style="color: #333;">Training & Capacity Building</h4>
+            <p style="color: #555;">Our training programs help enhance skills and build professional capacities.</p>
+            <a href="#" class="btn btn-success mt-3" style="background-color: #28a745; border: none;">Learn More</a>
+          </div>
+        </div>
+  
+        <!-- Service 6: Institutional Development -->
+        <div class="col-md-4">
+          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+            <i class="ico icon-circled icon-bgdark icon-building icon-4x mb-3"></i>
+            <h4 class="fw-bold mb-3" style="color: #333;">Institutional Development</h4>
+            <p style="color: #555;">Strengthening organizational structures to improve performance and sustainability.</p>
+            <a href="#" class="btn btn-dark mt-3" style="background-color: #343a40; border: none;">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
   <!-- Why ICTC Section -->
   <section id="why-ictc" style="padding: 50px 0; background-color: #f5f5f5;">
     <div class="container">

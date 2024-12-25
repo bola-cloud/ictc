@@ -32,7 +32,122 @@
     <link rel="shortcut icon" href="{{asset('img/ictc.jpeg')}}" />
 
     <style>
-        
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Side Navigation (Mobile) */
+
+
+
+        /* Show Side Navigation When Open */
+        .side-nav.open {
+            right: 0; /* Slide the side-nav into view */
+        }
+
+        /* Responsive Adjustments */
+        /* Side Navigation (Mobile) */
+.side-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Hidden off-screen by default */
+    width: 250px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: right 0.3s ease;
+    padding: 20px;
+    overflow-y: auto; /* Ensure scrolling for long menus */
+}
+
+/* Styling the menu items container */
+.side-nav nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+/* Styling each list item */
+.side-nav nav ul li {
+    margin-bottom: 15px; /* Space between menu items */
+    font-size: 16px; /* Font size for menu items */
+}
+
+/* Styling the links */
+.side-nav nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: #111; /* Text color */
+    font-size: 16px; /* Font size for mobile */
+    padding: 10px 15px; /* Padding around the text */
+    display: block; /* Ensure links take full width */
+    border-bottom: 1px solid #eee; /* Add a divider between items */
+    font-family: Arial, sans-serif; /* Consistent font */
+    text-align: left; /* Align text to the left */
+}
+
+/* Hover effects */
+.side-nav nav ul li a:hover {
+    background-color: #f8f9fa; /* Light gray background on hover */
+    color: #333; /* Darker text color on hover */
+    border-radius: 4px; /* Optional: Rounded edges for hover */
+}
+
+/* Show Side Navigation When Open */
+.side-nav.open {
+    right: 0; /* Slide the side-nav into view */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+i.fa.fa-bars {
+    color: #fff; /* White icon color for the hamburger menu */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navigation {
+        display: none; /* Hide desktop navigation */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+}
+
+
+
+
+
+        i.fa.fa-bars{
+            color: #fff
+        }
     </style>
     <!-- =======================================================
         Theme Name: Eterna
@@ -56,34 +171,32 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-7">
-                        <div class="navbar navbar-static-top">
-                        <div class="navigation">
+                    <div class="col-md-7 d-none d-md-flex">
+                        <!-- Regular Navigation (Visible on Desktop) -->
+                        <div class="navbar navbar-static-top navigation">
                             <nav>
                                 <ul class="nav topnav" style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0;">
-                                  <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
-                                    <a href="{{ route('home') }}" class="nav-btn {{ request()->routeIs('home') ? 'btn-highlight' : '' }}">
-                                      <i class="icon-home"></i> Home
-                                    </a>
-                                  </li>
-                                  <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
-                                    <a href="{{ route('about') }}" class="nav-btn {{ request()->routeIs('about') ? 'btn-highlight' : '' }}">
-                                      About
-                                    </a>
-                                  </li>
-                                  <li class="dropdown">
-                                    <a href="#" class="nav-btn">Portfolio <i class="icon-angle-down"></i></a>
-                                  </li>
-                                  <li class="dropdown">
-                                    <a href="#" class="nav-btn">Blog <i class="icon-angle-down"></i></a>
-                                  </li>
-                                  <li>
-                                    <a href="#" class="nav-btn">Contact</a>
-                                  </li>
+                                    <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
+                                        <a href="{{ route('home') }}" class="nav-btn {{ request()->routeIs('home') ? 'btn-highlight' : '' }}">
+                                            <i class="icon-home"></i> Home
+                                        </a>
+                                    </li>
+                                    <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
+                                        <a href="{{ route('about') }}" class="nav-btn {{ request()->routeIs('about') ? 'btn-highlight' : '' }}">
+                                            About
+                                        </a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="nav-btn">Portfolio <i class="icon-angle-down"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="nav-btn">Blog <i class="icon-angle-down"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="nav-btn">Contact</a>
+                                    </li>
                                 </ul>
-                            </nav>                              
-                        </div>
-                        <!-- end navigation -->
+                            </nav>
                         </div>
                     </div>
                     <div class="col-md-1 d-flex align-items-center justify-content-end">
@@ -92,15 +205,49 @@
                             <button class="btn btn-light dropdown-toggle p-2" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-globe"></i> En
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px;">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-130px, 75px);" data-popper-placement="bottom-end">
                                 <li><a class="dropdown-item" href="#">English</a></li>
                                 <li><a class="dropdown-item" href="#">العربية</a></li>
                             </ul>
                         </div>
-                    </div>                                     
+                    </div>
+                    <!-- Hamburger Menu for Mobile -->
+                    <div class="col-md-1 d-flex align-items-center justify-content-end d-md-none">
+                        <div class="hamburger-menu">
+                            <button class="hamburger-btn">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        
+            <!-- Side Navigation (Visible on Mobile) -->
+            <div class="side-nav">
+                <nav>
+                    <ul class="nav topnav">
+                        <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
+                            <a href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
+                            <a href="{{ route('about') }}">About</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Portfolio</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+                      
         </header>
+        
+        
         <!-- end header -->
         <div class="spinner-overlay" id="loadingSpinner">
             <div class="grow-pulse"></div>
@@ -213,9 +360,14 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
-    <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-    <script src="{{asset('js/bootstrap.js')}}"></script>
-  
+    {{-- <script src="{{asset('js/jquery.easing.1.3.js')}}"></script> --}}
+    {{-- <script src="{{asset('js/bootstrap.js')}}"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap 5 JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+       
     <script src="{{asset('js/modernizr.custom.js')}}"></script>
     <script src="{{asset('js/toucheffects.js')}}"></script>
     <script src="{{asset('js/google-code-prettify/prettify.js')}}"></script>
@@ -233,11 +385,8 @@
   
     <!-- Template Custom JavaScript File -->
     <script src="{{asset('js/custom.js')}}"></script>
-    <!-- Bootstrap 5 JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    
-         
+ 
+
     <script>
         // Initialize the thumbs gallery first
         document.addEventListener("DOMContentLoaded", () => {
@@ -365,6 +514,21 @@
                 }
             });
         }
+        $(document).ready(function () {
+    // Toggle the side navigation
+    $(".hamburger-btn").on("click", function () {
+        $(".side-nav").toggleClass("open");
+    });
+
+    // Close side navigation when clicking outside
+    $(document).on("click", function (e) {
+        if (!$(e.target).closest(".side-nav, .hamburger-btn").length) {
+            $(".side-nav").removeClass("open");
+        }
+    });
+});
+
+
     </script>
     
 

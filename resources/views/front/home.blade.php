@@ -335,7 +335,7 @@
       <div class="row text-center">
         <!-- Feature Item 1 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-check-circle fa-3x text-primary mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Proven Expertise</h4>
             <p style="font-size: 0.9rem; color: #555;">Decades of experience delivering impactful solutions.</p>
@@ -343,7 +343,7 @@
         </div>
         <!-- Feature Item 2 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-cogs fa-3x text-success mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Customized Solutions</h4>
             <p style="font-size: 0.9rem; color: #555;">Tailored approaches to meet unique organizational needs.</p>
@@ -351,7 +351,7 @@
         </div>
         <!-- Feature Item 3 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-lightbulb fa-3x text-warning mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Innovative Approach</h4>
             <p style="font-size: 0.9rem; color: #555;">Leveraging innovation to drive impactful outcomes.</p>
@@ -359,7 +359,7 @@
         </div>
         <!-- Feature Item 4 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-globe fa-3x text-danger mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Comprehensive Services</h4>
             <p style="font-size: 0.9rem; color: #555;">A full range of services for all organizational needs.</p>
@@ -369,7 +369,7 @@
       <div class="row text-center">
         <!-- Feature Item 5 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-leaf fa-3x text-success mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Focus on Sustainability</h4>
             <p style="font-size: 0.9rem; color: #555;">Building long-term, sustainable solutions.</p>
@@ -377,7 +377,7 @@
         </div>
         <!-- Feature Item 6 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-users fa-3x text-primary mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Client-Centric Philosophy</h4>
             <p style="font-size: 0.9rem; color: #555;">Placing clients at the heart of every decision.</p>
@@ -385,7 +385,7 @@
         </div>
         <!-- Feature Item 7 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-chart-line fa-3x text-warning mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Track Record of Success</h4>
             <p style="font-size: 0.9rem; color: #555;">Delivering results that exceed expectations.</p>
@@ -393,7 +393,7 @@
         </div>
         <!-- Feature Item 8 -->
         <div class="col-md-3 mb-4">
-          <div class="feature-box p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
             <i class="fa fa-award fa-3x text-danger mb-3"></i>
             <h4 class="mb-2" style="font-weight: bold;">Commitment to Excellence</h4>
             <p style="font-size: 0.9rem; color: #555;">Striving for excellence in every project we undertake.</p>
@@ -402,6 +402,7 @@
       </div>
     </div>
   </section>
+
 
   <section id="works">
     <div class="container">

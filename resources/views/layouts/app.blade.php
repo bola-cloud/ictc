@@ -30,7 +30,7 @@
     <link rel="shortcut icon" href="{{asset('img/ictc.jpeg')}}" />
 
     <style>
-        
+
     </style>
     <!-- =======================================================
         Theme Name: Eterna
@@ -215,7 +215,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="{{asset('js/jquery.js')}}"></script>
     <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>
-    <script src="{{asset('js/bootstrap.js')}}"></script>
+    {{-- <script src="{{asset('js/bootstrap.js')}}"></script> --}}
   
     <script src="{{asset('js/modernizr.custom.js')}}"></script>
     <script src="{{asset('js/toucheffects.js')}}"></script>

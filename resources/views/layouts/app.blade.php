@@ -208,7 +208,7 @@
                 <div class="col-md-4">
                   <h5 style="color: #fff; font-weight: bold;">Useful Links</h5>
                   <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    <a href="#" style="color: #fff; background-color: #ff6f3e; border-radius: 20px; padding: 5px 15px; text-decoration: none;">About Us</a>
+                    <a href="#" style="color: #fff; background-color: #0d6efd !important; border-radius: 20px; padding: 5px 15px; text-decoration: none;">About Us</a>
                     <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Directors Board</a>
                     <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Partners</a>
                     <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Projects</a>

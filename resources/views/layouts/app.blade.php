@@ -73,10 +73,13 @@
                                         </a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="nav-btn">Portfolio <i class="icon-angle-down"></i></a>
+                                        <a href="#" class="nav-btn">Working area</a>
                                     </li>
                                     <li class="dropdown">
-                                        <a href="#" class="nav-btn">Blog <i class="icon-angle-down"></i></a>
+                                        <a href="#" class="nav-btn">Media <i class="icon-angle-down"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="nav-btn">Partners </a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="nav-btn">Contact</a>

@@ -1,19 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-
-<style>
-
-
-</style>
-
   <!-- Hero Section -->
   <section class="head-video">
     <!-- Video Background -->
-    <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    {{-- <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
         <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
         Your browser does not support the video tag.
-    </video>
+    </video> --}}
 
     <!-- Carousel Content Overlay -->
     <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;">
@@ -184,6 +178,31 @@
     </div>
   </section>
 
+  <section class="news-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-2">
+              <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Latest <strong>News</strong></h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="card news-card p-2">
+                    <div class="news-images">
+                        <img src="https://picsum.photos/800/400" alt="News Image 1">
+                        <img src="https://picsum.photos/800/400" alt="News Image 2">
+                    </div>
+                    <div class="card-body news-card-body">
+                        <h3 class="news-card-title">Dr. Mustafa Madbouly - Prime Minister Witnesses the Inauguration</h3>
+                        <p class="news-card-text">The inauguration of the social services center in Sidi Abdel Rahman village is an initiative to provide better facilities and services to the community.</p>
+                        <a href="{{route('news-details')}}" class="news-read-more">Read More &raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
   {{-- <section id="content">
       <div class="container">
         <div class="row">
@@ -203,7 +222,7 @@
                     <p>
                       We provide high-quality web development services tailored to your needs.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="{{route('services')}}">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -219,7 +238,7 @@
                       <p>
                       Offering education services with a focus on capacity building and skill development.
                       </p>
-                      <a href="#">Learn More</a>
+                      <a href="{{route('services')}}">Learn More</a>
                   </div>
                   </div>
               </div>
@@ -235,7 +254,7 @@
                     <p>
                       We conduct in-depth research and evaluations to help your projects thrive.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="{{route('services')}}">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -253,7 +272,7 @@
                     <p>
                       Providing cutting-edge tech solutions to optimize your business operations.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="{{route('services')}}">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -269,7 +288,7 @@
                     <p>
                       Our training programs help enhance skills and build p professional capacities.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="{{route('services')}}">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -285,7 +304,7 @@
                     <p>
                       Strengthening organizational structures to improve performance and sustainability.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="{{route('services')}}">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -303,7 +322,7 @@
                     <p>
                       We specialize in executing development projects from concept to completion.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="{{route('services')}}">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -319,7 +338,7 @@
                     <p>
                       We offer strategies to foster sustainable economic growth and community prosperity.
                     </p>
-                    <a href="#">Learn More</a>
+                    <a href="{{route('services')}}">Learn More</a>
                   </div>
                 </div>
               </div>
@@ -330,74 +349,54 @@
       </div>
   </section> --}}
 
-  <section id="content" style="padding: 60px 0; background-color: #f9f9f9;">
+  <section id="scope-of-work" style="padding: 60px 0; background-color: #f9f9f9;">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Our <strong>Services</strong></h2>
-        <p style="font-size: 1.1rem; color: #666;">Explore the wide range of professional services we offer to help you achieve your goals.</p>
-      </div>
-      <div class="row g-4">
-        <!-- Service Card Template -->
-        <!-- Service 1: Website -->
-        <div class="col-md-4">
-          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-            <i class="ico icon-circled icon-bgdark icon-desktop icon-4x mb-3"></i>
-            <h4 class="fw-bold mb-3" style="color: #333;">Website</h4>
-            <p style="color: #555;">We provide high-quality web development services tailored to your needs.</p>
-            <a href="#" class="btn btn-primary mt-3" style="background-color: #007bff; border: none;">Learn More</a>
-          </div>
+        <div class="text-center mb-5">
+            <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Scope of <strong>Work</strong></h2>
+            <p style="font-size: 1.1rem; color: #666;">Explore our key scopes of work and how we deliver value in each area.</p>
         </div>
-  
-        <!-- Service 2: Education -->
-        <div class="col-md-4">
-          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-            <i class="icon-circled icon-bgsuccess icon-briefcase icon-4x mb-3"></i>
-            <h4 class="fw-bold mb-3" style="color: #333;">Education</h4>
-            <p style="color: #555;">Offering education services with a focus on capacity building and skill development.</p>
-            <a href="#" class="btn btn-success mt-3" style="background-color: #28a745; border: none;">Learn More</a>
-          </div>
+        <div class="row g-4">
+            <!-- Scope 1: Research -->
+            <div class="col-md-4">
+                <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                    <i class="ico icon-circled icon-bgprimary icon-search icon-4x mb-3" style="background-color: #007bff;"></i>
+                    <h4 class="fw-bold mb-3" style="color: #333;">Research</h4>
+                    <p style="color: #555;">Providing evidence-based studies and analysis.</p>
+                    <a href="{{route('services')}}" class="btn btn-primary mt-3" style="background-color: #007bff; border: none;">Learn More</a>
+                </div>
+            </div>
+            
+
+            <!-- Scope 2: Training -->
+            <div class="col-md-4">
+                <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                    <i class="icon-circled icon-bgsuccess icon-briefcase icon-4x mb-3"></i>
+                    <h4 class="fw-bold mb-3" style="color: #333;">Training</h4>
+                    <p style="color: #555;">Delivering specialized programs to build skills and knowledge.</p>
+                    <a href="{{route('services')}}" class="btn btn-success mt-3" style="background-color: #28a745; border: none;">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Scope 3: Technology -->
+            <div class="col-md-4">
+                <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                    <i class="ico icon-circled icon-bglight icon-cogs icon-4x mb-3"></i>
+                    <h4 class="fw-bold mb-3" style="color: #333;">Technology</h4>
+                    <p style="color: #555;">Leveraging innovative tools and solutions.</p>
+                    <a href="{{route('services')}}" class="btn btn-secondary mt-3" style="background-color: #6c757d; border: none;">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Scope 4: Institutional Development -->
+            <div class="col-md-4">
+                <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
+                    <i class="ico icon-circled icon-bgdark icon-building icon-4x mb-3"></i>
+                    <h4 class="fw-bold mb-3" style="color: #333;">Institutional Development</h4>
+                    <p style="color: #555;">Building robust organizational frameworks and systems.</p>
+                    <a href="{{route('services')}}" class="btn btn-dark mt-3" style="background-color: #34403c; border: none;">Learn More</a>
+                </div>
+            </div>
         </div>
-  
-        <!-- Service 3: Community Research -->
-        <div class="col-md-4">
-          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-            <i class="ico icon-circled icon-bgdanger icon-search icon-4x mb-3"></i>
-            <h4 class="fw-bold mb-3" style="color: #333;">Community Research & Project Evaluation</h4>
-            <p style="color: #555;">We conduct in-depth research and evaluations to help your projects thrive.</p>
-            <a href="#" class="btn btn-danger mt-3" style="background-color: #dc3545; border: none;">Learn More</a>
-          </div>
-        </div>
-  
-        <!-- Service 4: Technological Solutions -->
-        <div class="col-md-4">
-          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-            <i class="ico icon-circled icon-bglight icon-cogs icon-4x mb-3"></i>
-            <h4 class="fw-bold mb-3" style="color: #333;">Technological Solutions</h4>
-            <p style="color: #555;">Providing cutting-edge tech solutions to optimize your business operations.</p>
-            <a href="#" class="btn btn-secondary mt-3" style="background-color: #6c757d; border: none;">Learn More</a>
-          </div>
-        </div>
-  
-        <!-- Service 5: Training and Capacity Building -->
-        <div class="col-md-4">
-          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-            <i class="icon-circled icon-bgsuccess icon-briefcase icon-4x mb-3"></i>
-            <h4 class="fw-bold mb-3" style="color: #333;">Training & Capacity Building</h4>
-            <p style="color: #555;">Our training programs help enhance skills and build professional capacities.</p>
-            <a href="#" class="btn btn-success mt-3" style="background-color: #28a745; border: none;">Learn More</a>
-          </div>
-        </div>
-  
-        <!-- Service 6: Institutional Development -->
-        <div class="col-md-4">
-          <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-            <i class="ico icon-circled icon-bgdark icon-building icon-4x mb-3"></i>
-            <h4 class="fw-bold mb-3" style="color: #333;">Institutional Development</h4>
-            <p style="color: #555;">Strengthening organizational structures to improve performance and sustainability.</p>
-            <a href="#" class="btn btn-dark mt-3" style="background-color: #343a40; border: none;">Learn More</a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
   
@@ -405,7 +404,7 @@
   <section id="why-ictc" style="padding: 50px 0; background-color: #f5f5f5;">
     <div class="container">
       <div class="text-center mb-5">
-        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Why ICTC?</h2>
+        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Why <strong>ICTC?</strong></h2>
         <p style="font-size: 1.1rem; color: #666;">Discover the key reasons why ICTC is the trusted choice for organizations worldwide.</p>
       </div>
       <div class="row text-center">
@@ -479,8 +478,7 @@
     </div>
   </section>
 
-
-  <section id="works">
+  {{-- <section id="works">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -499,7 +497,7 @@
               <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
               </span>
                         <span>
-              <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
+              <a href="{{route('services')}}"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
               </span>
                       </div>
                     </figcaption>
@@ -516,7 +514,7 @@
               <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
               </span>
                         <span>
-              <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
+              <a href="{{route('services')}}"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
               </span>
                       </div>
                     </figcaption>
@@ -533,7 +531,7 @@
               <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
               </span>
                         <span>
-              <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
+              <a href="{{route('services')}}"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
               </span>
                       </div>
                     </figcaption>
@@ -550,7 +548,7 @@
               <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-plus icon-circled icon-bglight icon-2x"></i></a>
               </span>
                         <span>
-              <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
+              <a href="{{route('services')}}"><i class="icon-file icon-circled icon-bglight icon-2x"></i></a>
               </span>
                       </div>
                     </figcaption>
@@ -563,7 +561,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <section id="partners" class="partners-section">
     <div class="container">

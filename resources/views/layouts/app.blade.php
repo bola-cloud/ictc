@@ -54,7 +54,6 @@
                             <a href="{{route('home')}}" class="d-flex">
                                 <img src="{{asset('img/461161.png')}}" alt="" />
                             </a>
-                            
                         </div>
                     </div>
                     <div class="col-md-7 d-none d-md-flex">
@@ -72,17 +71,23 @@
                                             About
                                         </a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="nav-btn">Working area</a>
+                                    <li class="dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
+                                        <a href="{{ route('services') }}" class="nav-btn {{ request()->routeIs('about') ? 'btn-highlight' : '' }}">
+                                            Working area
+                                        </a>
                                     </li>
-                                    <li class="dropdown">
+                                    <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery']) ? 'active' : '' }}">
                                         <a href="#" class="nav-btn">Media <i class="icon-angle-down"></i></a>
-                                    </li>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ route('image-gallery') }}">Photos Gallery</a></li>
+                                            <li><a href="{{ route('video-gallery') }}">Videos Gallery</a></li>
+                                        </ul>
+                                    </li>                                                                      
                                     <li class="dropdown">
                                         <a href="#" class="nav-btn">Partners </a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="nav-btn">Contact</a>
+                                    <li class="dropdown {{ request()->routeIs('contact') ? 'active' : '' }}">
+                                        <a href="{{route('contact')}}" class="nav-btn">Contact</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -415,25 +420,23 @@
                 }
             });
         }
+
+        // Toggle the side navigation 
         $(document).ready(function () {
-    // Toggle the side navigation
-    $(".hamburger-btn").on("click", function () {
-        $(".side-nav").toggleClass("open");
-    });
+            // Toggle the side navigation
+            $(".hamburger-btn").on("click", function () {
+                $(".side-nav").toggleClass("open");
+            });
 
-    // Close side navigation when clicking outside
-    $(document).on("click", function (e) {
-        if (!$(e.target).closest(".side-nav, .hamburger-btn").length) {
-            $(".side-nav").removeClass("open");
-        }
-    });
-});
-
+            // Close side navigation when clicking outside
+            $(document).on("click", function (e) {
+                if (!$(e.target).closest(".side-nav, .hamburger-btn").length) {
+                    $(".side-nav").removeClass("open");
+                }
+            });
+        });
 
     </script>
-    
-
-
 
 </body>
 </html>

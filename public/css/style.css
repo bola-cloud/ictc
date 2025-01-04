@@ -3426,3 +3426,187 @@ i.fa.fa-bars {
 i.fa.fa-bars{
   color: #fff
 }
+/************* Dropdown hovering ***********/
+/* Base styling for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-btn {
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Dropdown menu hidden by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 55%; /* Positions it just below the parent */
+  left: 0;
+  background-color: #fff;
+  min-width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 25px !important;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+/* Dropdown menu items */
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f0f0f0;
+  color: #f0f0f0;
+  border-radius: 25px !important;
+}
+
+/* Show the dropdown smoothly on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: all 1s ease-in-out;
+}
+
+/************* Gallery styling ***********/
+
+/* Card styling */
+.gallery-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.gallery-card img {
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.3s ease;
+  height: 280px;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Card body styling */
+.gallery-card .card-body {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 0 0 15px 15px;
+}
+
+.gallery-card .card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+/* Badge for image counter */
+.image-counter {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border-radius: 12px;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.image-counter:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: background-color 0.3s ease;
+}
+
+/* Core Values and Experience Card Hover Effect */
+.experience-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styling */
+.icon {
+  font-size: 3.5rem;
+  transition: transform 0.3s ease;
+}
+
+.experience-card:hover .icon {
+  transform: scale(1.2);
+}
+
+/***************** News section *****************/
+.news-section {
+  padding: 40px 0;
+  background-color: #f8f9fa;
+}
+.news-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.news-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 15px;
+}
+.news-images img {
+  width: calc(50% - 4px);
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.news-card-body {
+  padding: 20px;
+}
+.news-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+.news-card-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+.news-read-more {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: bold;
+}
+.news-read-more:hover {
+  text-decoration: underline;
+}

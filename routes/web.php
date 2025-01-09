@@ -36,6 +36,10 @@ Route::get('/services', function () {
     return view('front.services');
 })->name('services');
 
+Route::get('/our-partners', function () {
+    return view('front.partners');
+})->name('partners');
+
 Route::get('/news-details', function () {
     return view('front.news-details');
 })->name('news-details');

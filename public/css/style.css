@@ -2983,6 +2983,25 @@ h3.title:hover::after {
 .partners-slider-unique .swiper-slide img:hover {
   filter: grayscale(0%);
 }
+.partners-slider-unique {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 100px; /* Adjust this to limit the height of logos */
+  object-fit: contain; /* Ensures the logos maintain proportions */
+  margin: auto;
+}
+
+.swiper {
+  overflow: hidden; /* To keep the slider clean */
+}
+
 /*  About blade  */ 
 .flyLeft {
   animation: slideInLeft 1s ease-out;

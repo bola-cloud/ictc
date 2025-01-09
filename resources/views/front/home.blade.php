@@ -570,13 +570,44 @@
       </div>
       <div class="swiper partners-slider-unique">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="img/dummies/works/1.jpg" alt="Partner 1"></div>
-          <div class="swiper-slide"><img src="img/dummies/works/2.jpg" alt="Partner 2"></div>
-          <div class="swiper-slide"><img src="img/dummies/works/3.jpg" alt="Partner 3"></div>
-          <div class="swiper-slide"><img src="img/dummies/works/4.jpg" alt="Partner 4"></div>
-          <div class="swiper-slide"><img src="img/dummies/works/2.jpg" alt="Partner 5"></div>
-          <div class="swiper-slide"><img src="img/dummies/works/1.jpg" alt="Partner 6"></div>
-          <div class="swiper-slide"><img src="img/dummies/works/3.jpg" alt="Partner 7"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/1ENJUHAtZLSJsbIZogsEVqwkwm2Qny5qgTB9x4u1.jpg')}}" alt="Partner 1"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/1nHKfliUpYMookSvjFRCT7WmrxkoF1pY6Oz0y518.jpg')}}" alt="Partner 2"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/2HLdwgj41gUb4UPONL1W1AsX4PaS86f7l9aJxaMk.jpg')}}" alt="Partner 3"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/3u5oWiAdD5dxvUsSAQRRcBTm7wi1jSKmeVzzfMuq.jpg')}}" alt="Partner 4"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/5VAFiYrIWF4vpyUF1bM90SGC2YbHGoG1Q54nBcaQ.png')}}" alt="Partner 5"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/7Yi8bQ9ShzlcrX5saYJO0wGDchy4af0DxgUuoVXA.png')}}" alt="Partner 6"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/8JVBG4NFzZxHn1eonRHfQSp6ZrPP9jWAVnHt09Gs.jpg')}}" alt="Partner 7"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/cNHCHgYfnZBodppu8HPIoTTAWPb6i14zzUjrPRxb.png')}}" alt="Partner 8"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/F4SWsy5Gtw4P8QreAWyYmF8dFrUXSLC2eRM30jN5.png')}}" alt="Partner 9"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/fcyUgNYTDlxxEVbeVz1zvnXuuHjA3awEgEeo0Xi9.png')}}" alt="Partner 10"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/FlrhG3mGKAv5S8p1BrguXccaflrzBa34hxd0NCIc.jpg')}}" alt="Partner 11"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/g7Jk6P8aPJbMoZuPwknqIObAsCRER0y80V758rKm.png')}}" alt="Partner 12"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/gGyrMyDXFgMkf0gDb6OKbPUVBFfCriTMdMtNbWzt.png')}}" alt="Partner 13"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/HlKtGote17VAWl8qnNEBX0iroVppv16M3plgvj57.png')}}" alt="Partner 14"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/IivMyN7AIdgv3UPzkTc46RtPaMoSW2X8XLsTYQrE.png')}}" alt="Partner 15"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/ivhMeBe2X6Wtpnf8GPDidpxTuSAehR8suJuX8SCm.png')}}" alt="Partner 16"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/jU7eo2KgT1MuUtbdIzGuz8YIkC3ZiK8mUEAb3AU6.png')}}" alt="Partner 17"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/L0xNjYYUtLD0tnZ5da8mPHkD1YF3bPKFa7fAQ5Fm.webp')}}" alt="Partner 18"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/LalEt0FT1kmqIxOeWi4d9K5JIdwkrXoxyVVOcuGX.png')}}" alt="Partner 19"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/lOeWSPMTsClG24MWt4UWnJfbsKNGkL09X1Ep5Xta.jpg')}}" alt="Partner 20"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/logo-qodra-arabic-dark2.png')}}" alt="Partner 21"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/lwOJQztuZfVxbeY1mqfECrvZCPK0LrqhFmG9GYtf.png')}}" alt="Partner 22"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/OTJlD9eXEdFHjYt0syuMZjp7A4h9W7aZEVbeTbXZ.jpg')}}" alt="Partner 23"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/psbUzykP3IGxe9SFhcDb0G4dhjahud82xqLCFgJc.png')}}" alt="Partner 24"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/PxYNBRQ90zmvJy8gtICLEkb0GRX9OYtTQmMAbqz2.jpg')}}" alt="Partner 25"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/QdZwuhoRbUF7NWZx5cxPiZZxAidyBYZBedVbe6sN.png')}}" alt="Partner 26"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/R2HRvBckiEbO7P4yJlPAzKLursnID3DpeAyI2akH.jpg')}}" alt="Partner 27"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/rfVOlSs7vlvTql3eD9CSUFpVW7lXZ31EIInJk2xe.png')}}" alt="Partner 28"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/rQJiMiDvAx9tj9CkcdId2ET3pPXGvCO03nI8h5lz.png')}}" alt="Partner 29"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/SR3aBbJ3KUFoJ6MJ5TCThDMnO4VdrKimbbfXGOgr.png')}}" alt="Partner 30"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/TkhWBChZGfqG06Mj0FZj7yMPq1hvRhIL9KupBle7.jpg')}}" alt="Partner 31"></div>  
+          <div class="swiper-slide"><img src="{{asset('partners/UXu4opBvcXoQQTkTOCcF0VkIFONiXoc6mjzVY1Ix.png')}}" alt="Partner 32"></div>          
+          <div class="swiper-slide"><img src="{{asset('partners/vt0sk9MXGhi7kcEjQDjC9bQmZjOFfsncOeZvOE9O.jpg')}}" alt="Partner 33"></div>          
+          <div class="swiper-slide"><img src="{{asset('partners/XDK9GHiWqOI8WdpOZ51dn9mm455z2Id5qDQAFw7w.jpg')}}" alt="Partner 34"></div>          
+          <div class="swiper-slide"><img src="{{asset('partners/xfrYkaMMkFLplrmc2dRE6Kc6vfcxEk3x97bujP4p.jpg')}}" alt="Partner 35"></div>          
+          <div class="swiper-slide"><img src="{{asset('partners/yJr4JG27EqU1hW1GRgeL7BT2VcuiojHavuk5mSqC.png')}}" alt="Partner 36"></div>          
+          <div class="swiper-slide"><img src="{{asset('partners/YRVDi2BhFCcKPJg2wVbT9JEn0dsM72U3oXwuqFmE.jpg')}}" alt="Partner 37"></div>          
+          <div class="swiper-slide"><img src="{{asset('partners/YrYXbM9wJMI2FZ3gQmGepp3VPndoH97bHhOFcKUc.jpg')}}" alt="Partner 38"></div>          
         </div>
       </div>
     </div>

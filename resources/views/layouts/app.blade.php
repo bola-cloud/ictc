@@ -84,7 +84,7 @@
                                         </ul>
                                     </li>                                                                      
                                     <li class="dropdown">
-                                        <a href="#" class="nav-btn">Partners </a>
+                                        <a href="{{route('partners')}}" class="nav-btn">Partners </a>
                                     </li>
                                     <li class="dropdown {{ request()->routeIs('contact') ? 'active' : '' }}">
                                         <a href="{{route('contact')}}" class="nav-btn">Contact</a>
@@ -99,7 +99,7 @@
                             <button class="btn btn-light dropdown-toggle p-2" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-solid fa-globe"></i> En
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-130px, 75px);" data-popper-placement="bottom-end">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px; position: absolute; margin: 0px; transform: translate(-10px, 20px);" data-popper-placement="bottom-end">
                                 <li><a class="dropdown-item" href="#">English</a></li>
                                 <li><a class="dropdown-item" href="#">العربية</a></li>
                             </ul>
@@ -205,9 +205,9 @@
                 <!-- Left Column: Logo and Description -->
                 <div class="col-md-4">
                   <div>
-                    <img src="{{asset('img/ictc.jpeg')}}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
+                    <img src="{{asset('img/461161.png')}}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
                     <p style="margin: 0;">
-                      ICTC for Development and Technological Solutions for Education
+                        ICTC FOR TRAINING AND COSULTING
                     </p>
                   </div>
                 </div>
@@ -320,15 +320,23 @@
         // Partners slider
         document.addEventListener("DOMContentLoaded", () => {
             const partnersSwiper = new Swiper(".partners-slider-unique", {
-                slidesPerView: 5, // Show 5 logos at a time
-                spaceBetween: 20, // Space between slides
-                loop: true, // Infinite loop
-                autoplay: {
-                    delay: 0, // Continuous scrolling
-                    disableOnInteraction: false,
+            slidesPerView: 5, // Number of visible logos
+            spaceBetween: 20, // Space between slides
+            loop: true, // Continuous looping
+            autoplay: {
+                delay: 0, // No delay for continuous scroll
+                disableOnInteraction: false,
+            },
+            speed: 3000, // Adjust speed for smoother scrolling
+            allowTouchMove: false, // Disable manual sliding
+            breakpoints: {
+                768: {
+                slidesPerView: 5, // Adjust for tablet
                 },
-                speed: 5000, // Speed of scrolling (higher = slower)
-                allowTouchMove: false, // Disable manual swiping
+                480: {
+                slidesPerView: 2, // Adjust for mobile
+                },
+            },
             });
         });
     

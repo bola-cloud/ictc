@@ -1,67 +1,13 @@
 @extends('layouts.app') <!-- Use your app layout -->
 
 @section('content')
-<style>
-    .partners-section {
-        padding: 50px 0;
-        background-color: #f9f9f9;
-    }
-
-    .category-title {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 20px;
-    }
-
-    .card {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        background-color: #fff;
-    }
-
-    .card img {
-        max-width: 100%;
-        height: auto;
-        padding: 10px;
-        object-fit: contain;
-    }
-    .partners-section .card {
-        overflow: hidden;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling effect */
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
-
-    .partners-section .card:hover {
-        transform: scale(1.05); /* Slight zoom on hover */
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-    }
-
-    .partners-section .card-img-top {
-        height: 150px; /* Ensure equal heights */
-        object-fit: contain; /* Maintain aspect ratio */
-        transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
-    }
-
-    .partners-section .card:hover .card-img-top {
-        transform: scale(1.1); /* Slight zoom effect on image */
-    }
-
-
-
-</style>
 
 <!-- Address Section -->
 <section class="address">
     <div class="container">
         <div class="col-lg-12 text-center">
             <h3>
-              About ICTC
+                ICTC Partners
             </h3>
         </div>
     </div>

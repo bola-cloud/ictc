@@ -227,12 +227,12 @@
                     </div>
                     <div class="card-body news-card-body">
                         <h3 class="news-card-title">
-                            {{ app()->getLocale() === 'ar' ? $news->ar_title : $news->en_title }}
+                            {{ app()->getLocale() === 'ar' ? ($news->ar_title ?? __('lang.no_title_available')) : ($news->en_title ?? __('lang.no_title_available')) }}
                         </h3>
                         <p class="news-card-text">
-                            {{ app()->getLocale() === 'ar' ? $news->ar_subtitle : $news->en_subtitle }}
+                            {{ app()->getLocale() === 'ar' ? ($news->ar_subtitle ?? __('lang.no_subtitle_available')) : ($news->en_subtitle ?? __('lang.no_subtitle_available')) }}
                         </p>
-                        <a href="{{ route('news-details',$news->id) }}" class="news-read-more">
+                        <a href="{{ route('news-details', $news->id) }}" class="news-read-more">
                             {{ __('lang.read_more') }} &raquo;
                         </a>
                     </div>

@@ -211,38 +211,42 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-12">
-                <div class="card news-card p-2">
-                    <div class="news-images">
-                        @if(!empty($news->image1_path))
-                            <img src="{{ asset('storage/' . $news->image1_path) }}" alt="{{ __('lang.news_title') }}">
-                        @else
-                            <img src="https://via.placeholder.com/300x200?text=No+Image+Available" alt="No Image Available">
-                        @endif
+                @if(!empty($news))
+                    <div class="card news-card p-2">
+                        <div class="news-images">
+                            @if(!empty($news->image1_path))
+                                <img src="{{ asset('storage/' . $news->image1_path) }}" alt="{{ __('lang.news_title') }}">
+                            @else
+                                <img src="https://via.placeholder.com/300x200?text=No+Image+Available" alt="No Image Available">
+                            @endif
 
-                        @if(!empty($news->image2_path))
-                            <img src="{{ asset('storage/' . $news->image2_path) }}" alt="{{ __('lang.news_title') }}">
-                        @else
-                            <img src="https://via.placeholder.com/300x200?text=No+Image+Available" alt="No Image Available">
-                        @endif
+                            @if(!empty($news->image2_path))
+                                <img src="{{ asset('storage/' . $news->image2_path) }}" alt="{{ __('lang.news_title') }}">
+                            @else
+                                <img src="https://via.placeholder.com/300x200?text=No+Image+Available" alt="No Image Available">
+                            @endif
+                        </div>
+                        <div class="card-body news-card-body">
+                            <h3 class="news-card-title">
+                                {{ app()->getLocale() === 'ar' ? ($news->ar_title ?? __('lang.no_title_available')) : ($news->en_title ?? __('lang.no_title_available')) }}
+                            </h3>
+                            <p class="news-card-text">
+                                {{ app()->getLocale() === 'ar' ? ($news->ar_subtitle ?? __('lang.no_subtitle_available')) : ($news->en_subtitle ?? __('lang.no_subtitle_available')) }}
+                            </p>
+                            @if(!empty($news->id))
+                                <a href="{{ route('news-details', $news->id) }}" class="news-read-more">
+                                    {{ __('lang.read_more') }} &raquo;
+                                </a>
+                            @else
+                                <span class="news-read-more disabled" style="color: #aaa; cursor: not-allowed;">
+                                    {{ __('lang.no_details_available') }}
+                                </span>
+                            @endif
+                        </div>
                     </div>
-                    <div class="card-body news-card-body">
-                        <h3 class="news-card-title">
-                            {{ app()->getLocale() === 'ar' ? ($news->ar_title ?? __('lang.no_title_available')) : ($news->en_title ?? __('lang.no_title_available')) }}
-                        </h3>
-                        <p class="news-card-text">
-                            {{ app()->getLocale() === 'ar' ? ($news->ar_subtitle ?? __('lang.no_subtitle_available')) : ($news->en_subtitle ?? __('lang.no_subtitle_available')) }}
-                        </p>
-                        @if(!empty($news->id))
-                            <a href="{{ route('news-details', $news->id) }}" class="news-read-more">
-                                {{ __('lang.read_more') }} &raquo;
-                            </a>
-                        @else
-                            <span class="news-read-more disabled" style="color: #aaa; cursor: not-allowed;">
-                                {{ __('lang.no_details_available') }}
-                            </span>
-                        @endif
-                    </div>
-                </div>
+                @else
+                    <p>{{ __('lang.no_news_available') }}</p>
+                @endif
             </div>
         </div>
     </div>

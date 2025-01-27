@@ -338,6 +338,10 @@ return [
     'news_details_subtitle' => 'Stay updated with the latest news',
     'breadcrumb_videos_gallery' => 'Videos Gallery',
     'logout' => 'Logout',
+    'no_title_available' => 'No title available',
+    'no_subtitle_available' => 'No subtitle available',
+    'no_details_available' => 'No details available',
+
 ];
 
 

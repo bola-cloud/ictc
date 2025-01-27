@@ -232,9 +232,15 @@
                         <p class="news-card-text">
                             {{ app()->getLocale() === 'ar' ? ($news->ar_subtitle ?? __('lang.no_subtitle_available')) : ($news->en_subtitle ?? __('lang.no_subtitle_available')) }}
                         </p>
-                        <a href="{{ route('news-details', $news->id) }}" class="news-read-more">
-                            {{ __('lang.read_more') }} &raquo;
-                        </a>
+                        @if(!empty($news->id))
+                            <a href="{{ route('news-details', $news->id) }}" class="news-read-more">
+                                {{ __('lang.read_more') }} &raquo;
+                            </a>
+                        @else
+                            <span class="news-read-more disabled" style="color: #aaa; cursor: not-allowed;">
+                                {{ __('lang.no_details_available') }}
+                            </span>
+                        @endif
                     </div>
                 </div>
             </div>

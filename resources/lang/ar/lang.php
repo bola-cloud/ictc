@@ -340,4 +340,7 @@ return [
     'news_details_subtitle' => 'ابقَ على اطلاع بأحدث الأخبار',
     'breadcrumb_videos_gallery' => 'معرض الفيديو',
     'logout' => 'تسجيل الخروج',
+    'no_subtitle_available' => 'لا توجد عناوين فرعية متاحة',
+    'no_title_available' => 'لا توجد عناوين متاحة',
+    'no_details_available' => 'لا توجد تفاصيل متاحة',
 ];

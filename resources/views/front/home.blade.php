@@ -15,7 +15,10 @@
             <img src="{{ asset('storage/' . $mainBanner->media_path) }}" alt="Banner Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
         @endif
     @else
-        <img src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" alt="Banner Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+         </video>
     @endif
 
     <!-- Carousel Content Overlay -->
@@ -210,8 +213,17 @@
             <div class="col-lg-12">
                 <div class="card news-card p-2">
                     <div class="news-images">
-                        <img src="{{ asset('storage/' . $news->image1_path) }}" alt="{{ __('lang.news_title') }}">
-                        <img src="{{ asset('storage/' . $news->image2_path) }}" alt="{{ __('lang.news_title') }}">
+                        @if(!empty($news->image1_path))
+                            <img src="{{ asset('storage/' . $news->image1_path) }}" alt="{{ __('lang.news_title') }}">
+                        @else
+                            <img src="https://via.placeholder.com/300x200?text=No+Image+Available" alt="No Image Available">
+                        @endif
+
+                        @if(!empty($news->image2_path))
+                            <img src="{{ asset('storage/' . $news->image2_path) }}" alt="{{ __('lang.news_title') }}">
+                        @else
+                            <img src="https://via.placeholder.com/300x200?text=No+Image+Available" alt="No Image Available">
+                        @endif
                     </div>
                     <div class="card-body news-card-body">
                         <h3 class="news-card-title">

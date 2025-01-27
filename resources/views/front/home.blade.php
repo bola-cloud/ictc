@@ -3,17 +3,19 @@
 @section('content')
   <!-- Hero Section -->
   <section class="head-video">
-    <!-- Video Background -->
-    {{-- <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-        <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video> --}}
+    <!-- Media Background -->
+    @if ($mainBanner->media_type == "video")
+        <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    @elseif ($mainBanner->media_type == "image")
+        <img src="{{ asset('storage/' . $mainBanner->media_path) }}" alt="Banner Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    @endif
 
     <!-- Carousel Content Overlay -->
     <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;">
         <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
-           
-
             <!-- Carousel Items -->
             <div class="carousel-inner h-100">
                 <!-- Slide 1 -->
@@ -21,7 +23,9 @@
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
                             <div class="col-8">
-                                <h1 class="text-light display-3 fw-bold text-center">تطوير حلول تكنولوجية للتعليم</h1>
+                                <h1 class="text-light display-3 fw-bold text-center">
+                                    {{ __('lang.slide_1') }}
+                                </h1>
                             </div>
                             <div class="col-4 text-center">
                                 <i class="fa-solid fa-laptop-file fa-7x text-warning"></i>
@@ -34,7 +38,9 @@
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
                             <div class="col-8">
-                                <h1 class="text-light display-3 fw-bold text-center">تقديم خدمات تنمية المجتمع</h1>
+                                <h1 class="text-light display-3 fw-bold text-center">
+                                    {{ __('lang.slide_2') }}
+                                </h1>
                             </div>
                             <div class="col-4 text-center">
                                 <i class="fa-solid fa-people-roof fa-7x text-primary"></i>
@@ -47,7 +53,9 @@
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
                             <div class="col-8">
-                                <h1 class="text-light display-3 fw-bold text-center">مشاريع دعم الطفولة المبكرة</h1>
+                                <h1 class="text-light display-3 fw-bold text-center">
+                                    {{ __('lang.slide_3') }}
+                                </h1>
                             </div>
                             <div class="col-4 text-center">
                                 <i class="fa-solid fa-hands-holding-child fa-7x text-danger"></i>
@@ -60,7 +68,9 @@
                     <div class="container h-100">
                         <div class="row align-items-center h-100">
                             <div class="col-8">
-                                <h1 class="text-light display-3 fw-bold text-center">التعليم الفني والتدريب المهني</h1>
+                                <h1 class="text-light display-3 fw-bold text-center">
+                                    {{ __('lang.slide_4') }}
+                                </h1>
                             </div>
                             <div class="col-4 text-center">
                                 <i class="fa-solid fa-helmet-safety fa-7x text-success"></i>
@@ -69,21 +79,23 @@
                     </div>
                 </div>
             </div>
-              <!-- Pagination Indicators -->
-              <div class="carousel-indicators">
+
+            <!-- Pagination Indicators -->
+            <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-              </div>
+            </div>
+
             <!-- Navigation Controls -->
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden">{{ __('lang.previous') }}</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden">{{ __('lang.next') }}</span>
             </button>
         </div>
     </div>
@@ -92,51 +104,53 @@
   <!-- About Us Section -->
   <section id="about-section" class="content">
     <div class="container">
-      <div class="row">
-        <!-- Image Section -->
-        <div class="col-md-5 animate-fade-in-left">
-          <div class="about-image">
-            <img src="img/dummies/blog/img1.jpg" alt="About ICTC" class="img-fluid" />
-          </div>
-        </div>
-  
-        <!-- Text Content Section -->
-        <div class="col-md-7 animate-fade-in-right">
-          <div class="about-text">
-            <h3>Who Are We?</h3>
-            <p>
-              ICTC is a leading organization specializing in training, research, technology, and institutional development. 
-              With extensive expertise in community development and capacity building, ICTC provides innovative solutions 
-              to enhance organizational performance and societal impact.
-            </p>
-            <div class="about-features">
-              <div class="feature-item">
-                <i class="icon-bullhorn"></i>
-                <span>
-                  <h5>Innovative Solutions</h5>
-                  <p>Tailored strategies to drive growth and sustainability.</p>
-                </span>
-              </div>
-              <div class="feature-item">
-                <i class="icon-sitemap"></i>
-                <span>
-                  <h5>Community Focused</h5>
-                  <p>Empowering communities with impactful initiatives.</p>
-                </span>
-              </div>
+        <div class="row">
+            <!-- Image Section -->
+            <div class="col-md-5 animate-fade-in-left">
+                <div class="about-image">
+                    <img src="img/dummies/blog/img1.jpg" alt="{{ __('lang.about_title') }}" class="img-fluid" />
+                </div>
             </div>
-          </div>
+
+            <!-- Text Content Section -->
+            <div class="col-md-7 animate-fade-in-right">
+                <div class="about-text">
+                    <h3>{{ __('lang.about_title') }}</h3>
+                    <p>
+                        {{ __('lang.about_description') }}
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="icon-bullhorn"></i>
+                            <span>
+                                <h5>{{ __('lang.feature_1_title') }}</h5>
+                                <p>{{ __('lang.feature_1_description') }}</p>
+                            </span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="icon-sitemap"></i>
+                            <span>
+                                <h5>{{ __('lang.feature_2_title') }}</h5>
+                                <p>{{ __('lang.feature_2_description') }}</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </section>  
+  </section>
 
   <!-- Photo and Video Gallery Section -->
   <section id="gallery" style="padding: 50px 0; background-color: #f9f9f9;">
     <div class="container">
         <div class="section-title text-center" style="margin-bottom: 30px;">
-            <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Our Gallery</h2>
-            <p style="font-size: 1rem; color: #666;">Explore our collection of photos and videos showcasing our work and events</p>
+          <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+              {{ __('lang.gallery_title') }} <strong>{{ __('lang.gallery_title_strong') }}</strong>
+          </h2>
+          <p style="font-size: 1rem; color: #666;">
+              {{ __('lang.gallery_subtitle') }}
+          </p>
         </div>
         <div class="row">
             <!-- Photo Gallery Link -->
@@ -181,27 +195,36 @@
   <section class="news-section">
     <div class="container">
         <div class="row">
-            <div class="col-12 text-center mb-2">
-              <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Latest <strong>News</strong></h2>
-            </div>
+          <div class="col-12 text-center mb-2">
+            <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+                {{ __('lang.latest_news_title') }} <strong>{{ __('lang.latest_news_title_strong') }}</strong>
+            </h2>
+          </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card news-card p-2">
                     <div class="news-images">
-                        <img src="https://picsum.photos/800/400" alt="News Image 1">
-                        <img src="https://picsum.photos/800/400" alt="News Image 2">
+                        <img src="{{ asset('storage/' . $news->image1_path) }}" alt="{{ __('lang.news_title') }}">
+                        <img src="{{ asset('storage/' . $news->image2_path) }}" alt="{{ __('lang.news_title') }}">
                     </div>
                     <div class="card-body news-card-body">
-                        <h3 class="news-card-title">Dr. Mustafa Madbouly - Prime Minister Witnesses the Inauguration</h3>
-                        <p class="news-card-text">The inauguration of the social services center in Sidi Abdel Rahman village is an initiative to provide better facilities and services to the community.</p>
-                        <a href="{{route('news-details')}}" class="news-read-more">Read More &raquo;</a>
+                        <h3 class="news-card-title">
+                            {{ app()->getLocale() === 'ar' ? $news->ar_title : $news->en_title }}
+                        </h3>
+                        <p class="news-card-text">
+                            {{ app()->getLocale() === 'ar' ? $news->ar_subtitle : $news->en_subtitle }}
+                        </p>
+                        <a href="{{ route('news-details',$news->id) }}" class="news-read-more">
+                            {{ __('lang.read_more') }} &raquo;
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
   </section>
+
 
   {{-- <section id="content">
       <div class="container">
@@ -226,7 +249,7 @@
                   </div>
                 </div>
               </div>
-    
+
               <!-- Service 2: Education -->
               <div class="col-md-4 mt-4">
                   <div class="box">
@@ -259,7 +282,7 @@
                 </div>
               </div>
             </div>
-    
+
             <div class="row">
               <!-- Service 4: Technological Solutions -->
               <div class="col-md-4 mt-4">
@@ -276,7 +299,7 @@
                   </div>
                 </div>
               </div>
-    
+
               <!-- Service 5: Training and Capacity Building -->
               <div class="col-md-4 mt-4">
                 <div class="box">
@@ -292,7 +315,7 @@
                   </div>
                 </div>
               </div>
-    
+
               <!-- Service 6: Institutional Development -->
               <div class="col-md-4 mt-4">
                 <div class="box">
@@ -309,7 +332,7 @@
                 </div>
               </div>
             </div>
-    
+
             <div class="row">
               <!-- Service 7: Implementation of Development Projects -->
               <div class="col-md-4 mt-4">
@@ -326,7 +349,7 @@
                   </div>
                 </div>
               </div>
-    
+
               <!-- Service 8: Economic Development -->
               <div class="col-md-4 mt-4">
                 <div class="box">
@@ -342,7 +365,7 @@
                   </div>
                 </div>
               </div>
-    
+
             </div>
           </div>
         </div>
@@ -352,28 +375,47 @@
   <section id="scope-of-work" style="padding: 60px 0; background-color: #f9f9f9;">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Scope of <strong>Work</strong></h2>
-            <p style="font-size: 1.1rem; color: #666;">Explore our key scopes of work and how we deliver value in each area.</p>
+          <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+            {{ __('lang.scope_work_title') }} <strong>{{ __('lang.scope_work_title_strong') }}</strong>
+          </h2>
+          <p style="font-size: 1.1rem; color: #666;">
+              {{ __('lang.scope_subtitle') }}
+          </p>
         </div>
         <div class="row g-4">
             <!-- Scope 1: Research -->
             <div class="col-md-4">
                 <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
                     <i class="ico icon-circled icon-bgprimary icon-search icon-4x mb-3" style="background-color: #007bff;"></i>
-                    <h4 class="fw-bold mb-3" style="color: #333;">Research</h4>
-                    <p style="color: #555;">Providing evidence-based studies and analysis.</p>
-                    <a href="{{route('services')}}" class="btn btn-primary mt-3" style="background-color: #007bff; border: none;">Learn More</a>
+                    <h4 class="fw-bold mb-3" style="color: #333;">
+                        {{ __('lang.scope_research_title') }}
+                    </h4>
+                    <p style="color: #555;">
+                        {{ __('lang.scope_research_description') }}
+                    </p>
+                    <a href="{{ route('services') }}" class="btn btn-primary mt-3" style="background-color: #007bff; border: none;">
+                        {{ __('lang.learn_more') }}
+                    </a>
                 </div>
             </div>
-            
+
+
+
+
 
             <!-- Scope 2: Training -->
             <div class="col-md-4">
                 <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
                     <i class="icon-circled icon-bgsuccess icon-briefcase icon-4x mb-3"></i>
-                    <h4 class="fw-bold mb-3" style="color: #333;">Training</h4>
-                    <p style="color: #555;">Delivering specialized programs to build skills and knowledge.</p>
-                    <a href="{{route('services')}}" class="btn btn-success mt-3" style="background-color: #28a745; border: none;">Learn More</a>
+                    <h4 class="fw-bold mb-3" style="color: #333;">
+                        {{ __('lang.scope_training_title') }}
+                    </h4>
+                    <p style="color: #555;">
+                        {{ __('lang.scope_training_description') }}
+                    </p>
+                    <a href="{{ route('services') }}" class="btn btn-success mt-3" style="background-color: #28a745; border: none;">
+                        {{ __('lang.learn_more') }}
+                    </a>
                 </div>
             </div>
 
@@ -381,9 +423,15 @@
             <div class="col-md-4">
                 <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
                     <i class="ico icon-circled icon-bglight icon-cogs icon-4x mb-3"></i>
-                    <h4 class="fw-bold mb-3" style="color: #333;">Technology</h4>
-                    <p style="color: #555;">Leveraging innovative tools and solutions.</p>
-                    <a href="{{route('services')}}" class="btn btn-secondary mt-3" style="background-color: #6c757d; border: none;">Learn More</a>
+                    <h4 class="fw-bold mb-3" style="color: #333;">
+                        {{ __('lang.scope_technology_title') }}
+                    </h4>
+                    <p style="color: #555;">
+                        {{ __('lang.scope_technology_description') }}
+                    </p>
+                    <a href="{{ route('services') }}" class="btn btn-secondary mt-3" style="background-color: #6c757d; border: none;">
+                        {{ __('lang.learn_more') }}
+                    </a>
                 </div>
             </div>
 
@@ -391,92 +439,51 @@
             <div class="col-md-4">
                 <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
                     <i class="ico icon-circled icon-bgdark icon-building icon-4x mb-3"></i>
-                    <h4 class="fw-bold mb-3" style="color: #333;">Institutional Development</h4>
-                    <p style="color: #555;">Building robust organizational frameworks and systems.</p>
-                    <a href="{{route('services')}}" class="btn btn-dark mt-3" style="background-color: #34403c; border: none;">Learn More</a>
+                    <h4 class="fw-bold mb-3" style="color: #333;">
+                        {{ __('lang.scope_institutional_title') }}
+                    </h4>
+                    <p style="color: #555;">
+                        {{ __('lang.scope_institutional_description') }}
+                    </p>
+                    <a href="{{ route('services') }}" class="btn btn-dark mt-3" style="background-color: #34403c; border: none;">
+                        {{ __('lang.learn_more') }}
+                    </a>
                 </div>
             </div>
         </div>
     </div>
   </section>
-  
+
+
   <!-- Why ICTC Section -->
   <section id="why-ictc" style="padding: 50px 0; background-color: #f5f5f5;">
     <div class="container">
-      <div class="text-center mb-5">
-        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">Why <strong>ICTC?</strong></h2>
-        <p style="font-size: 1.1rem; color: #666;">Discover the key reasons why ICTC is the trusted choice for organizations worldwide.</p>
-      </div>
-      <div class="row text-center">
-        <!-- Feature Item 1 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-check-circle fa-3x text-primary mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Proven Expertise</h4>
-            <p style="font-size: 0.9rem; color: #555;">Decades of experience delivering impactful solutions.</p>
-          </div>
+        <div class="text-center mb-5">
+          <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+            {{ __('lang.why_ictc_title') }} <strong>{{ __('lang.why_ictc_title_strong') }}</strong>
+          </h2>
+          <p style="font-size: 1.1rem; color: #666;">
+              {{ __('lang.why_ictc_subtitle') }}
+          </p>
         </div>
-        <!-- Feature Item 2 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-cogs fa-3x text-success mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Customized Solutions</h4>
-            <p style="font-size: 0.9rem; color: #555;">Tailored approaches to meet unique organizational needs.</p>
-          </div>
+        <div class="row text-center">
+            @for ($i = 1; $i <= 8; $i++)
+                <div class="col-md-3 mb-4">
+                    <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                        <i class="fa fa-check-circle fa-3x text-primary mb-3"></i>
+                        <h4 class="mb-2" style="font-weight: bold;">
+                            {{ __('lang.feature_' . $i . '_title') }}
+                        </h4>
+                        <p style="font-size: 0.9rem; color: #555;">
+                            {{ __('lang.feature_' . $i . '_description') }}
+                        </p>
+                    </div>
+                </div>
+            @endfor
         </div>
-        <!-- Feature Item 3 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-lightbulb fa-3x text-warning mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Innovative Approach</h4>
-            <p style="font-size: 0.9rem; color: #555;">Leveraging innovation to drive impactful outcomes.</p>
-          </div>
-        </div>
-        <!-- Feature Item 4 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-globe fa-3x text-danger mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Comprehensive Services</h4>
-            <p style="font-size: 0.9rem; color: #555;">A full range of services for all organizational needs.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row text-center">
-        <!-- Feature Item 5 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-leaf fa-3x text-success mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Focus on Sustainability</h4>
-            <p style="font-size: 0.9rem; color: #555;">Building long-term, sustainable solutions.</p>
-          </div>
-        </div>
-        <!-- Feature Item 6 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-users fa-3x text-primary mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Client-Centric Philosophy</h4>
-            <p style="font-size: 0.9rem; color: #555;">Placing clients at the heart of every decision.</p>
-          </div>
-        </div>
-        <!-- Feature Item 7 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-chart-line fa-3x text-warning mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Track Record of Success</h4>
-            <p style="font-size: 0.9rem; color: #555;">Delivering results that exceed expectations.</p>
-          </div>
-        </div>
-        <!-- Feature Item 8 -->
-        <div class="col-md-3 mb-4">
-          <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <i class="fa fa-award fa-3x text-danger mb-3"></i>
-            <h4 class="mb-2" style="font-weight: bold;">Commitment to Excellence</h4>
-            <p style="font-size: 0.9rem; color: #555;">Striving for excellence in every project we undertake.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
+
 
   {{-- <section id="works">
     <div class="container">
@@ -566,7 +573,9 @@
   <section id="partners" class="partners-section">
     <div class="container">
       <div class="title-container">
-        <h3 class="title">Our <strong>Partners</strong></h3>
+        <h3 class="title">
+            {{ __('lang.partners_title') }} <strong>{{ __('lang.partners_title_strong') }}</strong>
+        </h3>
       </div>
       <div class="swiper partners-slider-unique">
         <div class="swiper-wrapper">
@@ -600,17 +609,17 @@
           <div class="swiper-slide"><img src="{{asset('partners/rfVOlSs7vlvTql3eD9CSUFpVW7lXZ31EIInJk2xe.png')}}" alt="Partner 28"></div>
           <div class="swiper-slide"><img src="{{asset('partners/rQJiMiDvAx9tj9CkcdId2ET3pPXGvCO03nI8h5lz.png')}}" alt="Partner 29"></div>
           <div class="swiper-slide"><img src="{{asset('partners/SR3aBbJ3KUFoJ6MJ5TCThDMnO4VdrKimbbfXGOgr.png')}}" alt="Partner 30"></div>
-          <div class="swiper-slide"><img src="{{asset('partners/TkhWBChZGfqG06Mj0FZj7yMPq1hvRhIL9KupBle7.jpg')}}" alt="Partner 31"></div>  
-          <div class="swiper-slide"><img src="{{asset('partners/UXu4opBvcXoQQTkTOCcF0VkIFONiXoc6mjzVY1Ix.png')}}" alt="Partner 32"></div>          
-          <div class="swiper-slide"><img src="{{asset('partners/vt0sk9MXGhi7kcEjQDjC9bQmZjOFfsncOeZvOE9O.jpg')}}" alt="Partner 33"></div>          
-          <div class="swiper-slide"><img src="{{asset('partners/XDK9GHiWqOI8WdpOZ51dn9mm455z2Id5qDQAFw7w.jpg')}}" alt="Partner 34"></div>          
-          <div class="swiper-slide"><img src="{{asset('partners/xfrYkaMMkFLplrmc2dRE6Kc6vfcxEk3x97bujP4p.jpg')}}" alt="Partner 35"></div>          
-          <div class="swiper-slide"><img src="{{asset('partners/yJr4JG27EqU1hW1GRgeL7BT2VcuiojHavuk5mSqC.png')}}" alt="Partner 36"></div>          
-          <div class="swiper-slide"><img src="{{asset('partners/YRVDi2BhFCcKPJg2wVbT9JEn0dsM72U3oXwuqFmE.jpg')}}" alt="Partner 37"></div>          
-          <div class="swiper-slide"><img src="{{asset('partners/YrYXbM9wJMI2FZ3gQmGepp3VPndoH97bHhOFcKUc.jpg')}}" alt="Partner 38"></div>          
+          <div class="swiper-slide"><img src="{{asset('partners/TkhWBChZGfqG06Mj0FZj7yMPq1hvRhIL9KupBle7.jpg')}}" alt="Partner 31"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/UXu4opBvcXoQQTkTOCcF0VkIFONiXoc6mjzVY1Ix.png')}}" alt="Partner 32"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/vt0sk9MXGhi7kcEjQDjC9bQmZjOFfsncOeZvOE9O.jpg')}}" alt="Partner 33"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/XDK9GHiWqOI8WdpOZ51dn9mm455z2Id5qDQAFw7w.jpg')}}" alt="Partner 34"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/xfrYkaMMkFLplrmc2dRE6Kc6vfcxEk3x97bujP4p.jpg')}}" alt="Partner 35"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/yJr4JG27EqU1hW1GRgeL7BT2VcuiojHavuk5mSqC.png')}}" alt="Partner 36"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/YRVDi2BhFCcKPJg2wVbT9JEn0dsM72U3oXwuqFmE.jpg')}}" alt="Partner 37"></div>
+          <div class="swiper-slide"><img src="{{asset('partners/YrYXbM9wJMI2FZ3gQmGepp3VPndoH97bHhOFcKUc.jpg')}}" alt="Partner 38"></div>
         </div>
       </div>
     </div>
   </section>
-   
+
 @endsection

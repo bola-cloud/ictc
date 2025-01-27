@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="utf-8">
@@ -30,16 +30,37 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{asset('ico/apple-touch-icon-72-precomposed.png')}}" />
     <link rel="apple-touch-icon-precomposed" href="{{asset('ico/apple-touch-icon-57-precomposed.png')}}" />
     <link rel="shortcut icon" href="{{asset('img/ictc.jpeg')}}" />
+    <!-- Add Google Fonts -->
+    @if(app()->getLocale() === 'ar')
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+    @else
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    @endif
 
     <style>
+        body {
+            font-family: {{ app()->getLocale() === 'ar' ? "'Tajawal', sans-serif" : "'Roboto', sans-serif" }};
+            direction: {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }};
+            text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};
+            font-size: {{ app()->getLocale() === 'ar' ? '1.1rem' : '1rem' }};
+        }
 
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: {{ app()->getLocale() === 'ar' ? '700' : '500' }};
+            letter-spacing: {{ app()->getLocale() === 'ar' ? '0.5px' : 'normal' }};
+            word-spacing: {{ app()->getLocale() === 'ar' ? '2px' : 'normal' }};
+            font-size: {{ app()->getLocale() === 'ar' ? '1.2em' : '1em' }};
+        }
+
+        p {
+            font-weight: {{ app()->getLocale() === 'ar' ? '500' : '400' }};
+            letter-spacing: {{ app()->getLocale() === 'ar' ? '0.5px' : 'normal' }};
+            line-height: 1.8;
+            word-spacing: {{ app()->getLocale() === 'ar' ? '1.5px' : 'normal' }};
+            font-size: {{ app()->getLocale() === 'ar' ? '1.05rem' : '1rem' }};
+        }
     </style>
-    <!-- =======================================================
-        Theme Name: Eterna
-        Theme URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-        Author: BootstrapMade.com
-        Author URL: https://bootstrapmade.com
-    ======================================================= -->
+
 </head>
 
 <body>
@@ -49,10 +70,10 @@
         <header>
             <div class="container">
                 <div class="row nomargin">
-                    <div class="col-md-4">
+                    <div class="col-md-4 d-flex justify-content-center">
                         <div class="logo">
                             <a href="{{route('home')}}" class="d-flex">
-                                <img src="{{asset('img/461161.png')}}" alt="" />
+                                <img src="{{asset('img/white logo.png')}}" alt="" />
                             </a>
                         </div>
                     </div>
@@ -63,45 +84,71 @@
                                 <ul class="nav topnav" style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0;">
                                     <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
                                         <a href="{{ route('home') }}" class="nav-btn {{ request()->routeIs('home') ? 'btn-highlight' : '' }}">
-                                            <i class="icon-home"></i> Home
+                                            <i class="icon-home"></i> {{ __('lang.home') }}
                                         </a>
                                     </li>
                                     <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
                                         <a href="{{ route('about') }}" class="nav-btn {{ request()->routeIs('about') ? 'btn-highlight' : '' }}">
-                                            About
+                                            {{ __('lang.about') }}
                                         </a>
                                     </li>
                                     <li class="dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
-                                        <a href="{{ route('services') }}" class="nav-btn {{ request()->routeIs('about') ? 'btn-highlight' : '' }}">
-                                            Working area
+                                        <a href="{{ route('services') }}" class="nav-btn {{ request()->routeIs('services') ? 'btn-highlight' : '' }}">
+                                            {{ __('lang.services') }}
                                         </a>
                                     </li>
                                     <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery']) ? 'active' : '' }}">
-                                        <a href="#" class="nav-btn">Media <i class="icon-angle-down"></i></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="{{ route('image-gallery') }}">Photos Gallery</a></li>
-                                            <li><a href="{{ route('video-gallery') }}">Videos Gallery</a></li>
+                                        <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
+                                        <ul class="dropdown-menu" style="top: 60% !important;">
+                                            <li><a href="{{ route('image-gallery') }}">{{ __('lang.photos_gallery') }}</a></li>
+                                            <li><a href="{{ route('video-gallery') }}">{{ __('lang.videos_gallery') }}</a></li>
                                         </ul>
-                                    </li>                                                                      
-                                    <li class="dropdown">
-                                        <a href="{{route('partners')}}" class="nav-btn">Partners </a>
+                                    </li>
+                                    <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">
+                                        <a href="{{ route('partners') }}" class="nav-btn">{{ __('lang.partners') }}</a>
                                     </li>
                                     <li class="dropdown {{ request()->routeIs('contact') ? 'active' : '' }}">
-                                        <a href="{{route('contact')}}" class="nav-btn">Contact</a>
+                                        <a href="{{ route('contact') }}" class="nav-btn">{{ __('lang.contact') }}</a>
                                     </li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
+
                     <div class="col-md-1 d-flex align-items-center justify-content-end lang">
                         <!-- Language Dropdown -->
                         <div class="dropdown">
-                            <button class="btn btn-light dropdown-toggle p-2" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fa-solid fa-globe"></i> En
+                            <button
+                                class="btn btn-light dropdown-toggle p-2"
+                                type="button"
+                                id="languageDropdown"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                                style="border-radius: 12px; min-width: 80px;"
+                            >
+                                <i class="fa-solid fa-globe"></i>
+                                {{ App::getLocale() == 'ar' ? 'AR' : 'EN' }}
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px; position: absolute; margin: 0px; transform: translate(-10px, 20px);" data-popper-placement="bottom-end">
-                                <li><a class="dropdown-item" href="#">English</a></li>
-                                <li><a class="dropdown-item" href="#">العربية</a></li>
+                            <ul
+                                class="dropdown-menu dropdown-menu-end custom-dropdown"
+                                aria-labelledby="languageDropdown"
+                            >
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="{{ LaravelLocalization::getLocalizedURL('en') }}"
+                                    >
+                                        English
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        class="dropdown-item"
+                                        href="{{ LaravelLocalization::getLocalizedURL('ar') }}"
+                                    >
+                                        العربية
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -115,45 +162,64 @@
                     </div>
                 </div>
             </div>
-        
+
             <!-- Side Navigation (Visible on Mobile) -->
             <div class="side-nav">
                 <nav>
                     <ul class="nav topnav">
                         <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
-                            <a href="{{ route('home') }}">Home</a>
+                            <a href="{{ route('home') }}">{{ __('lang.home') }}</a>
                         </li>
                         <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
-                            <a href="{{ route('about') }}">About</a>
+                            <a href="{{ route('about') }}">{{ __('lang.about') }}</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="#">Portfolio</a>
+                        <li class="dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
+                            <a href="{{ route('services') }}">{{ __('lang.services') }}</a>
                         </li>
-                        <li class="dropdown">
-                            <a href="#">Blog</a>
+                        <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery']) ? 'active' : '' }}">
+                            <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('image-gallery') }}">{{ __('lang.photos_gallery') }}</a></li>
+                                <li><a href="{{ route('video-gallery') }}">{{ __('lang.videos_gallery') }}</a></li>
+                            </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#">Contact</a>
+                        <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">
+                            <a href="{{ route('partners') }}">{{ __('lang.partners') }}</a>
                         </li>
-                        <div class="">
+                        <li class="dropdown {{ request()->routeIs('contact') ? 'active' : '' }}">
+                            <a href="{{ route('contact') }}">{{ __('lang.contact') }}</a>
+                        </li>
+                        <div>
                             <!-- Language Dropdown -->
                             <div class="dropdown">
                                 <button class="btn btn-light dropdown-toggle p-2" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-globe"></i> En
+                                    <i class="fa-solid fa-globe"></i> {{ App::getLocale() == 'ar' ? 'AR' : 'EN' }}
                                 </button>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px; position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(-130px, 75px);" data-popper-placement="bottom-end">
-                                    <li><a class="dropdown-item" href="#">English</a></li>
-                                    <li><a class="dropdown-item" href="#">العربية</a></li>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="border-radius: 12px; min-width: 100px;">
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="{{ LaravelLocalization::getLocalizedURL('en') }}"
+                                        >
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item"
+                                            href="{{ LaravelLocalization::getLocalizedURL('ar') }}"
+                                        >
+                                            العربية
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </ul>
                 </nav>
             </div>
-                      
         </header>
-        
-        
+
         <!-- end header -->
         <div class="spinner-overlay" id="loadingSpinner">
             <div class="grow-pulse"></div>
@@ -166,7 +232,7 @@
             <button class="share__button">
                 <i class="fa-solid fa-share-nodes"></i>
             </button>
-        
+
             <!-- Social Icons -->
             <ul class="share__icons">
                 <!-- Facebook -->
@@ -196,71 +262,91 @@
 
             </ul>
         </div>
-        
-        
+
+
         <footer style="background-color:#1a2333; color: #fff; padding: 40px 0;">
             <div class="container">
-              <div class="row">
-          
-                <!-- Left Column: Logo and Description -->
-                <div class="col-md-4">
-                  <div>
-                    <img src="{{asset('img/461161.png')}}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
-                    <p style="margin: 0;">
-                        ICTC FOR TRAINING AND COSULTING
-                    </p>
-                  </div>
+                <div class="row">
+
+                    <!-- Left Column: Logo and Description -->
+                    <div class="col-md-4">
+                        <div>
+                            <img src="{{ asset('img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
+                            <p style="margin: 0;">
+                                {{ __('lang.company_name') }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Center Column: Useful Links -->
+                    <div class="col-md-4">
+                        <h5 style="color: #fff; font-weight: bold;">{{ __('lang.useful_links') }}</h5>
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                            <a href="{{ route('about') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('about') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.about_us') }}
+                            </a>
+                            <a href="{{ route('services') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('services') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.working_area') }}
+                            </a>
+                            <a href="{{ route('partners') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('partners') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.partners') }}
+                            </a>
+                            <a href="{{ route('image-gallery') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('image-gallery') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.photos_gallery') }}
+                            </a>
+                            <a href="{{ route('video-gallery') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('video-gallery') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.videos_gallery') }}
+                            </a>
+                            <a href="{{ route('latest.news') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('latest.news') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.latest_news') }}
+                            </a>
+                            <a href="{{ route('contact') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('contact') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.contact_us') }}
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Contact Info -->
+                    <div class="col-md-4">
+                        <h5 style="color: #fff; font-weight: bold;">{{ __('lang.contact') }}</h5>
+                        <p>
+                            <i class="fa fa-phone"></i> {{ __('lang.support') }} : 020000000<br>
+                            <i class="fa fa-envelope"></i> {{ __('lang.email') }} : contact@ictc-egy.com
+                        </p>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-whatsapp"></i>
+                            </a>
+                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-          
-                <!-- Center Column: Useful Links -->
-                <div class="col-md-4">
-                  <h5 style="color: #fff; font-weight: bold;">Useful Links</h5>
-                  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                    <a href="#" style="color: #fff; background-color: #0d6efd !important; border-radius: 20px; padding: 5px 15px; text-decoration: none;">About Us</a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Directors Board</a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Partners</a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Projects</a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Media</a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Latest News</a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Fields Of Works</a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 20px; padding: 5px 15px; text-decoration: none;">Contact Us</a>
-                  </div>
+
+                <!-- Footer Bottom -->
+                <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
+                    <p style="margin: 0; color: #ccc;">{{ __('lang.copyright') }}</p>
                 </div>
-          
-                <!-- Right Column: Contact Info -->
-                <div class="col-md-4">
-                  <h5 style="color: #fff; font-weight: bold;">Contact Us</h5>
-                  <p>
-                    <i class="fa fa-phone"></i> Support : 020000000<br>
-                    <i class="fa fa-envelope"></i> Email : contact@ictc-egy.com
-                  </p>
-                  <div style="display: flex; gap: 10px;">
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                      <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                      <i class="fa fa-whatsapp"></i>
-                    </a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                      <i class="fa fa-envelope"></i>
-                    </a>
-                    <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                      <i class="fa fa-linkedin"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-          
-              <!-- Footer Bottom -->
-              <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
-                <p style="margin: 0; color: #ccc;">Copyright © 2025 ICTC</p>
-              </div>
             </div>
         </footer>
-          
+
     </div>
     <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i></a>
-  
+
     <!-- javascript
       ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -273,25 +359,25 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-       
+
     <script src="{{asset('js/modernizr.custom.js')}}"></script>
     <script src="{{asset('js/toucheffects.js')}}"></script>
     <script src="{{asset('js/google-code-prettify/prettify.js')}}"></script>
     <script src="{{asset('js/jquery.bxslider.min.js')}}"></script>
     <script src="{{asset('js/camera/camera.js')}}"></script>
     <script src="{{asset('js/camera/setting.js')}}"></script>
-  
+
     <script src="{{asset('js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{asset('js/portfolio/jquery.quicksand.js')}}"></script>
     <script src="{{asset('js/portfolio/setting.js')}}"></script>
-  
+
     <script src="{{asset('js/jquery.flexslider.js')}}"></script>
     <script src="{{asset('js/animate.js')}}"></script>
     <script src="{{asset('js/inview.js')}}"></script>
-  
+
     <!-- Template Custom JavaScript File -->
     <script src="{{asset('js/custom.js')}}"></script>
- 
+
 
     <script>
         // Initialize the thumbs gallery first
@@ -303,7 +389,7 @@
                 watchSlidesVisibility: true,
                 watchSlidesProgress: true,
             });
-    
+
             // Initialize the main gallery, linking to the thumbs gallery
             const swiperMain = new Swiper(".main-gallery", {
                 spaceBetween: 10,
@@ -316,7 +402,7 @@
                 },
             });
         });
-    
+
         // Partners slider
         document.addEventListener("DOMContentLoaded", () => {
             const partnersSwiper = new Swiper(".partners-slider-unique", {
@@ -339,19 +425,19 @@
             },
             });
         });
-    
+
         // Share button toggle
         document.addEventListener("DOMContentLoaded", () => {
             const shareButton = document.querySelector(".share__button");
             const shareContainer = document.querySelector(".share-container");
-    
+
             if (shareButton && shareContainer) {
                 shareButton.addEventListener("click", () => {
                     shareContainer.classList.toggle("active");
                 });
             }
         });
-    
+
         // Header scroll effect
         document.addEventListener("DOMContentLoaded", () => {
             const header = document.querySelector("header");
@@ -363,7 +449,7 @@
                 }
             });
         });
-    
+
         // Text slider
         document.addEventListener("DOMContentLoaded", () => {
             const textSwiper = new Swiper(".text-slider", {
@@ -382,7 +468,7 @@
                 allowTouchMove: false, // Disable manual swipe
             });
         });
-    
+
         // Photo Gallery Lightbox
         document.addEventListener('DOMContentLoaded', () => {
             // Initialize Swiper
@@ -412,24 +498,41 @@
             const spinner = document.getElementById('loadingSpinner');
             spinner.classList.add('active');
 
-            // Hide spinner after page loads
+            // Hide spinner after page fully loads
             window.addEventListener('load', () => {
+                spinner.classList.remove('active');
+            });
+
+            // Handle route changes for Single Page Applications (SPAs)
+            if (window.history.pushState) {
+                document.addEventListener('click', (e) => {
+                    const target = e.target.closest('a'); // Find the closest anchor tag
+                    if (
+                        target &&
+                        target.href &&
+                        target.target !== '_blank' &&
+                        target.getAttribute('href') !== '#' &&
+                        target.getAttribute('href') !== ''
+                    ) {
+                        e.preventDefault(); // Prevent default navigation
+                        spinner.classList.add('active'); // Show spinner
+
+                        // Simulate loading (replace this part with your actual page navigation logic)
+                        setTimeout(() => {
+                            window.location.href = target.href; // Perform navigation
+                        }, 1000); // Adjust the delay as needed
+                    }
+                });
+            }
+
+            // Hide spinner on popstate (back/forward button)
+            window.addEventListener('popstate', () => {
                 spinner.classList.remove('active');
             });
         });
 
-        // Show spinner on route changes for SPAs (if applicable)
-        if (window.history.pushState) {
-            document.addEventListener('click', (e) => {
-                const target = e.target.closest('a');
-                if (target && target.href && target.target !== '_blank') {
-                    const spinner = document.getElementById('loadingSpinner');
-                    spinner.classList.add('active');
-                }
-            });
-        }
 
-        // Toggle the side navigation 
+        // Toggle the side navigation
         $(document).ready(function () {
             // Toggle the side navigation
             $(".hamburger-btn").on("click", function () {
@@ -445,7 +548,6 @@
         });
 
     </script>
-
+    @stack('js')
 </body>
 </html>
-  

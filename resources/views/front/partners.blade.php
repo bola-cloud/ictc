@@ -6,8 +6,8 @@
 <section class="address">
     <div class="container">
         <div class="col-lg-12 text-center">
-            <h3>
-                ICTC Partners
+            <h3 class="address-h3">
+                {{ __('lang.partners_heading') }}
             </h3>
         </div>
     </div>
@@ -17,14 +17,18 @@
     <div class="container">
         <!-- Title -->
         <div class="text-center mb-4">
-            <h3 class="title">Our <strong>Partners</strong></h3>
+            <h3 class="title">
+                {{ __('lang.partners_section_title') }} <strong>{{ __('lang.partners_section_strong') }}</strong>
+            </h3>
         </div>
 
         <!-- Partners Section -->
         <div class="row">
             <!-- Governmental Institutions -->
             <div class="col-12 mb-5">
-                <h4 class="category-title text-center mb-3">Governmental Institutions</h4>
+                <h4 class="category-title text-center mb-3">
+                    {{ __('lang.category_governmental') }}
+                </h4>
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-4">
                         <div class="card">
@@ -51,7 +55,9 @@
 
             <!-- NGOs -->
             <div class="col-12 mb-5">
-                <h4 class="category-title text-center mb-3">Non-Governmental Organizations</h4>
+                <h4 class="category-title text-center mb-3">
+                    {{ __('lang.category_ngo') }}
+                </h4>
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-4">
                         <div class="card">
@@ -78,7 +84,9 @@
 
             <!-- International Organizations -->
             <div class="col-12 mb-5">
-                <h4 class="category-title text-center mb-3">International Organizations</h4>
+                <h4 class="category-title text-center mb-3">
+                    {{ __('lang.category_international') }}
+                </h4>
                 <div class="row">
                     <div class="col-md-3 col-sm-6 mb-4">
                         <div class="card">

@@ -3054,7 +3054,7 @@ h3.title:hover::after {
 
 
 
-/*  About blade  */ 
+/*  About blade  */
 .flyLeft {
   animation: slideInLeft 1s ease-out;
 }
@@ -3516,7 +3516,7 @@ i.fa.fa-bars{
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 55%; /* Positions it just below the parent */
+  top:100%; /* Positions it just below the parent */
   left: 0;
   background-color: #fff;
   min-width: 200px;
@@ -3680,4 +3680,91 @@ i.fa.fa-bars{
 }
 .news-read-more:hover {
   text-decoration: underline;
+}
+/* Dropdown Menu */
+.dropdown-menu {
+  border-radius: 14px !important;
+  min-width: 120px;
+  margin-top: 8px;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white; /* Background color of dropdown menu */
+}
+
+/* Dropdown Items */
+.dropdown-item {
+  padding: 10px 15px;
+  font-size: 14px;
+  text-align: left;
+  color: black; /* Default text color */
+  background-color: transparent; /* Ensure transparent background */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Hover State */
+.dropdown-item:hover {
+  background-color: #007bff !important ; /* Hover background color (blue) */
+  color: white !important; /* Contrasting text color */
+}
+
+
+/********************* About styling *************************/
+
+.hidden-navigation {
+    opacity: 0;
+    transform: translateX(100%);
+    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Slow transition */
+}
+
+.visible-navigation {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto; /* Allow interaction when visible */
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out; /* Slow transition */
+    animation: slideIn 2s ease-in-out; /* Add smooth sliding animation */
+}
+
+/* Keyframes for sliding animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.btn-group-vertical .btn {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-group-vertical .btn:hover {
+    /* background-color: #007bff;
+    color: white; */
+    transform: scale(1.05);
+}
+
+.btn-group-vertical .btn.active {
+    /* background-color: #0056b3;
+    color: white; */
+    font-weight: bold;
+    transform: scale(1.1);
+}
+.address-h3 {
+    margin: 0;
+    display: inline-block;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 5px;
+}
+strong {
+    font-weight: bold !important;
+    letter-spacing: 0.5px !important;
+}
+.nav-border{
+    border-right: 2px solid #ddd;
 }

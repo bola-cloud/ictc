@@ -84,10 +84,10 @@
                 <nav>
                   <ul class="nav topnav">
                     <li class="dropdown active">
-                      <a href="index.html"><i class="icon-home"></i> Home <i class="icon-angle-down"></i></a>
+                      <a href="index.html"><i class="icon-home"></i> Dashboard <i class="icon-angle-down"></i></a>
                       <ul class="dropdown-menu">
-                        <li><a href="index-alt2.html">Homepage 2</a></li>
-                        <li><a href="index-alt3.html">Homepage 3</a></li>
+                        <li><a href="index-alt2.html">Dashboardpage 2</a></li>
+                        <li><a href="index-alt3.html">Dashboardpage 3</a></li>
                         <li><a href="index-alt4.html">Parallax slider</a></li>
                         <li><a href="index-landingpage.html">Landing page</a></li>
                       </ul>

@@ -337,6 +337,7 @@ return [
     'news_details_title' => 'News Details',
     'news_details_subtitle' => 'Stay updated with the latest news',
     'breadcrumb_videos_gallery' => 'Videos Gallery',
+    'logout' => 'Logout',
 ];
 
 

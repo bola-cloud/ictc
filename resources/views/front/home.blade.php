@@ -4,13 +4,18 @@
   <!-- Hero Section -->
   <section class="head-video">
     <!-- Media Background -->
-    @if ($mainBanner->media_type == "video")
-        <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-            <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    @elseif ($mainBanner->media_type == "image")
-        <img src="{{ asset('storage/' . $mainBanner->media_path) }}" alt="Banner Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+    @if ($mainBanner)
+
+        @if ($mainBanner->media_type == "video")
+            <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        @elseif ($mainBanner->media_type == "image")
+            <img src="{{ asset('storage/' . $mainBanner->media_path) }}" alt="Banner Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        @endif
+    @else
+        <img src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" alt="Banner Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
     @endif
 
     <!-- Carousel Content Overlay -->

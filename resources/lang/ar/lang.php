@@ -339,4 +339,5 @@ return [
     'news_details_title' => 'تفاصيل الأخبار',
     'news_details_subtitle' => 'ابقَ على اطلاع بأحدث الأخبار',
     'breadcrumb_videos_gallery' => 'معرض الفيديو',
+    'logout' => 'تسجيل الخروج',
 ];

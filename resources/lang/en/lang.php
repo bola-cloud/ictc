@@ -341,7 +341,7 @@ return [
     'no_title_available' => 'No title available',
     'no_subtitle_available' => 'No subtitle available',
     'no_details_available' => 'No details available',
-
+    'no_news_available' => 'No news available',
 ];
 
 

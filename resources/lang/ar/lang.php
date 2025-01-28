@@ -343,4 +343,5 @@ return [
     'no_subtitle_available' => 'لا توجد عناوين فرعية متاحة',
     'no_title_available' => 'لا توجد عناوين متاحة',
     'no_details_available' => 'لا توجد تفاصيل متاحة',
+    'no_news_available' => 'لا توجد أخبار متاحة',
 ];

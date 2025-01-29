@@ -191,6 +191,21 @@
                             </ul>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="la la-image"></i> <!-- Main Banner icon -->
+                                <span class="menu-title" data-i18n="nav.dash.main">{{ __('lang.user_administration') }}</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class="{{ Route::currentRouteName() == 'admin.user.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.user.index') }}" data-i18n="nav.dash.crypto">{{ __('lang.index') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.user.create' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.user.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
             </div>

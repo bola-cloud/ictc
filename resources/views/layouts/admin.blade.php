@@ -75,7 +75,7 @@
                 <ul class="nav navbar-nav flex-row">
                     <li class="nav-item mobile-menu d-md-none mr-auto"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu font-large-1"></i></a></li>
                     <li class="nav-item">
-                        <a class="navbar-brand" href="{{route('dashboard')}}">
+                        <a class="navbar-brand" href="{{route('home')}}">
                           <img class="brand-logo" alt="modern admin logo" src="{{asset('img/461161.png')}}"
                           style="height: 55px; width: 178px;">
                           {{-- <h3 class="brand-text">Screen Video </h3> --}}
@@ -175,7 +175,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a href="#">
                                 <i class="la la-image"></i> <!-- Main Banner icon -->
@@ -190,7 +190,7 @@
                                 </li>
                             </ul>
                         </li>
-                                                
+
                     </ul>
                 </div>
             </div>
@@ -234,7 +234,7 @@
             let sortableList = document.getElementById('sortable-list');
             let confirmButton = document.getElementById('confirm-order-btn');
             let updatedOrder = [];
-    
+
             // Ensure that the sortableList exists in the DOM
             if (sortableList) {
                 // Initialize SortableJS manually
@@ -244,18 +244,18 @@
                     onEnd: function (event) {
                         // Capture the new order
                         updatedOrder = Array.from(event.target.children).map((el, index) => el.getAttribute('wire:sortable.item'));
-    
+
                         // Show the confirm button
                         confirmButton.style.display = 'block';
                     }
                 });
             }
-    
+
             // Handle the confirm button click
             confirmButton.addEventListener('click', function () {
                 // Emit the Livewire event with the updated order
                 Livewire.emit('updateOrder', updatedOrder);
-    
+
                 // Hide the confirm button after order is confirmed
                 confirmButton.style.display = 'none';
             });

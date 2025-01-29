@@ -271,7 +271,9 @@
                     <!-- Left Column: Logo and Description -->
                     <div class="col-md-4">
                         <div>
-                            <img src="{{ asset('img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
+                            <a href="{{route('dashboard')}}">
+                                <img src="{{ asset('img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
+                            </a>
                             <p style="margin: 0;">
                                 {{ __('lang.company_name') }}
                             </p>

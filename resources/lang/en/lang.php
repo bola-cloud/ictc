@@ -342,6 +342,31 @@ return [
     'no_subtitle_available' => 'No subtitle available',
     'no_details_available' => 'No details available',
     'no_news_available' => 'No news available',
+
+    //user
+    'user_management' => 'User Management',
+    'create_user' => 'Create User',
+    'edit_user' => 'Edit User',
+    'user_created_successfully' => 'User created successfully!',
+    'user_updated_successfully' => 'User updated successfully!',
+    'user_deleted_successfully' => 'User deleted successfully!',
+    'cannot_delete_yourself' => 'You cannot delete yourself!',
+    'name' => 'Name',
+    'email' => 'Email',
+    'password' => 'Password',
+    'category' => 'Category',
+    'admin' => 'Admin',
+    'user' => 'User',
+    'actions' => 'Actions',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'confirm_delete' => 'Are you sure you want to delete this user?',
+    'no_users_found' => 'No users found.',
+    'edit_user' => 'Edit User',
+    'update' => 'Update',
+    'cancel' => 'Cancel',
+    'leave_blank_if_not_changing' => 'Leave blank if you do not want to change it',
+    'save' => 'Save',
 ];
 
 

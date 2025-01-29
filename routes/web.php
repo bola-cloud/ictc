@@ -50,6 +50,7 @@ Route::group([
         'auth:sanctum',
         config('jetstream.auth_session'),
         'verified',
+        'admin', // Apply the admin middleware
     ]
 ], function () {
     Route::get('/admin', [\App\Http\Controllers\Admin\Dashboard::class, 'index'])->name('dashboard');
@@ -64,4 +65,5 @@ Route::group([
     });
     Route::resource('news', NewsController::class)->names('admin.news');
     Route::resource('main_banners', MainBannerController::class)->names('admin.main_banners');
+    Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->names('admin.users');
 });

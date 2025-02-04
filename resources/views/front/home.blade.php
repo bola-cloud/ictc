@@ -277,7 +277,7 @@
             </div>
         </div>
     </section>
-
+    
     <!-- Why ICTC Section -->
     <section id="why-ictc" style="padding: 50px 0; background-color: #f5f5f5;">
         <div class="container">

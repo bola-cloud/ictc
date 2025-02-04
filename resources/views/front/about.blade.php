@@ -41,7 +41,7 @@
         </div>
 
         <!-- About ICTC Section -->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-md-9">
                 <section id="about" class="about-section position-relative" style="padding: 60px 0; background-color: #f8f9fa;">
                     <div class="container">
@@ -72,7 +72,7 @@
         </div>
 
         <!-- Vision and Mission Section -->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-md-9">
                 <section id="vision-mission" class="vision-mission-section position-relative" style="padding: 60px 0; background-color: #f8f9fa;">
                     <div class="container">
@@ -115,7 +115,7 @@
         </div>
 
         <!-- Core Values Section -->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-md-9">
                 <section id="core-values" class="core-values-section" style="padding: 60px 0; background-color: #f8f9fa;">
                 <div class="container">
@@ -154,7 +154,7 @@
         </div>
 
         <!-- Scope of Work Section -->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-md-9">
                 <section id="scope" class="scope-section" style="padding: 60px 0; background-color: #fff;">
                     <div class="container">
@@ -194,7 +194,7 @@
         </div>
 
         <!-- Experience Section -->
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-md-9">
                 <section id="experience" class="experience-section" style="padding: 60px 0; background-color: #fff;">
                 <div class="container">

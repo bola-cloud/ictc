@@ -124,7 +124,7 @@ return [
     'videos_gallery' => 'معرض الفيديو',
     'partners' => 'الشركاء',
     'contact' => 'اتصل بنا',
-    'company_name' => 'ICTC للتدريب والاستشارات',
+    'company_name' => 'آي سي تي سي للتدريب والاستشارات',
     'useful_links' => 'روابط مفيدة',
     'about_us' => 'من نحن',
     'working_area' => 'مجال العمل',
@@ -136,7 +136,7 @@ return [
     'contact' => 'اتصل بنا',
     'support' => 'الدعم',
     'email' => 'البريد الإلكتروني',
-    'copyright' => 'حقوق النشر © 2025 ICTC',
+    'copyright' => 'حقوق النشر © 2025 آي سي تي سي',
     'slide_1' => 'تطوير حلول تكنولوجية للتعليم',
     'slide_2' => 'تقديم خدمات تنمية المجتمع',
     'slide_3' => 'مشاريع دعم الطفولة المبكرة',
@@ -145,7 +145,7 @@ return [
     'next' => 'التالي',
     // About Us Section
     'about_title' => 'من نحن؟',
-    'about_description' => 'ICTC هي منظمة رائدة متخصصة في التدريب والبحث والتكنولوجيا وتطوير المؤسسات. مع خبرة واسعة في تنمية المجتمع وبناء القدرات، تقدم ICTC حلولاً مبتكرة لتعزيز الأداء المؤسسي والأثر المجتمعي.',
+    'about_description' => 'آي سي تي سي هي منظمة رائدة متخصصة في التدريب والبحث والتكنولوجيا وتطوير المؤسسات. مع خبرة واسعة في تنمية المجتمع وبناء القدرات، تقدم آي سي تي سي حلولاً مبتكرة لتعزيز الأداء المؤسسي والأثر المجتمعي.',
     'feature_1_title' => 'حلول مبتكرة',
     'feature_1_description' => 'استراتيجيات مخصصة لدفع النمو والاستدامة.',
     'feature_2_title' => 'تركيز مجتمعي',
@@ -164,9 +164,9 @@ return [
     'scope_institutional_title' => 'تطوير المؤسسات',
     'scope_institutional_description' => 'بناء أطر وأنظمة مؤسسية قوية.',
     'learn_more' => 'اعرف المزيد',
-    // Why ICTC Section
-    'why_ictc_title' => 'لماذا ICTC؟',
-    'why_ictc_subtitle' => 'اكتشف الأسباب الرئيسية التي تجعل ICTC الخيار الموثوق للمنظمات حول العالم.',
+    // Why آي سي تي سي Section
+    'why_آي سي تي سي_title' => 'لماذا آي سي تي سي؟',
+    'why_آي سي تي سي_subtitle' => 'اكتشف الأسباب الرئيسية التي تجعل آي سي تي سي الخيار الموثوق للمنظمات حول العالم.',
     'feature_1_title' => 'خبرة مثبتة',
     'feature_1_description' => 'عقود من الخبرة في تقديم حلول مؤثرة.',
     'feature_2_title' => 'حلول مخصصة',
@@ -184,18 +184,18 @@ return [
     'feature_8_title' => 'التزام بالتميز',
     'feature_8_description' => 'السعي لتحقيق التميز في كل مشروع نقوم به.',
     // Partners Section
-    'partners_title' => 'شركاؤنا',
+    'partners_title' => 'الشركاء والاعتمادات',
     // Address Section
-    'address_title' => 'عن ICTC',
+    'address_title' => 'عن آي سي تي سي',
 
     // Page Header
     'breadcrumb_home' => 'الرئيسية',
     'breadcrumb_about' => 'من نحن',
     'page_header_about_us' => 'من نحن',
 
-    // About ICTC Section
-    'about_section_title' => 'عن ICTC',
-    'about_section_description' => 'ICTC هي منظمة رائدة متخصصة في التدريب والبحث والتكنولوجيا وتطوير المؤسسات. مع خبرة واسعة في تنمية المجتمع وبناء القدرات، تهدف ICTC إلى تقديم حلول مبتكرة لتعزيز الأداء المؤسسي والأثر المجتمعي.',
+    // About آي سي تي سي Section
+    'about_section_title' => 'عن آي سي تي سي',
+    'about_section_description' => 'آي سي تي سي هي منظمة رائدة متخصصة في التدريب والبحث والتكنولوجيا وتطوير المؤسسات. مع خبرة واسعة في تنمية المجتمع وبناء القدرات، تهدف آي سي تي سي إلى تقديم حلول مبتكرة لتعزيز الأداء المؤسسي والأثر المجتمعي.',
     // Vision and Mission Section
     'vision_title' => 'رؤيتنا',
     'vision_description' => 'دفع تطوير المؤسسات والنمو المستدام من خلال تقديم حلول تكنولوجيا المعلومات والاتصالات المخصصة التي تمكّن المؤسسات من تعزيز كفاءتها وبناء قدراتها وتحقيق نجاح طويل الأمد في ظل التحول الرقمي المستمر.',
@@ -218,7 +218,7 @@ return [
     ],
     // Scope of Work Section
     'scope_title' => 'مجال العمل',
-    'scope_subtitle' => 'استكشف المجالات الرئيسية حيث تقدم ICTC تأثيرها.',
+    'scope_subtitle' => 'استكشف المجالات الرئيسية حيث تقدم آي سي تي سي تأثيرها.',
     'scope_items' => [
         ['icon' => 'icon-research', 'title' => 'البحث', 'description' => 'تقديم دراسات وتحليلات مبنية على الأدلة.'],
         ['icon' => 'icon-training', 'title' => 'التدريب', 'description' => 'تقديم برامج متخصصة لبناء المهارات والمعرفة.'],
@@ -228,7 +228,7 @@ return [
 
     // Experience Section
     'experience_title' => 'خبرتنا',
-    'experience_subtitle' => 'سجل ICTC الحافل في تحقيق النمو والابتكار.',
+    'experience_subtitle' => 'سجل آي سي تي سي الحافل في تحقيق النمو والابتكار.',
     'experience_items' => [
         ['icon' => 'fa-solid fa-chart-bar', 'color' => '#007bff', 'title' => 'البحث الميداني', 'description' => 'إجراء استطلاعات وتحليلات لتوليد رؤى قابلة للتنفيذ.'],
         ['icon' => 'fa-solid fa-chalkboard', 'color' => '#4ea8de', 'title' => 'التدريب وتطوير المهارات', 'description' => 'تزويد الأفراد والمؤسسات بالمهارات الأساسية.'],
@@ -273,13 +273,13 @@ return [
     'contact_info_title' => 'معلومات الاتصال الخاصة بنا',
     'contact_info_subtitle' => 'تواصل معنا من خلال أي من الطرق التالية.',
     'contact_address_title' => 'العنوان',
-    'contact_address_description' => 'مكتب ICTC، القاهرة، مصر',
+    'contact_address_description' => 'مكتب آي سي تي سي، القاهرة، مصر',
     'contact_phone_title' => 'الهاتف',
     'contact_phone_description' => '+١٢٣-٤٥٦-٧٨٩٠',
     'contact_email_title' => 'البريد الإلكتروني',
-    'contact_email_description' => 'contact@ictc-egy.com',
+    'contact_email_description' => 'contact@آي سي تي سي-egy.com',
     'contact_website_title' => 'الموقع الإلكتروني',
-    'contact_website_description' => 'www.ictc-egy.com',
+    'contact_website_description' => 'www.آي سي تي سي-egy.com',
 
     // Contact Form Section
     'contact_form_title' => 'أرسل لنا رسالة',
@@ -291,19 +291,19 @@ return [
     'contact_form_message_placeholder' => 'اكتب رسالتك',
     'contact_form_button' => 'أرسل الرسالة',
     // Partners Section
-    'partners_heading' => 'شركاء ICTC',
-    'partners_subheading' => 'شركاؤنا',
+    'partners_heading' => 'شركاء آي سي تي سي',
+    'partners_subheading' => 'الشركاء والاعتمادات',
     'category_governmental' => 'المؤسسات الحكومية',
     'category_ngo' => 'المنظمات غير الحكومية',
     'category_international' => 'المنظمات الدولية',
     'partners_section_title' => '',
-    'partners_section_strong' => 'شركاؤنا',
+    'partners_section_strong' => 'الشركاء والاعتمادات',
     // Titles with Strong Elements
     'partners_title' => '',
-    'partners_title_strong' => 'شركاؤنا',
+    'partners_title_strong' => 'الشركاء والاعتمادات',
 
-    'why_ictc_title' => '',
-    'why_ictc_title_strong' => 'لماذا ICTC؟',
+    'why_آي سي تي سي_title' => '',
+    'why_آي سي تي سي_title_strong' => 'لماذا آي سي تي سي؟',
 
     'scope_work_title' => '',
     'scope_work_title_strong' => 'مجال العمل',
@@ -318,7 +318,7 @@ return [
     'photos_gallery_title' => '',
     'photos_gallery_title_strong' => 'معرض الصور',
     // Gallery Section
-    'gallery_section_title' => 'معرض ICTC',
+    'gallery_section_title' => 'معرض آي سي تي سي',
 
     // Breadcrumb Section
     'breadcrumb_home' => 'الرئيسية',

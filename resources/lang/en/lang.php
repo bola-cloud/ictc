@@ -181,8 +181,8 @@ return [
     'feature_7_description' => 'Delivering results that exceed expectations.',
     'feature_8_title' => 'Commitment to Excellence',
     'feature_8_description' => 'Striving for excellence in every project we undertake.',
-    // Partners Section
-    'partners_title' => 'Our Partners',
+    // Partners and Accreditations Section
+    'partners_title' => 'Our Partners and Accreditations',
     // Address Section
     'address_title' => 'About ICTC',
 
@@ -288,18 +288,18 @@ return [
     'contact_form_message_label' => 'Your Message',
     'contact_form_message_placeholder' => 'Write your message',
     'contact_form_button' => 'Send Message',
-    // Partners Section
-    'partners_heading' => 'ICTC Partners',
-    'partners_subheading' => 'Our Partners',
+    // Partners and Accreditations Section
+    'partners_heading' => 'ICTC Partners and Accreditations',
+    'partners_subheading' => 'Our Partners and Accreditations',
     'category_governmental' => 'Governmental Institutions',
     'category_ngo' => 'Non-Governmental Organizations',
     'category_international' => 'International Organizations',
-    // Partners Section Title
+    // Partners and Accreditations Section Title
     'partners_section_title' => 'Our',
     'partners_section_strong' => 'Partners',
     // Titles with Strong Elements
     'partners_title' => 'Our',
-    'partners_title_strong' => 'Partners',
+    'partners_title_strong' => 'Partners and Accreditations',
 
     'why_ictc_title' => 'Why',
     'why_ictc_title_strong' => 'ICTC?',
@@ -323,7 +323,7 @@ return [
     'breadcrumb_home' => 'Home',
     'breadcrumb_photos_gallery' => 'Photos Gallery',
     'breadcrumb_sample_title' => 'Sample Title 1',
-    'partners_titles' => 'Our partners',
+    'partners_titles' => 'Our Partners and Accreditations',
     'media_preview' => 'Media preview',
     'video_gallery' => 'Video Gallery',
     'no_videos_found' => 'No videos found.',

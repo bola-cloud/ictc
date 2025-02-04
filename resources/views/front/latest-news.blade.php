@@ -46,7 +46,7 @@
                 <!-- News Cards -->
                 <div class="row justify-content-center">
                     @forelse ($news as $item)
-                        <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-stretch">
+                        <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-stretch mt-3">
                             <div class="card news-card p-2 shadow-sm">
                                 <div class="news-images">
                                     <img src="{{ asset('storage/' . $item->image1_path) }}" alt="{{ $item->ar_title }}" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">

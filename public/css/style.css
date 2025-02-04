@@ -3832,3 +3832,33 @@ strong {
     width: 140px; /* Ensures buttons are equal in width */
     text-align: center;
 }
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+}
+
+.news-card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center; /* Centers content including the button */
+    text-align: center; /* Ensures text is also centered */
+}
+
+.news-card-text {
+    flex-grow: 1; /* Ensures text expands while keeping the button at the bottom */
+    text-align: center;
+}
+
+.news-read-more {
+    margin-top: auto; /* Pushes button to the bottom */
+    text-align: center; /* Centers text inside button */
+    display: block;
+    width: fit-content;
+    transition: 0.3s ease;
+}

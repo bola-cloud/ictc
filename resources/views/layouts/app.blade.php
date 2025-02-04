@@ -97,11 +97,12 @@
                                             {{ __('lang.services') }}
                                         </a>
                                     </li>
-                                    <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery']) ? 'active' : '' }}">
+                                    <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery','latest.news']) ? 'active' : '' }}">
                                         <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
                                         <ul class="dropdown-menu" style="top: 60% !important;">
                                             <li><a href="{{ route('image-gallery') }}">{{ __('lang.photos_gallery') }}</a></li>
                                             <li><a href="{{ route('video-gallery') }}">{{ __('lang.videos_gallery') }}</a></li>
+                                            <li><a href="{{ route('latest.news') }}">{{ __('lang.latest_news') }}</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">

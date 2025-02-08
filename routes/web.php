@@ -20,23 +20,20 @@ Route::group([
 ], function () {
     Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::get('/about', function () {
-        return view('front.about');
-    })->name('about');
+    Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about');
 
     Route::get('/services', function () {
         return view('front.services');
     })->name('services');
 
-    Route::get('/our-partners', function () {
-        return view('front.partners');
-    })->name('partners');
+    Route::get('/our-partners', [\App\Http\Controllers\PartnersController::class, 'index'])->name('partners');
 
     Route::get('/news-details/{id}', [\App\Http\Controllers\HomeController::class, 'newsDetails'])->name('news-details');
     Route::get('/image-gallery', [\App\Http\Controllers\GalleryController::class, 'index'])->name('image-gallery');
     Route::get('/media-details/{id}', [\App\Http\Controllers\GalleryController::class, 'mediaDetails'])->name('media-details');
     Route::get('/video-gallery', [\App\Http\Controllers\GalleryController::class, 'videoGallery'])->name('video-gallery');
     Route::get('/latest-news', [\App\Http\Controllers\HomeController::class,'latestNews'])->name('latest.news');
+    Route::post('/contact', [\App\Http\Controllers\MessageController::class, 'store'])->name('messages.store');
 
     Route::get('/contact', function () {
         return view('front.contact');
@@ -66,4 +63,7 @@ Route::group([
     Route::resource('news', NewsController::class)->names('admin.news');
     Route::resource('main_banners', MainBannerController::class)->names('admin.main_banners');
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class)->names('admin.users');
+    Route::resource('admin/partners', \App\Http\Controllers\Admin\PartnerController::class)->names('admin.partners');
+    Route::resource('scopes', \App\Http\Controllers\Admin\ScopeAdminController::class)->names('admin.scopes');
+    Route::resource('messages', \App\Http\Controllers\Admin\MessageAdminController::class)->names('admin.messages');
 });

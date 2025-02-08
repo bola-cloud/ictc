@@ -74,37 +74,47 @@
 <section id="contact-form" class="contact-form-section" style="padding: 60px 0; background-color: #fff;">
   <div class="container">
     <div class="row">
-      <!-- Contact Form -->
-      <div class="col-md-6">
-        <div class="contact-form bg-white shadow p-4 rounded" style="border-radius: 15px;">
-          <h3 style="font-size: 1.8rem; font-weight: bold; color: #333; margin-bottom: 20px;">
-            {{ __('lang.contact_form_title') }}
-          </h3>
-          <form action="#" method="POST">
-            <div class="mb-3">
-              <label for="name" class="form-label" style="font-weight: bold; color: #666;">
-                {{ __('lang.contact_form_name_label') }}
-              </label>
-              <input type="text" id="name" class="form-control" placeholder="{{ __('lang.contact_form_name_placeholder') }}">
+        <!-- Contact Form -->
+        <div class="col-md-6">
+            <div class="contact-form bg-white shadow p-4 rounded" style="border-radius: 15px;">
+                <h3 style="font-size: 1.8rem; font-weight: bold; color: #333; margin-bottom: 20px;">
+                    {{ __('lang.contact_form_title') }}
+                </h3>
+
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+
+                <form action="{{ route('messages.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="name" class="form-label" style="font-weight: bold; color: #666;">
+                            {{ __('lang.contact_form_name_label') }}
+                        </label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="{{ __('lang.contact_form_name_placeholder') }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label" style="font-weight: bold; color: #666;">
+                            {{ __('lang.contact_form_email_label') }}
+                        </label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('lang.contact_form_email_placeholder') }}" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="message" class="form-label" style="font-weight: bold; color: #666;">
+                            {{ __('lang.contact_form_message_label') }}
+                        </label>
+                        <textarea name="message" id="message" class="form-control" rows="5" placeholder="{{ __('lang.contact_form_message_placeholder') }}" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100" style="background: linear-gradient(135deg, #007bff, #6a11cb); border: none; padding: 10px 20px; font-weight: bold;">
+                        {{ __('lang.contact_form_button') }}
+                    </button>
+                </form>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label" style="font-weight: bold; color: #666;">
-                {{ __('lang.contact_form_email_label') }}
-              </label>
-              <input type="email" id="email" class="form-control" placeholder="{{ __('lang.contact_form_email_placeholder') }}">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label" style="font-weight: bold; color: #666;">
-                {{ __('lang.contact_form_message_label') }}
-              </label>
-              <textarea id="message" class="form-control" rows="5" placeholder="{{ __('lang.contact_form_message_placeholder') }}"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary w-100" style="background: linear-gradient(135deg, #007bff, #6a11cb); border: none; padding: 10px 20px; font-weight: bold;">
-              {{ __('lang.contact_form_button') }}
-            </button>
-          </form>
         </div>
-      </div>
+
       <!-- Google Map -->
       <div class="col-md-6">
         <div class="map-container" style="height: 400px; border-radius: 15px; overflow: hidden;">

@@ -159,29 +159,31 @@
                 <section id="scope" class="scope-section" style="padding: 60px 0; background-color: #fff;">
                     <div class="container">
                         <div class="text-center mb-5">
-                        <h3 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                            <strong>{{ __('lang.scope_title') }}</strong>
-                        </h3>
-                        <p style="font-size: 1.1rem; color: #666;">
-                            {{ __('lang.scope_subtitle') }}
-                        </p>
+                            <h3 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+                                <strong>{{ __('lang.scope_title') }}</strong>
+                            </h3>
+                            <p style="font-size: 1.1rem; color: #666;">
+                                {{ __('lang.scope_subtitle') }}
+                            </p>
                         </div>
                         <div class="row g-4">
-                        @foreach (__('lang.scope_items') as $scope)
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card text-center shadow-sm p-4 h-100" style="border-radius: 15px; background-color: #fff;">
-                            <div class="icon mb-3" style="font-size: 3.5rem; color: #007bff;">
-                                <i class="{{ $scope['icon'] }}"></i>
-                            </div>
-                            <h5 class="fw-bold" style="color: #333;">{{ $scope['title'] }}</h5>
-                            <p style="font-size: 1rem; color: #666;">{{ $scope['description'] }}</p>
-                            </div>
-                        </div>
-                        @endforeach
+                            @foreach ($scopes as $scope)
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card text-center shadow-sm p-4 h-100" style="border-radius: 15px; background-color: #fff;">
+                                        <div class="icon mb-3 text-{{ $scope->color }}" style="font-size: 3.5rem;">
+                                            <i class="{{ $scope->icon }}"></i>
+                                        </div>
+                                        <h5 class="fw-bold" style="color: #333;">{{ $scope->title }}</h5>
+                                        <p style="font-size: 1rem; color: #666;">{{ $scope->description }}</p>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </section>
             </div>
+
+            <!-- Navigation Sidebar -->
             <div id="nav-scope" class="col-md-2 hidden-navigation d-flex align-items-center p-3 m-3 nav-border">
                 <div class="btn-group-vertical w-100">
                     <button class="btn btn-outline-primary mb-2 scroll-btn" data-target="#about">{{ __('lang.nav_about') }}</button>

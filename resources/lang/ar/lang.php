@@ -374,4 +374,113 @@ return [
     'leave_blank_if_not_changing' => 'اتركه فارغًا إذا كنت لا تريد تغييره',
     'save' => 'حفظ',
     'user_administration' => 'إدارة المستخدمين',
+
+    'partners_list' => 'قائمة الشركاء',
+    'add_partner' => 'إضافة شريك',
+    'edit_partner' => 'تعديل الشريك',
+    'category' => 'الفئة',
+    'image' => 'الصورة',
+    'actions' => 'الإجراءات',
+    'save' => 'حفظ',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'confirm_delete' => 'هل أنت متأكد أنك تريد حذف هذا الشريك؟',
+    'partner_added' => 'تمت إضافة الشريك بنجاح!',
+    'partner_updated' => 'تم تحديث الشريك بنجاح!',
+    'partner_deleted' => 'تم حذف الشريك بنجاح!',
+
+    // Categories
+    'governmental' => 'حكومي',
+    'ngo' => 'منظمة غير حكومية',
+    'international' => 'منظمة دولية',
+    'partners_administration' => 'إدارة الشركاء',
+
+    // عام
+    'save' => 'حفظ',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'actions' => 'الإجراءات',
+    'confirm_delete' => 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
+
+    // نطاق العمل
+    'scopes_list' => 'قائمة نطاق العمل',
+    'add_scope' => 'إضافة نطاق',
+    'edit_scope' => 'تعديل النطاق',
+    'scope_added' => 'تمت إضافة النطاق بنجاح!',
+    'scope_updated' => 'تم تحديث النطاق بنجاح!',
+    'scope_deleted' => 'تم حذف النطاق بنجاح!',
+
+    // الحقول
+    'ar_title' => 'العنوان بالعربية',
+    'en_title' => 'العنوان بالإنجليزية',
+    'ar_description' => 'الوصف بالعربية',
+    'en_description' => 'الوصف بالإنجليزية',
+    'icon' => 'الأيقونة',
+    'color' => 'اللون',
+
+    // عناوين نطاق العمل
+    'scope_work_title' => 'نطاق العمل',
+    'scope_work_title_strong' => 'المجالات',
+    'scope_subtitle' => 'نحن نركز على عدة مجالات لتقديم خدمات عالية الجودة.',
+
+    // فئات النطاق
+    'scope_research_title' => 'البحث',
+    'scope_research_description' => 'نقوم بإجراء الأبحاث لمساعدة المؤسسات في اتخاذ قرارات مستنيرة.',
+
+    'scope_training_title' => 'التدريب',
+    'scope_training_description' => 'نحن نقدم برامج تدريبية لتنمية القدرات.',
+
+    'scope_technology_title' => 'التكنولوجيا',
+    'scope_technology_description' => 'نطور حلولاً تكنولوجية لتحسين العمليات التجارية.',
+
+    'scope_institutional_title' => 'التنمية المؤسسية',
+    'scope_institutional_description' => 'نساعد في تعزيز المؤسسات وتحسين كفاءتها.',
+
+    // ألوان Bootstrap
+    'primary' => 'أساسي',
+    'success' => 'ناجح',
+    'warning' => 'تحذير',
+    'danger' => 'خطر',
+    'info' => 'معلومات',
+    'secondary' => 'ثانوي',
+    'dark' => 'داكن',
+
+    'learn_more' => 'اعرف المزيد',
+
+    'scopes_administration' => 'إدارة نطاق العمل',
+
+    // عام
+    'save' => 'حفظ',
+    'edit' => 'تعديل',
+    'delete' => 'حذف',
+    'actions' => 'الإجراءات',
+    'confirm_delete' => 'هل أنت متأكد أنك تريد حذف هذا العنصر؟',
+
+    // الرسائل (نموذج الاتصال)
+    'messages_list' => 'قائمة الرسائل',
+    'message' => 'الرسالة',
+    'message_sent_success' => 'تم إرسال رسالتك بنجاح!',
+    'message_deleted' => 'تم حذف الرسالة بنجاح!',
+    'view' => 'عرض',
+    'status' => 'الحالة',
+    'read' => 'مقروءة',
+    'unread' => 'غير مقروءة',
+
+    // حقول نموذج الاتصال
+    'contact_form_title' => 'تواصل معنا',
+    'contact_form_name_label' => 'الاسم الكامل',
+    'contact_form_name_placeholder' => 'أدخل اسمك الكامل',
+    'contact_form_email_label' => 'البريد الإلكتروني',
+    'contact_form_email_placeholder' => 'أدخل بريدك الإلكتروني',
+    'contact_form_message_label' => 'رسالتك',
+    'contact_form_message_placeholder' => 'اكتب رسالتك هنا...',
+    'contact_form_button' => 'إرسال الرسالة',
+
+    // عناوين الجدول
+    'name' => 'الاسم',
+    'email' => 'البريد الإلكتروني',
+    'message_sent_success' => 'تم إرسال رسالتك بنجاح!',
+    'view_message' => 'عرض الرسالة',
+    'back_to_list' => 'العودة إلى قائمة الرسائل',
+    'show_messages' => 'عرض الرسائل',
 ];

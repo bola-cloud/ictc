@@ -206,6 +206,42 @@
                             </ul>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="la la-image"></i> <!-- Main Banner icon -->
+                                <span class="menu-title" data-i18n="nav.dash.main">{{ __('lang.partners_administration') }}</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class="{{ Route::currentRouteName() == 'admin.partners.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.partners.index') }}" data-i18n="nav.dash.crypto">{{ __('lang.index') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.partners.create' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.partners.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="la la-image"></i> <!-- Main Banner icon -->
+                                <span class="menu-title" data-i18n="nav.dash.main">{{ __('lang.scopes_administration') }}</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class="{{ Route::currentRouteName() == 'admin.scopes.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.scopes.index') }}" data-i18n="nav.dash.crypto">{{ __('lang.index') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.scopes.create' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.scopes.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item {{ Route::currentRouteName() == 'admin.messages.index' ? 'active' : '' }}">
+                            <a href="{{ route('admin.messages.index') }}">
+                                <i class="la la-share-alt"></i>
+                                <span class="menu-title" data-i18n="nav.morris_charts.main">{{ __('lang.show_messages') }}</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

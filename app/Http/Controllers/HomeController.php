@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\MainBanner;
 use App\Models\News;
+use App\Models\Partner;
+use App\Models\Scope;
 
 class HomeController extends Controller
 {
@@ -12,9 +14,13 @@ class HomeController extends Controller
     {
         $mainBanner = MainBanner::where('flag',true)->first();
         $news = News::where('flag',true)->first();
+        $partners = Partner::all();
+        $scopes = Scope::all();
         return view('front.home',[
             'mainBanner'=>$mainBanner,
             'news'=>$news,
+            'partners'=>$partners,
+            'scopes'=>$scopes,
         ]);
     }
 

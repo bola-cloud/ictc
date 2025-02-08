@@ -368,6 +368,115 @@ return [
     'leave_blank_if_not_changing' => 'Leave blank if you do not want to change it',
     'save' => 'Save',
     'user_administration' => 'User Administration',
+
+    'partners_list' => 'Partners List',
+    'add_partner' => 'Add Partner',
+    'edit_partner' => 'Edit Partner',
+    'category' => 'Category',
+    'image' => 'Image',
+    'actions' => 'Actions',
+    'save' => 'Save',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'confirm_delete' => 'Are you sure you want to delete this partner?',
+    'partner_added' => 'Partner added successfully!',
+    'partner_updated' => 'Partner updated successfully!',
+    'partner_deleted' => 'Partner deleted successfully!',
+
+    // Categories
+    'governmental' => 'Governmental',
+    'ngo' => 'Non-Governmental Organization (NGO)',
+    'international' => 'International Organization',
+    'partners_administration' => 'Partners Administration',
+
+    // General
+    'save' => 'Save',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'actions' => 'Actions',
+    'confirm_delete' => 'Are you sure you want to delete this item?',
+
+    // Scope of Work
+    'scopes_list' => 'Scope of Work List',
+    'add_scope' => 'Add Scope',
+    'edit_scope' => 'Edit Scope',
+    'scope_added' => 'Scope added successfully!',
+    'scope_updated' => 'Scope updated successfully!',
+    'scope_deleted' => 'Scope deleted successfully!',
+
+    // Fields
+    'ar_title' => 'Arabic Title',
+    'en_title' => 'English Title',
+    'ar_description' => 'Arabic Description',
+    'en_description' => 'English Description',
+    'icon' => 'Icon',
+    'color' => 'Color',
+
+    // Scope Work Titles
+    'scope_work_title' => 'Scope of Work',
+    'scope_work_title_strong' => 'Areas',
+    'scope_subtitle' => 'We focus on multiple areas to provide quality services.',
+
+    // Scope Categories
+    'scope_research_title' => 'Research',
+    'scope_research_description' => 'We conduct research to help organizations make data-driven decisions.',
+
+    'scope_training_title' => 'Training',
+    'scope_training_description' => 'We provide training programs for capacity building.',
+
+    'scope_technology_title' => 'Technology',
+    'scope_technology_description' => 'We develop technological solutions to optimize business processes.',
+
+    'scope_institutional_title' => 'Institutional Development',
+    'scope_institutional_description' => 'We assist in strengthening organizations and improving efficiency.',
+
+    // Bootstrap Colors
+    'primary' => 'Primary',
+    'success' => 'Success',
+    'warning' => 'Warning',
+    'danger' => 'Danger',
+    'info' => 'Info',
+    'secondary' => 'Secondary',
+    'dark' => 'Dark',
+
+    'learn_more' => 'Learn More',
+
+    'scopes_administration' => 'Scopes Administration',
+
+    // General
+    'save' => 'Save',
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'actions' => 'Actions',
+    'confirm_delete' => 'Are you sure you want to delete this item?',
+
+    // Messages (Contact Form)
+    'messages_list' => 'Messages List',
+    'message' => 'Message',
+    'message_sent_success' => 'Your message has been sent successfully!',
+    'message_deleted' => 'Message deleted successfully!',
+    'view' => 'View',
+    'status' => 'Status',
+    'read' => 'Read',
+    'unread' => 'Unread',
+
+    // Contact Form Labels
+    'contact_form_title' => 'Get in Touch',
+    'contact_form_name_label' => 'Your Name',
+    'contact_form_name_placeholder' => 'Enter your full name',
+    'contact_form_email_label' => 'Your Email',
+    'contact_form_email_placeholder' => 'Enter your email address',
+    'contact_form_message_label' => 'Your Message',
+    'contact_form_message_placeholder' => 'Write your message here...',
+    'contact_form_button' => 'Send Message',
+
+    // Table Headers
+    'name' => 'Name',
+    'email' => 'Email',
+    'message_sent_success' => 'Your message has been sent successfully!',
+    'view_message' => 'View Message',
+    'back_to_list' => 'Back to Messages List',
+    'show_messages' => 'Show Messages',
 ];
 
 

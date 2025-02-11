@@ -10,6 +10,11 @@ class Scope extends Model
     use HasFactory;
     protected $fillable = ['ar_title', 'en_title', 'ar_description', 'en_description', 'icon', 'color'];
 
+    // Relationship with Project
+    public function projects()
+    {
+        return $this->hasMany(Project::class, 'scope_id');
+    }
     // Function to get the correct title based on app locale
     public function getTitleAttribute()
     {

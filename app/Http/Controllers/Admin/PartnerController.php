@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Partner;
+use Illuminate\Support\Facades\File;
 
 class PartnerController extends Controller
 {
@@ -62,7 +63,14 @@ class PartnerController extends Controller
 
     public function destroy(Partner $partner)
     {
+        // Delete the image file from public/storage/partners/
+        if (File::exists(public_path($partner->image_path))) {
+            File::delete(public_path($partner->image_path));
+        }
+
+        // Delete partner record from database
         $partner->delete();
+
         return redirect()->route('admin.partners.index')->with('success', __('lang.partner_deleted'));
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\MainBanner;
+use Illuminate\Support\Facades\File;
 
 class MainBannerController extends Controller
 {
@@ -73,7 +74,18 @@ class MainBannerController extends Controller
 
     public function destroy(MainBanner $mainBanner)
     {
+        // Ensure the correct path is used
+        $filePath = public_path(basename($mainBanner->media_path));
+
+        // Check if the file exists and delete it
+        if (File::exists($filePath)) {
+            dd('enter');
+            File::delete($filePath);
+        }
+        dd('not enter');
+        // Delete the banner from the database
         $mainBanner->delete();
+
         return redirect()->route('admin.main_banners.index')->with('success', __('lang.banner_deleted_successfully'));
     }
 }

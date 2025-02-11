@@ -177,13 +177,13 @@
                         <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
                             <i class="ico icon-circled icon-bg{{ $scope->color }} {{ $scope->icon }} icon-4x mb-3"></i>
                             <h4 class="fw-bold mb-3" style="color: #333;">
-                                {{ $scope->title }}
+                                {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}
                             </h4>
                             <p style="color: #555;">
-                                {{ $scope->description }}
+                                {{ app()->getLocale() === 'ar' ? $scope->ar_description : $scope->en_description }}
                             </p>
-                            <a href="{{ route('services') }}" class="btn btn-{{ $scope->color }} mt-3">
-                                {{ __('lang.learn_more') }}
+                            <a href="{{ route('scope.projects', $scope->id) }}" class="btn btn-{{ $scope->color }} mt-3">
+                                {{ __('lang.show_projects') }}
                             </a>
                         </div>
                     </div>

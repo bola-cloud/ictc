@@ -34,6 +34,7 @@ Route::group([
     Route::get('/video-gallery', [\App\Http\Controllers\GalleryController::class, 'videoGallery'])->name('video-gallery');
     Route::get('/latest-news', [\App\Http\Controllers\HomeController::class,'latestNews'])->name('latest.news');
     Route::post('/contact', [\App\Http\Controllers\MessageController::class, 'store'])->name('messages.store');
+    Route::get('scopes/{id}/projects', [App\Http\Controllers\HomeController::class, 'showScopeProjects'])->name('scope.projects');
 
     Route::get('/contact', function () {
         return view('front.contact');
@@ -66,4 +67,11 @@ Route::group([
     Route::resource('admin/partners', \App\Http\Controllers\Admin\PartnerController::class)->names('admin.partners');
     Route::resource('scopes', \App\Http\Controllers\Admin\ScopeAdminController::class)->names('admin.scopes');
     Route::resource('messages', \App\Http\Controllers\Admin\MessageAdminController::class)->names('admin.messages');
+    Route::prefix('admin')->middleware(['auth'])->group(function () {
+        Route::get('scopes/{id}/projects', [App\Http\Controllers\Admin\ProjectAdminController::class, 'show'])->name('admin.scopes.show');
+        Route::get('scopes/{id}/projects/create', [App\Http\Controllers\Admin\ProjectAdminController::class, 'create'])->name('admin.projects.create');
+        Route::post('scopes/{id}/projects/store', [App\Http\Controllers\Admin\ProjectAdminController::class, 'save'])->name('admin.projects.store');
+        Route::resource('projects', App\Http\Controllers\Admin\ProjectAdminController::class)->except(['create', 'show','store'])->names('admin.projects');
+    });
+
 });

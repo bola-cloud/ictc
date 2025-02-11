@@ -35,6 +35,8 @@
                             @method('DELETE')
                             <button class="btn btn-danger btn-sm" onclick="return confirm('{{ __('lang.confirm_delete') }}')">{{ __('lang.delete') }}</button>
                         </form>
+                        <!-- New Show Button -->
+                        <a href="{{ route('admin.scopes.show', $scope->id) }}" class="btn btn-info btn-sm">{{ __('lang.show_projects') }}</a>
                     </td>
                 </tr>
                 @endforeach

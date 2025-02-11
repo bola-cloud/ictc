@@ -39,4 +39,10 @@ class HomeController extends Controller
             'news'=>$news,
         ]);
     }
+
+    public function showScopeProjects($id) {
+        $scope = Scope::findOrFail($id);
+        $projects = $scope->projects ?? collect(); // Ensures an empty collection instead of null
+        return view('front.projects', compact('scope', 'projects'));
+    }
 }

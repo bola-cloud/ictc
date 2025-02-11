@@ -135,15 +135,25 @@
             const video = document.createElement('video');
 
             video.src = videoSrc;
+            video.crossOrigin = "anonymous"; // Helps prevent CORS issues if applicable
             video.muted = true; // Prevent audio
+
             video.addEventListener('loadeddata', () => {
-            const ctx = canvas.getContext('2d');
-            canvas.width = video.videoWidth / 2; // Scale down width
-            canvas.height = video.videoHeight / 2; // Scale down height
-            ctx.drawImage(video, 0, 0, canvas.width, canvas.height); // Draw the first frame
+                const ctx = canvas.getContext('2d');
+                canvas.width = 320; // Fixed size to ensure consistency
+                canvas.height = 180;
+
+                video.currentTime = 1; // Seek to 1s to ensure a visible frame
+
+                video.addEventListener('seeked', () => {
+                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height); // Draw thumbnail
+                });
             });
+
+            video.load(); // Start loading the video
         });
     });
+
 
 </script>
 @endpush

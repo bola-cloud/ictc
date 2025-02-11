@@ -522,5 +522,5 @@ return [
     'projects_for_scope' => 'المشاريع لنطاق',
     'breadcrumb_projects' => 'المشاريع',
     'photo_gallery' => 'معرض الصور',
-
+    'no_images_available' => 'لا توجد صور متاحة.',
 ];

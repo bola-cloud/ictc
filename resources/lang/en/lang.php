@@ -516,6 +516,7 @@ return [
     'projects_for_scope' => 'Projects for Scope',
     'breadcrumb_projects' => 'Projects',
     'photo_gallery' => 'Photo Gallery',
+    'no_images_available' => 'No images available.',
 ];
 
 

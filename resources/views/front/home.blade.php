@@ -561,6 +561,9 @@
             </div>
         </div>
     </section>
+
+@endsection
+@push('js')
     <!-- Include Video Thumbnail Generation Script -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -585,4 +588,4 @@
             }
         });
     </script>
-@endsection
+@endpush

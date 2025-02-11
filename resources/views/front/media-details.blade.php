@@ -21,19 +21,27 @@
     <!-- Page Header -->
     <section id="inner-headline">
         <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-            <div class="inner-heading">
-                <ul class="breadcrumb">
-                <li><a href="{{ route('home') }}">{{ __('lang.breadcrumb_home') }}</a> <i class="icon-angle-right"></i></li>
-                <li class="active"> &nbsp; {{ __('lang.breadcrumb_photos_gallery') }} <i class="icon-angle-right"></i></li>
-                <li class="active"> {{app()->getLocale() === 'ar' ? $images[0]->gallery->ar_title : $images[0]->gallery->en_title  }} </li>
-                </ul>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-heading">
+                        <ul class="breadcrumb">
+                            <li><a href="{{ route('home') }}">{{ __('lang.breadcrumb_home') }}</a> <i class="icon-angle-right"></i></li>
+                            <li class="active"> &nbsp; {{ __('lang.breadcrumb_photos_gallery') }} <i class="icon-angle-right"></i></li>
+
+                            @if (!empty($images) && isset($images[0]) && $images[0]->gallery)
+                                <li class="active">
+                                    {{ app()->getLocale() === 'ar' ? $images[0]->gallery->ar_title : $images[0]->gallery->en_title }}
+                                </li>
+                            @else
+                                <li class="active text-muted">{{ __('lang.no_gallery_found') }}</li>
+                            @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
         </div>
     </section>
+
 
     <div class="text-center mb-5 mt-3">
         <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">

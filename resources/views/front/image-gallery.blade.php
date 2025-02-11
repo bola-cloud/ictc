@@ -49,37 +49,29 @@
     <section class="photo-gallery">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">
-                <!-- Image 1 -->
                 @forelse ($galleries as $gallery)
                     <div class="col">
                         <div class="card gallery-card position-relative">
-                            <a href="{{route('media-details',$gallery->id)}}">
-                                <img src="{{ asset('storage/' . $gallery->featuredImage->image_path) }}" alt="{{ __('lang.news_title') }}">
-                                <span class="image-counter badge">{{$gallery->images()->count()}}</span>
+                            <a href="{{ route('media-details', $gallery->id) }}">
+                                @if ($gallery->featuredImage)
+                                    <img src="{{ asset('storage/' . $gallery->featuredImage->image_path) }}" class="card-img-top" alt="{{ __('lang.news_title') }}">
+                                @else
+                                    <img src="https://via.placeholder.com/480x320?text=No+Image" class="card-img-top" alt="No Image Available">
+                                @endif
+                                <span class="image-counter badge">{{ $gallery->images()->count() }}</span>
                             </a>
                             <div class="card-body text-center">
                                 <h5 class="card-title">
-                                      {{ app()->getLocale() === 'ar' ? $gallery->ar_title : $gallery->en_title }}
+                                    {{ app()->getLocale() === 'ar' ? $gallery->ar_title : $gallery->en_title }}
                                 </h5>
                             </div>
                         </div>
                     </div>
                 @empty
-
-                @endforelse
-
-                {{-- <!-- Image 2 -->
-                <div class="col">
-                    <div class="card gallery-card position-relative">
-                        <a href="{{route('media-details')}}">
-                            <img src="https://picsum.photos/id/678/480/320.webp" class="card-img-top" alt="Sample Image 2">
-                            <span class="image-counter badge">2</span>
-                        </a>
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Sample Title 2</h5>
-                        </div>
+                    <div class="col-12 text-center">
+                        <p class="text-muted">{{ __('lang.no_galleries_found') }}</p>
                     </div>
-                </div> --}}
+                @endforelse
             </div>
         </div>
     </section>

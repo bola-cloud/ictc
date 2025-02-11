@@ -521,5 +521,6 @@ return [
     'no_projects_available' => 'لا توجد مشاريع متاحة لهذا النطاق',
     'projects_for_scope' => 'المشاريع لنطاق',
     'breadcrumb_projects' => 'المشاريع',
+    'photo_gallery' => 'معرض الصور',
 
 ];

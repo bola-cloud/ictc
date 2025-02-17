@@ -31,17 +31,17 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'ar_title' => 'required|string|max:255',
             'en_title' => 'required|string|max:255',
-            'ar_subtitle' => 'nullable|string|max:255',
-            'en_subtitle' => 'nullable|string|max:255',
-            'ar_head' => 'nullable|string|max:255',
-            'en_head' => 'nullable|string|max:255',
+            'ar_subtitle' => 'required|string|max:255',
+            'en_subtitle' => 'required|string|max:255',
+            'ar_head' => 'required|string|max:255',
+            'en_head' => 'required|string|max:255',
             'ar_content' => 'required|string',
             'en_content' => 'required|string',
-            'image1_path' => 'required|file|image',
-            'image2_path' => 'required|file|image',
+            'image1_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image2_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'flag' => 'nullable|boolean',
         ]);
 

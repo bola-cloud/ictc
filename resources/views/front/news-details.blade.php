@@ -37,10 +37,10 @@
                 </div>
                 <div class="col-lg-4">
                     <div class="row g-2">
-                        <div class="col-6">
+                        <div class="col-12">
                             <img src="{{ asset('storage/' . $news->image1_path) }}" alt="News Image 1" class="img-fluid rounded shadow-sm">
                         </div>
-                        <div class="col-6">
+                        <div class="col-12">
                             <img src="{{ asset('storage/' . $news->image2_path) }}" alt="News Image 2" class="img-fluid rounded shadow-sm">
                         </div>
                     </div>

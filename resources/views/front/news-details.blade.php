@@ -29,7 +29,7 @@
                             {{ app()->getLocale() === 'ar' ? $news->ar_head : $news->en_head }}
                         </div>
                         <div class="card-body">
-                            <p class="fs-5 text-{{ app()->getLocale() === 'ar' ? 'right' : 'left' }}">
+                            <p class="fs-5 text-{{ app()->getLocale() === 'ar' ? 'end' : 'start' }}">
                                 {{ app()->getLocale() === 'ar' ? $news->ar_content : $news->en_content }}
                             </p>
                         </div>

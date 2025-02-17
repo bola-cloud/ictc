@@ -49,9 +49,14 @@
                         <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-stretch mt-3">
                             <div class="card news-card p-2 shadow-sm">
                                 <div class="news-images">
-                                    <img src="{{ asset('storage/' . $item->image1_path) }}" alt="{{ $item->ar_title }}" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
+                                    <img src="{{ asset('storage/' . $item->image1_path) }}"
+                                         alt="{{ $item->ar_title }}"
+                                         style="width: 100%; height: 200px; object-fit: contain; margin-bottom: 10px; background-color: #f8f9fa;">
+
                                     @if ($item->image2_path)
-                                        <img src="{{ asset('storage/' . $item->image2_path) }}" alt="{{ $item->ar_title }}" style="width: 100%; height: 200px; object-fit: cover;">
+                                        <img src="{{ asset('storage/' . $item->image2_path) }}"
+                                             alt="{{ $item->ar_title }}"
+                                             style="width: 100%; height: 200px; object-fit: contain; background-color: #f8f9fa;">
                                     @endif
                                 </div>
                                 <div class="card-body news-card-body">

@@ -26,74 +26,32 @@
             <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
                 <!-- Carousel Items -->
                 <div class="carousel-inner h-100">
-                    <!-- Slide 1 -->
-                    <div class="carousel-item active h-100">
-                        <div class="container h-100">
-                            <div class="row align-items-center h-100">
-                                <div class="col-8">
-                                    <h1 class="text-light display-3 fw-bold text-center">
-                                        {{ __('lang.slide_1') }}
-                                    </h1>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <i class="fa-solid fa-laptop-file fa-7x text-warning"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="carousel-item h-100">
-                        <div class="container h-100">
-                            <div class="row align-items-center h-100">
-                                <div class="col-8">
-                                    <h1 class="text-light display-3 fw-bold text-center">
-                                        {{ __('lang.slide_2') }}
-                                    </h1>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <i class="fa-solid fa-people-roof fa-7x text-primary"></i>
+                    @foreach ($scopes as $index => $scope)
+                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }} h-100">
+                            <div class="container h-100">
+                                <div class="row align-items-center h-100">
+                                    <div class="col-8">
+                                        <h1 class="text-light display-3 fw-bold text-center">
+                                            {{ $scope->title }}
+                                        </h1>
+                                        <p class="text-light text-center fs-4">
+                                            {{ $scope->description }}
+                                        </p>
+                                    </div>
+                                    <div class="col-4 text-center">
+                                        <i class="fa-solid {{ $scope->icon }} fa-7x" style="color: {{ $scope->color }}"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="carousel-item h-100">
-                        <div class="container h-100">
-                            <div class="row align-items-center h-100">
-                                <div class="col-8">
-                                    <h1 class="text-light display-3 fw-bold text-center">
-                                        {{ __('lang.slide_3') }}
-                                    </h1>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <i class="fa-solid fa-hands-holding-child fa-7x text-danger"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="carousel-item h-100">
-                        <div class="container h-100">
-                            <div class="row align-items-center h-100">
-                                <div class="col-8">
-                                    <h1 class="text-light display-3 fw-bold text-center">
-                                        {{ __('lang.slide_4') }}
-                                    </h1>
-                                </div>
-                                <div class="col-4 text-center">
-                                    <i class="fa-solid fa-helmet-safety fa-7x text-success"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
 
                 <!-- Pagination Indicators -->
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    @foreach ($scopes as $index => $scope)
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-label="Slide {{ $index + 1 }}"></button>
+                    @endforeach
                 </div>
 
                 <!-- Navigation Controls -->
@@ -113,7 +71,7 @@
         <div class="container">
             <div class="section-title text-center" style="margin-bottom: 30px;">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                    {{ __('lang.gallery_title') }} <strong>{{ __('lang.gallery_title_strong') }}</strong>
+                    <strong> {{ __('lang.gallery_title') }} {{ __('lang.gallery_title_strong') }}</strong>
                 </h2>
                 <p style="font-size: 1rem; color: #666;">
                     {{ __('lang.gallery_subtitle') }}
@@ -162,7 +120,7 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                    {{ __('lang.scope_work_title') }} <strong>{{ __('lang.scope_work_title_strong') }}</strong>
+                    <strong> {{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</strong>
                 </h2>
                 <p style="font-size: 1.1rem; color: #666;">
                     {{ __('lang.scope_subtitle') }}
@@ -230,22 +188,34 @@
         </div>
     </section>
 
+    @php
+        $icons = [
+            'fa-award',        // Proven Expertise
+            'fa-cogs',         // Customized Solutions
+            'fa-lightbulb',    // Innovative Approach
+            'fa-layer-group',  // Comprehensive Services
+            'fa-leaf',         // Focus on Sustainability
+            'fa-user-check',   // Client-Centric Philosophy
+            'fa-chart-line',   // Track Record of Success
+            'fa-star'          // Commitment to Excellence
+        ];
+    @endphp
     <!-- Why ICTC Section -->
     <section id="why-ictc" style="padding: 50px 0; background-color: #f5f5f5;">
         <div class="container">
             <div class="text-center mb-5">
-            <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                {{ __('lang.why_ictc_title') }} <strong>{{ __('lang.why_ictc_title_strong') }}</strong>
-            </h2>
-            <p style="font-size: 1.1rem; color: #666;">
-                {{ __('lang.why_ictc_subtitle') }}
-            </p>
+                <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+                    <strong> {{ __('lang.why_ictc_title') }} {{ __('lang.why_ictc_title_strong') }}</strong>
+                </h2>
+                <p style="font-size: 1.1rem; color: #666;">
+                    {{ __('lang.why_ictc_subtitle') }}
+                </p>
             </div>
             <div class="row text-center">
                 @for ($i = 1; $i <= 8; $i++)
                     <div class="col-md-3 mb-4">
                         <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                            <i class="fa fa-check-circle fa-3x text-primary mb-3"></i>
+                            <i class="fa {{ $icons[$i-1] }} fa-3x text-primary mb-3"></i>
                             <h4 class="mb-2" style="font-weight: bold;">
                                 {{ __('lang.feature_' . $i . '_title') }}
                             </h4>
@@ -264,7 +234,7 @@
             <div class="row">
             <div class="col-12 text-center mb-2">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                    {{ __('lang.latest_news_title') }} <strong>{{ __('lang.latest_news_title_strong') }}</strong>
+                    <strong> {{ __('lang.latest_news_title') }} {{ __('lang.latest_news_title_strong') }}</strong>
                 </h2>
             </div>
             </div>
@@ -547,7 +517,7 @@
         <div class="container">
             <div class="title-container">
                 <h3 class="title">
-                    {{ __('lang.partners_title') }} <strong>{{ __('lang.partners_title_strong') }}</strong>
+                    <strong>{{ __('lang.partners_title') }} {{ __('lang.partners_title_strong') }}</strong>
                 </h3>
             </div>
             <div class="swiper partners-slider-unique">

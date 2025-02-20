@@ -325,16 +325,16 @@
                         </p>
                         <div style="display: flex; gap: 10px;">
                             <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa fa-facebook"></i>
+                                <i class="fa-brands fa-facebook"></i>
                             </a>
                             <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa fa-whatsapp"></i>
+                                <i class="fa-brands fa-whatsapp"></i>
                             </a>
                             <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fa fa-envelope"></i>
                             </a>
                             <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa fa-linkedin"></i>
+                                <i class="fa-brands fa-linkedin"></i>
                             </a>
                         </div>
                     </div>

@@ -236,6 +236,21 @@
                             </ul>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="la la-cogs"></i> <!-- Services Icon -->
+                                <span class="menu-title" data-i18n="nav.services.main">{{ __('lang.service_administration') }}</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class="{{ Route::currentRouteName() == 'admin.services.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.services.index') }}" data-i18n="nav.services.index">{{ __('lang.index') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.services.create' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.services.create') }}" data-i18n="nav.services.create">{{ __('lang.create') }}</a>
+                                </li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item {{ Route::currentRouteName() == 'admin.messages.index' ? 'active' : '' }}">
                             <a href="{{ route('admin.messages.index') }}">
                                 <i class="la la-share-alt"></i>

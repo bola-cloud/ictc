@@ -9,6 +9,7 @@ use App\Models\Partner;
 use App\Models\Scope;
 use App\Models\Gallery;
 use App\Models\GalleryImage;
+use App\Models\Project;
 
 class HomeController extends Controller
 {
@@ -58,5 +59,13 @@ class HomeController extends Controller
         $scope = Scope::findOrFail($id);
         $projects = $scope->projects ?? collect(); // Ensures an empty collection instead of null
         return view('front.projects', compact('scope', 'projects'));
+    }
+
+    public function allProjects()
+    {
+        $scopes = Scope::all();
+        $projects = Project::all();
+
+        return view('front.all-projects', compact('scopes', 'projects'));
     }
 }

@@ -8,7 +8,7 @@
             <a href="{{ route('admin.partners.create') }}" class="btn btn-primary mb-3">{{ __('lang.add_partner') }}</a>
         </div>
         <table class="table">
-            <thead class="">
+            <thead>
                 <tr>
                     <th>{{ __('lang.category') }}</th>
                     <th>{{ __('lang.image') }}</th>
@@ -18,7 +18,14 @@
             <tbody>
                 @foreach($partners as $partner)
                 <tr>
-                    <td>{{ __('lang.' . $partner->category) }}</td>
+                    <td>
+
+                        @if (!empty($partner->categories) && $partner->categories instanceof \App\Models\PartnerCategory)
+                            {{ app()->getLocale() == 'ar' ? $partner->categories->ar_name : $partner->categories->en_name }}
+                        @else
+                            <span class="text-muted">{{ __('lang.no_category') }}</span>
+                        @endif
+                    </td>
                     <td><img src="{{ asset($partner->image_path) }}" width="80"></td>
                     <td>
                         <a href="{{ route('admin.partners.edit', $partner->id) }}" class="btn btn-warning btn-sm">{{ __('lang.edit') }}</a>
@@ -29,7 +36,8 @@
                         </form>
                     </td>
                 </tr>
-                @endforeach
+            @endforeach
+
             </tbody>
         </table>
     </div>

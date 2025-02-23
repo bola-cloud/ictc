@@ -39,7 +39,7 @@
                                         </p>
                                     </div>
                                     <div class="col-4 text-center">
-                                        <i class="fa-solid {{ $scope->icon }} fa-7x" style="color: {{ $scope->color }}"></i>
+                                        <i class="fa-solid {{ $scope->icon }} fa-7x text-{{ $scope->color }}"></i>
                                     </div>
                                 </div>
                             </div>

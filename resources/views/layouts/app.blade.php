@@ -97,6 +97,11 @@
                                             {{ __('lang.services') }}
                                         </a>
                                     </li>
+                                    <li class="dropdown {{ request()->routeIs('all-projects') ? 'active' : '' }}">
+                                        <a href="{{ route('all-projects') }}" class="nav-btn {{ request()->routeIs('all-projects') ? 'btn-highlight' : '' }}">
+                                            {{ __('lang.projects') }}
+                                        </a>
+                                    </li>
                                     <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery','latest.news']) ? 'active' : '' }}">
                                         <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
                                         <ul class="dropdown-menu" style="top: 60% !important;">
@@ -177,11 +182,15 @@
                         <li class="dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
                             <a href="{{ route('services') }}">{{ __('lang.services') }}</a>
                         </li>
-                        <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery']) ? 'active' : '' }}">
+                        <li class="dropdown {{ request()->routeIs('all-projects') ? 'active' : '' }}">
+                            <a href="{{ route('all-projects') }}">{{ __('lang.projects') }}</a>
+                        </li>
+                        <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery','latest.news']) ? 'active' : '' }}">
                             <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('image-gallery') }}">{{ __('lang.photos_gallery') }}</a></li>
                                 <li><a href="{{ route('video-gallery') }}">{{ __('lang.videos_gallery') }}</a></li>
+                                <li><a href="{{ route('latest.news') }}">{{ __('lang.latest_news') }}</a></li>
                             </ul>
                         </li>
                         <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">
@@ -242,10 +251,16 @@
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                 </li>
-                <!-- TikTok -->
+                {{-- <!-- TikTok -->
                 <li style="--rotate: 27deg;">
                     <a href="#" style="background-color: #000;">
                         <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </li> --}}
+                <!-- LinkedIn -->
+                <li style="--rotate: 27deg;">
+                    <a href="#" style="background-color: #0077b5;">
+                        <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </li>
                 <!-- WhatsApp -->
@@ -301,6 +316,10 @@
                                 style="color: #fff; background-color: {{ Request::routeIs('image-gallery') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
                                 {{ __('lang.photos_gallery') }}
                             </a>
+                            <a href="{{ route('all-projects') }}"
+                                style="color: #fff; background-color: {{ Request::routeIs('all-projects') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
+                                {{ __('lang.projects') }}
+                            </a>
                             <a href="{{ route('video-gallery') }}"
                                 style="color: #fff; background-color: {{ Request::routeIs('video-gallery') ? '#0d6efd' : '#2f2f2f' }}; border-radius: 20px; padding: 5px 15px; text-decoration: none;">
                                 {{ __('lang.videos_gallery') }}
@@ -320,8 +339,8 @@
                     <div class="col-md-4">
                         <h5 style="color: #fff; font-weight: bold;">{{ __('lang.contact') }}</h5>
                         <p>
-                            <i class="fa fa-phone"></i> {{ __('lang.support') }} : 020000000<br>
-                            <i class="fa fa-envelope"></i> {{ __('lang.email') }} : contact@ictc-egy.com
+                            <i class="fa fa-phone"></i> {{ __('lang.support') }}&nbsp; :&nbsp; 020000000<br>
+                            <i class="fa fa-envelope"></i> {{ __('lang.email') }}&nbsp; : &nbsp;contact@ictc-egy.com
                         </p>
                         <div style="display: flex; gap: 10px;">
                             <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
@@ -335,6 +354,9 @@
                             </a>
                             <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-brands fa-youtube"></i>
                             </a>
                         </div>
                     </div>

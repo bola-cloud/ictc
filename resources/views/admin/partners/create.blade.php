@@ -10,10 +10,12 @@
 
             <div class="form-group">
                 <label>{{ __('lang.category') }}</label>
-                <select name="category" class="form-control" required>
-                    <option value="governmental">{{ __('lang.governmental') }}</option>
-                    <option value="ngo">{{ __('lang.ngo') }}</option>
-                    <option value="international">{{ __('lang.international') }}</option>
+                <select name="category_id" class="form-control" required>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">
+                            {{ app()->getLocale() == 'ar' ? $category->ar_name : $category->en_name }}
+                        </option>
+                    @endforeach
                 </select>
             </div>
 

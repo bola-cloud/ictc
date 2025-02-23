@@ -5,32 +5,35 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Partner;
+use App\Models\PartnerCategory;
 use Illuminate\Support\Facades\File;
 
 class PartnerController extends Controller
 {
     public function index()
     {
-        $partners = Partner::all();
+        $partners = Partner::with('categories')->get();
+        // dd($partners);
         return view('admin.partners.index', compact('partners'));
     }
 
     public function create()
     {
-        return view('admin.partners.create');
+        $categories = PartnerCategory::all(); // Fetch all categories
+        return view('admin.partners.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'category' => 'required|in:governmental,ngo,international',
+            'category_id' => 'required|exists:partner_categories,id',
             'image' => 'required|image|max:2048'
         ]);
 
         $imagePath = $request->file('image')->store('partners', 'public');
 
         Partner::create([
-            'category' => $request->category,
+            'category_id' => $request->category_id,
             'image_path' => 'storage/' . $imagePath,
         ]);
 
@@ -39,13 +42,14 @@ class PartnerController extends Controller
 
     public function edit(Partner $partner)
     {
-        return view('admin.partners.edit', compact('partner'));
+        $categories = PartnerCategory::all();
+        return view('admin.partners.edit', compact('partner', 'categories'));
     }
 
     public function update(Request $request, Partner $partner)
     {
         $request->validate([
-            'category' => 'required|in:governmental,ngo,international',
+            'category_id' => 'required|exists:partner_categories,id',
             'image' => 'nullable|image|max:2048'
         ]);
 
@@ -55,7 +59,7 @@ class PartnerController extends Controller
         }
 
         $partner->update([
-            'category' => $request->category,
+            'category_id' => $request->category_id,
         ]);
 
         return redirect()->route('admin.partners.index')->with('success', __('lang.partner_updated'));

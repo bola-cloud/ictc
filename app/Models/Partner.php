@@ -9,6 +9,10 @@ class Partner extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['image_path', 'category'];
+    protected $fillable = ['image_path', 'category_id'];
 
+    public function categories()
+    {
+        return $this->belongsTo(PartnerCategory::class, 'category_id', 'id');
+    }
 }

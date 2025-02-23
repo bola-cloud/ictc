@@ -2,32 +2,31 @@
 
 @section('content')
 <div class="container-fluid m-0">
-    <!-- Address Section -->
+
     <section class="address">
         <div class="container">
             <div class="col-lg-12 text-center">
-                <h3 class="address-h3">{{ __('lang.projects_for_scope') }}: {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}</h3>
+                <h3 class="address-h3">{{ __('lang.all_projects') }}</h3>
             </div>
         </div>
     </section>
 
-    <!-- Page Header -->
-    <section id="inner-headline">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="inner-heading">
-                        <ul class="breadcrumb">
-                            <li>
-                                <a href="{{ route('home') }}">{{ __('lang.breadcrumb_home') }}</a>
-                                <i class="icon-angle-right"></i>
-                            </li>
-                            <li class="active">&nbsp; {{ __('lang.breadcrumb_projects') }}</li>
-                        </ul>
-                        <h2>{{ __('lang.projects_for_scope') }}: {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}</h2>
-                    </div>
-                </div>
-            </div>
+    <!-- Scopes Filter Section -->
+    <section class="scopes-filter text-center my-4">
+        <div class="container d-flex justify-content-center flex-wrap gap-3">
+            <!-- Show "All" Button -->
+            <button class="scope-btn active" onclick="filterProjects('all')" style="border: 1px solid #000; color: #000;">
+                {{ __('lang.all_projects') }}
+            </button>
+
+            @foreach($scopes as $scope)
+                <button class="scope-btn" onclick="filterProjects('{{ $scope->id }}')"
+                        style="border: 1px solid {{ getBootstrapColor($scope->color) }};
+                               color: {{ getBootstrapColor($scope->color) }};
+                               background: transparent;">
+                    {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}
+                </button>
+            @endforeach
         </div>
     </section>
 
@@ -39,14 +38,15 @@
                     <h4 class="text-muted">{{ __('lang.no_projects_available') }}</h4>
                 </div>
             @else
-                <div class="row">
+                <div class="row" id="projectsContainer">
                     @foreach($projects as $project)
-                        <div class="col-md-6">
-                            <div class="card project-card shadow-lg text-center">
+                        <div class="col-md-6 project-card" data-scope="{{ $project->scope_id }}">
+                            <div class="card shadow-lg text-center">
                                 @if($project->image)
-                                    <img src="{{ asset('storage/' . $project->image) }}" class="card-img-top img-fluid" alt="{{ $project->en_name }}" style="height: 400px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                                    <img src="{{ asset('storage/' . $project->image) }}" class="card-img-top img-fluid" alt="{{ $project->en_name }}"
+                                         style="height: 350px; object-fit: cover; border-radius: 10px 10px 0 0;">
                                 @else
-                                    <img src="https://via.placeholder.com/400x300?text=No+Image" class="card-img-top img-fluid" alt="No Image Available" style="height: 200px; object-fit: cover; border-radius: 10px 10px 0 0;">
+                                    <img src="https://via.placeholder.com/400x300?text=No+Image" class="card-img-top img-fluid">
                                 @endif
                                 <div class="card-body">
                                     <h4 class="card-title">
@@ -68,13 +68,13 @@
                                         <h5 class="modal-title" id="projectModalLabel{{ $project->id }}">
                                             {{ app()->getLocale() === 'ar' ? $project->ar_name : $project->en_name }}
                                         </h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                     </div>
                                     <div class="modal-body text-center">
                                         @if($project->image)
-                                            <img src="{{ asset('storage/' . $project->image) }}" class="img-fluid rounded mb-3" alt="{{ $project->en_name }}" style="max-height: 400px; object-fit: contain;">
+                                            <img src="{{ asset('storage/' . $project->image) }}" class="img-fluid rounded mb-3" style="max-height: 400px; object-fit: contain;">
                                         @else
-                                            <img src="https://via.placeholder.com/600x400?text=No+Image" class="img-fluid rounded mb-3" alt="No Image Available">
+                                            <img src="https://via.placeholder.com/600x400?text=No+Image" class="img-fluid rounded mb-3">
                                         @endif
                                         <p>{{ app()->getLocale() === 'ar' ? $project->ar_description : $project->en_description }}</p>
                                     </div>
@@ -90,4 +90,43 @@
         </div>
     </section>
 </div>
+
+<!-- JavaScript for Filtering -->
+<script>
+    function filterProjects(scopeId) {
+        // Remove active class from all buttons
+        document.querySelectorAll('.scope-btn').forEach(btn => btn.classList.remove('active'));
+
+        // Highlight the selected filter
+        event.target.classList.add('active');
+
+        // Show/Hide projects based on the selected scope
+        document.querySelectorAll('.project-card').forEach(card => {
+            if (scopeId === 'all' || card.getAttribute('data-scope') === scopeId) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+<style>
+    .scope-btn {
+        padding: 10px 20px;
+        border-radius: 20px;
+        font-size: 1.2rem;
+        background: transparent;
+        transition: 0.3s;
+    }
+
+    .scope-btn.active {
+        background: rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card {
+        margin-bottom: 30px;
+    }
+</style>
+
 @endsection

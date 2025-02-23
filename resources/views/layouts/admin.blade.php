@@ -218,6 +218,9 @@
                                 <li class="{{ Route::currentRouteName() == 'admin.partners.create' ? 'active' : '' }}">
                                     <a class="menu-item" href="{{ route('admin.partners.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
                                 </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.partner_categories.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.partner_categories.index') }}" data-i18n="nav.dash.sales">{{ __('lang.partner_categories') }}</a>
+                                </li>
                             </ul>
                         </li>
 

@@ -559,4 +559,6 @@ return [
     'category_updated' => 'تم تحديث التصنيف بنجاح!',
     'category_deleted' => 'تم حذف التصنيف بنجاح!',
     'cancel' => 'إلغاء',
+    'partner_categories_administration' => 'إدارة تصنيفات الشركاء',
+    'no_categories_found' => 'لم يتم العثور على تصنيفات.',
 ];

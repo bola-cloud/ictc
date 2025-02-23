@@ -552,6 +552,8 @@ return [
     'category_added' => 'Category added successfully!',
     'category_updated' => 'Category updated successfully!',
     'category_deleted' => 'Category deleted successfully!',
+    'partner_categories_administration' => 'Partner Categories Administration',
+    'no_categories_found' => 'No categories found.',
 ];
 
 

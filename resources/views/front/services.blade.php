@@ -65,66 +65,20 @@
             </p>
         </div>
         <div class="row g-4">
-            <!-- Research Services -->
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.market_analysis_title') }}</h4>
-                    <p>{{ __('lang.market_analysis_description') }}</p>
+            @foreach($services as $service)
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                        <h4 class="fw-bold">
+                            {{ app()->getLocale() == 'ar' ? $service->ar_title : $service->en_title }}
+                        </h4>
+                        <p>
+                            {{ app()->getLocale() == 'ar' ? $service->ar_description : $service->en_description }}
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.impact_assessment_title') }}</h4>
-                    <p>{{ __('lang.impact_assessment_description') }}</p>
-                </div>
-            </div>
-
-            <!-- Training Services -->
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.skill_development_title') }}</h4>
-                    <p>{{ __('lang.skill_development_description') }}</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.leadership_training_title') }}</h4>
-                    <p>{{ __('lang.leadership_training_description') }}</p>
-                </div>
-            </div>
-
-            <!-- Technology Services -->
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.custom_software_title') }}</h4>
-                    <p>{{ __('lang.custom_software_description') }}</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.automation_title') }}</h4>
-                    <p>{{ __('lang.automation_description') }}</p>
-                </div>
-            </div>
-
-            <!-- Institutional Development Services -->
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.governance_frameworks_title') }}</h4>
-                    <p>{{ __('lang.governance_frameworks_description') }}</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                    <h4 class="fw-bold">{{ __('lang.change_management_title') }}</h4>
-                    <p>{{ __('lang.change_management_description') }}</p>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
-<style>
 
-
-</style>
 @endsection

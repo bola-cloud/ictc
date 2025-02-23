@@ -22,9 +22,7 @@ Route::group([
 
     Route::get('/about', [\App\Http\Controllers\AboutController::class, 'index'])->name('about');
 
-    Route::get('/services', function () {
-        return view('front.services');
-    })->name('services');
+    Route::get('/services', [\App\Http\Controllers\ServiceController::class, 'index'])->name('services');
 
     Route::get('/our-partners', [\App\Http\Controllers\PartnersController::class, 'index'])->name('partners');
 

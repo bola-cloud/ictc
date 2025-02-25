@@ -74,5 +74,6 @@ Route::group([
     });
     Route::resource('/admin/services', App\Http\Controllers\Admin\ServiceController::class)->names('admin.services');
     Route::resource('/partner_categories', App\Http\Controllers\Admin\PartnerCategoryController::class)->names('admin.partner_categories');
-
+    Route::get('/settings', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin.settings.index');
+    Route::post('/settings/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin.settings.update');
 });

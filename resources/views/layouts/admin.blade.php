@@ -260,6 +260,14 @@
                                 <span class="menu-title" data-i18n="nav.morris_charts.main">{{ __('lang.show_messages') }}</span>
                             </a>
                         </li>
+
+                        <li class="nav-item {{ Route::currentRouteName() == 'admin.settings.index' ? 'active' : '' }}">
+                            <a href="{{ route('admin.settings.index') }}">
+                                <i class="la la-cog"></i>
+                                <span class="menu-title" data-i18n="nav.settings">{{ __('lang.settings') }}</span>
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
             </div>

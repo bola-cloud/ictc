@@ -70,14 +70,14 @@
         <header>
             <div class="container">
                 <div class="row nomargin">
-                    <div class="col-md-4 d-flex justify-content-center">
+                    <div class="col-md-3 d-flex justify-content-center">
                         <div class="logo">
-                            <a href="{{route('home')}}" class="d-flex">
-                                <img src="{{asset('img/white logo.png')}}" alt="" />
+                            <a href="{{ route('home') }}" class="d-flex">
+                                <img src="{{ asset($settings->logo ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px;">
                             </a>
                         </div>
                     </div>
-                    <div class="col-md-7 d-none d-md-flex">
+                    <div class="col-md-8 d-none d-md-flex">
                         <!-- Regular Navigation (Visible on Desktop) -->
                         <div class="navbar navbar-static-top navigation">
                             <nav>
@@ -247,35 +247,31 @@
             <ul class="share__icons">
                 <!-- Facebook -->
                 <li style="--rotate: -18deg;">
-                    <a href="#" style="background-color: #1877F2;">
+                    <a href="{{ !empty($settings->facebook) ? $settings->facebook : '#' }}" target="_blank" style="background-color: #1877F2;">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
                 </li>
-                {{-- <!-- TikTok -->
-                <li style="--rotate: 27deg;">
-                    <a href="#" style="background-color: #000;">
-                        <i class="fa-brands fa-tiktok"></i>
-                    </a>
-                </li> --}}
+
                 <!-- LinkedIn -->
                 <li style="--rotate: 27deg;">
-                    <a href="#" style="background-color: #0077b5;">
+                    <a href="{{ !empty($settings->linkedin) ? $settings->linkedin : '#' }}" target="_blank" style="background-color: #0077b5;">
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </li>
+
                 <!-- WhatsApp -->
                 <li style="--rotate: 72deg;">
-                    <a href="#" style="background-color: #25D366;">
+                    <a href="{{ !empty($settings->whatsapp) ? 'https://wa.me/' . $settings->whatsapp : '#' }}" target="_blank" style="background-color: #25D366;">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </li>
+
                 <!-- YouTube -->
                 <li style="--rotate: 117deg;">
-                    <a href="#" style="background-color: #FF0000;">
+                    <a href="{{ !empty($settings->youtube) ? $settings->youtube : '#' }}" target="_blank" style="background-color: #FF0000;">
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </li>
-
             </ul>
         </div>
 
@@ -288,7 +284,7 @@
                     <div class="col-md-4">
                         <div>
                             <a href="{{route('dashboard')}}">
-                                <img src="{{ asset('img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
+                                <img src="{{ asset($settings->logo ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
                             </a>
                             <p style="margin: 0;">
                                 {{ __('lang.company_name') }}
@@ -343,19 +339,33 @@
                             <i class="fa fa-envelope"></i> {{ __('lang.email') }}&nbsp; : &nbsp;contact@ictc-egy.com
                         </p>
                         <div style="display: flex; gap: 10px;">
-                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+                            <!-- Facebook -->
+                            <a href="{{ !empty($settings->facebook) ? $settings->facebook : '#' }}" target="_blank"
+                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fa-brands fa-facebook"></i>
                             </a>
-                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+
+                            <!-- WhatsApp -->
+                            <a href="{{ !empty($settings->whatsapp) ? 'https://wa.me/' . $settings->whatsapp : '#' }}" target="_blank"
+                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fa-brands fa-whatsapp"></i>
                             </a>
-                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+
+                            <!-- Email -->
+                            <a href="{{ !empty($settings->email) ? 'mailto:' . $settings->email : '#' }}" target="_blank"
+                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fa fa-envelope"></i>
                             </a>
-                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+
+                            <!-- LinkedIn -->
+                            <a href="{{ !empty($settings->linkedin) ? $settings->linkedin : '#' }}" target="_blank"
+                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fa-brands fa-linkedin"></i>
                             </a>
-                            <a href="#" style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
+
+                            <!-- YouTube -->
+                            <a href="{{ !empty($settings->youtube) ? $settings->youtube : '#' }}" target="_blank"
+                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
                                 <i class="fa-brands fa-youtube"></i>
                             </a>
                         </div>
@@ -365,6 +375,12 @@
                 <!-- Footer Bottom -->
                 <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
                     <p style="margin: 0; color: #ccc;">{{ __('lang.copyright') }}</p>
+                    <p style="margin: 5px 0 0; color: #ccc;">
+                        {{ __('lang.developed_by') }}
+                        <a href="https://wa.me/201555622169" target="_blank" style="color: #25D366; text-decoration: none;">
+                            <strong>Eng: Bola Eshaq</strong>
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>

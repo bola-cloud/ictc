@@ -1,5 +1,7 @@
 <?php
 return [
+    'copyright' => '© ' . date('Y') . ' All rights reserved.',
+    'developed_by' => 'Developed by',
     'gallery_management' => 'Gallery Management',
     'create_gallery' => 'Create Gallery',
     'edit_gallery' => 'Edit Gallery',
@@ -554,6 +556,19 @@ return [
     'category_deleted' => 'Category deleted successfully!',
     'partner_categories_administration' => 'Partner Categories Administration',
     'no_categories_found' => 'No categories found.',
+    'settings' => 'Settings',
+    'website_settings' => 'Website Settings',
+    'logo' => 'Logo',
+    'cover_image' => 'Cover Image',
+    'facebook_link' => 'Facebook Link',
+    'linkedin_link' => 'LinkedIn Link',
+    'youtube_link' => 'YouTube Link',
+    'whatsapp_number' => 'WhatsApp Number',
+    'email_address' => 'Email Address',
+    'save_settings' => 'Save Settings',
+    'no_logo' => 'No Logo Uploaded',
+    'no_cover' => 'No Cover Image Uploaded',
+    'success_setting_updated' => 'Settings updated successfully!',
 ];
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Page Header -->
-    <section class="page-header address">
+    <section class="page-header address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
         <div class="container text-center">
             <h2 class="address-h3" style="font-size: 2.5rem; font-weight: bold;">
                 {{ __('lang.news_details_title') }}
@@ -17,9 +17,13 @@
     <section class="news-section py-5" style="background-color: #f8f9fa;">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <h1 class="fw-bold" style="color: #0d6efd;">{{ app()->getLocale() === 'ar' ? $news->ar_title : $news->en_title }}</h1>
-                    <p class="text-muted">{{ app()->getLocale() === 'ar' ? $news->ar_subtitle : $news->en_subtitle }}</p>
+                <div class="col-12 mb-4" style="text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};">
+                    <h1 class="fw-bolder fs-4" style="color: #0d6efd; font-weight: 900;">
+                        {{ app()->getLocale() === 'ar' ? $news->ar_title : $news->en_title }}
+                    </h1>
+                    <p class="text-muted">
+                        {{ app()->getLocale() === 'ar' ? $news->ar_subtitle : $news->en_subtitle }}
+                    </p>
                 </div>
             </div>
             <div class="row">

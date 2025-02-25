@@ -1,5 +1,7 @@
 <?php
 return [
+    'copyright' => '© ' . date('Y') . ' جميع الحقوق محفوظة.',
+    'developed_by' => 'تم التطوير بواسطة',
     'gallery_management' => 'إدارة المعارض',
     'create_gallery' => 'إنشاء معرض',
     'edit_gallery' => 'تعديل المعرض',
@@ -561,4 +563,17 @@ return [
     'cancel' => 'إلغاء',
     'partner_categories_administration' => 'إدارة تصنيفات الشركاء',
     'no_categories_found' => 'لم يتم العثور على تصنيفات.',
+    'settings' => 'الإعدادات',
+    'website_settings' => 'إعدادات الموقع',
+    'logo' => 'الشعار',
+    'cover_image' => 'صورة الغلاف',
+    'facebook_link' => 'رابط الفيسبوك',
+    'linkedin_link' => 'رابط لينكد إن',
+    'youtube_link' => 'رابط يوتيوب',
+    'whatsapp_number' => 'رقم واتساب',
+    'email_address' => 'عنوان البريد الإلكتروني',
+    'save_settings' => 'حفظ الإعدادات',
+    'no_logo' => 'لم يتم رفع شعار',
+    'no_cover' => 'لم يتم رفع صورة غلاف',
+    'success_setting_updated' => 'تم تحديث الإعدادات بنجاح!',
 ];

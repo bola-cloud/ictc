@@ -5,7 +5,7 @@
 
     <div class="container-fluid m-0">
         <!-- Address Section -->
-        <section class="address">
+        <section class="address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
             <div class="container">
                 <div class="col-lg-12 text-center">
                     <h3 class="address-h3">{{ __('lang.address_title') }}</h3>

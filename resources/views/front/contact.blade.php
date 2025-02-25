@@ -3,7 +3,7 @@
 @section('content')
 
 <!-- Page Header -->
-<section class="page-header address">
+<section class="page-header address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
   <div class="container text-center">
     <h3 class="address-h3" style="font-size: 2.5rem; font-weight: bold;">
       {{ __('lang.contact_us_title') }}

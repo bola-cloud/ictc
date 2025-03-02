@@ -3,13 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Partner;
+use App\Models\PartnerCategory;
 
 class PartnersController extends Controller
 {
     public function index()
     {
-        $partners = Partner::all()->groupBy('category'); // Group partners by category
-        return view('front.partners', compact('partners'));
+        $categories = PartnerCategory::with('partners')->get();
+        return view('front.partners', compact('categories'));
     }
 }

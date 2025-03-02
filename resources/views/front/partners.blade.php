@@ -24,13 +24,13 @@
 
         <!-- Dynamic Partners Section -->
         <div class="row">
-            @foreach ($partners as $category => $categoryPartners)
+            @foreach ($categories as $category)
                 <div class="col-12 mb-5">
                     <h4 class="category-title text-center mb-3">
-                        {{ __('lang.' . $category) }}
+                        {{ app()->getLocale() === 'ar' ? $category->ar_name : $category->en_name }}
                     </h4>
                     <div class="row">
-                        @foreach ($categoryPartners as $partner)
+                        @foreach ($category->partners as $partner)
                             <div class="col-md-3 col-sm-6 mb-4">
                                 <div class="card">
                                     <img src="{{ asset($partner->image_path) }}" class="card-img-top" alt="Partner">

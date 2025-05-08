@@ -52,6 +52,7 @@ body {
   line-height: 1.6em;
   color: #656565;
   overflow-x: hidden;
+  background: #f3eed4 !important;
 }
 
 a {
@@ -3861,4 +3862,7 @@ strong {
     display: block;
     width: fit-content;
     transition: 0.3s ease;
+}
+.section-background{
+    background: whitesmoke !important ;
 }

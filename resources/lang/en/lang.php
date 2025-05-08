@@ -569,6 +569,10 @@ return [
     'no_logo' => 'No Logo Uploaded',
     'no_cover' => 'No Cover Image Uploaded',
     'success_setting_updated' => 'Settings updated successfully!',
+    'i_meaning' => 'Innovative development interventions',
+    'c1_meaning' => 'Community Based',
+    't_meaning' => 'Technological Solutions',
+    'c2_meaning' => 'Capabilities',
 ];
 
 

@@ -82,11 +82,11 @@
                         <div class="navbar navbar-static-top navigation">
                             <nav>
                                 <ul class="nav topnav" style="display: flex; gap: 10px; list-style: none; padding: 0; margin: 0;">
-                                    <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
+                                    {{-- <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
                                         <a href="{{ route('home') }}" class="nav-btn {{ request()->routeIs('home') ? 'btn-highlight' : '' }}">
                                             <i class="icon-home"></i> {{ __('lang.home') }}
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
                                         <a href="{{ route('about') }}" class="nav-btn {{ request()->routeIs('about') ? 'btn-highlight' : '' }}">
                                             {{ __('lang.about') }}
@@ -173,9 +173,9 @@
             <div class="side-nav">
                 <nav>
                     <ul class="nav topnav">
-                        <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
+                        {{-- <li class="dropdown {{ request()->routeIs('home') ? 'active' : '' }}">
                             <a href="{{ route('home') }}">{{ __('lang.home') }}</a>
-                        </li>
+                        </li> --}}
                         <li class="dropdown {{ request()->routeIs('about') ? 'active' : '' }}">
                             <a href="{{ route('about') }}">{{ __('lang.about') }}</a>
                         </li>
@@ -278,7 +278,7 @@
 
         <footer style="background-color:#1a2333; color: #fff; padding: 40px 0;">
             <div class="container">
-                <div class="row">
+                <div class="row d-flex justify-content-between align-items-center">
 
                     <!-- Left Column: Logo and Description -->
                     <div class="col-md-4">
@@ -293,7 +293,7 @@
                     </div>
 
                     <!-- Center Column: Useful Links -->
-                    <div class="col-md-4">
+                    {{-- <div class="col-md-4">
                         <h5 style="color: #fff; font-weight: bold;">{{ __('lang.useful_links') }}</h5>
                         <div style="display: flex; flex-wrap: wrap; gap: 10px;">
                             <a href="{{ route('about') }}"
@@ -329,7 +329,7 @@
                                 {{ __('lang.contact_us') }}
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <!-- Right Column: Contact Info -->
                     <div class="col-md-4">
@@ -374,7 +374,7 @@
 
                 <!-- Footer Bottom -->
                 <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
-                    <p style="margin: 0; color: #ccc;">{{ __('lang.copyright') }}</p>
+                    {{-- <p style="margin: 0; color: #ccc;">{{ __('lang.copyright') }}</p> --}}
                     <p style="margin: 5px 0 0; color: #ccc;">
                         {{ __('lang.developed_by') }}
                         <a href="https://wa.me/201555622169" target="_blank" style="color: #25D366; text-decoration: none;">

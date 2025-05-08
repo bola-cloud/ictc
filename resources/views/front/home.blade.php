@@ -1,73 +1,55 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Hero Section -->
-    <section class="head-video">
-        <!-- Media Background -->
-        @if ($mainBanner)
 
+    <!-- Hero Section -->
+    <section class="head-video position-relative">
+        <!-- Background Media (unchanged) -->
+        @if ($mainBanner && $mainBanner->media_path)
             @if ($mainBanner->media_type == "video")
-                <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                    <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
+                <video autoplay muted loop preload="auto" title="Hero Background Video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                    <source src="{{ asset('storage/' . $mainBanner->media_path) }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             @elseif ($mainBanner->media_type == "image")
-                <img src="{{ asset('storage/' . $mainBanner->media_path) }}" alt="Banner Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+                <img src="{{ asset('storage/' . $mainBanner->media_path) }}" alt="{{ $mainBanner->alt_text ?? 'Hero Banner' }}" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
             @endif
         @else
-            <video autoplay muted loop style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-                <source src="https://www.qodra-egy.net/img/midea/My%20Video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <img src="{{ asset('img/default-banner.jpg') }}" alt="Default Hero Banner" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
         @endif
 
-        <!-- Carousel Content Overlay -->
-        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10;">
-            <div id="carouselExampleIndicators" class="carousel slide h-100" data-bs-ride="carousel">
-                <!-- Carousel Items -->
-                <div class="carousel-inner h-100">
-                    @foreach ($scopes as $index => $scope)
-                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }} h-100">
-                            <div class="container h-100">
-                                <div class="row align-items-center h-100">
-                                    <div class="col-8">
-                                        <h1 class="text-light display-3 fw-bold text-center">
-                                            {{ $scope->title }}
-                                        </h1>
-                                        <p class="text-light text-center fs-4">
-                                            {{ $scope->description }}
-                                        </p>
-                                    </div>
-                                    <div class="col-4 text-center">
-                                        <i class="fa-solid {{ $scope->icon }} fa-7x text-{{ $scope->color }}"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <!-- Pagination Indicators -->
-                <div class="carousel-indicators">
-                    @foreach ($scopes as $index => $scope)
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-label="Slide {{ $index + 1 }}"></button>
-                    @endforeach
-                </div>
-
-                <!-- Navigation Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">{{ __('lang.previous') }}</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">{{ __('lang.next') }}</span>
-                </button>
+        <!-- Typewriter Content Overlay -->
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; display: flex; align-items: center; justify-content: center;">
+            <div class="container text-center">
+                <h1 class="text-primary display-2 fw-bold mb-4" style="font-size: 4rem;">
+                    <i id="typewriter-icon" class="fa-solid fa-2x me-2" role="img" aria-label="ICTC icon"></i>
+                    <span id="typewriter-text"></span>
+                </h1>
             </div>
         </div>
     </section>
 
-    <section id="gallery" style="padding: 50px 0; background-color: #f9f9f9;">
+    <!-- Custom CSS for Typewriter Effect -->
+    <style>
+        #typewriter-text {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 576px) {
+            .display-2 {
+                font-size: 2.5rem !important;
+            }
+            .fa-2x {
+                font-size: 1.5rem !important;
+            }
+        }
+    </style>
+
+
+    <section id="gallery" class="section-background" style="padding: 50px 0;">
         <div class="container">
             <div class="section-title text-center" style="margin-bottom: 30px;">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -116,7 +98,7 @@
         </div>
     </section>
 
-    <section id="scope-of-work" style="padding: 60px 0; background-color: #f9f9f9;">
+    <section id="scope-of-work" class="section-background" style="padding: 60px 0;">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -149,7 +131,7 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about-section" class="content">
+    <section id="about-section" class="section-background" class="content">
         <div class="container">
             <div class="row">
                 <!-- Image Section -->
@@ -201,7 +183,7 @@
         ];
     @endphp
     <!-- Why ICTC Section -->
-    <section id="why-ictc" style="padding: 50px 0; background-color: #f5f5f5;">
+    <section id="why-ictc" class="section-background" style="padding: 50px 0;">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -229,7 +211,7 @@
         </div>
     </section>
 
-    <section class="news-section">
+    <section class="news-section section-background">
         <div class="container">
             <div class="row">
             <div class="col-12 text-center mb-2">
@@ -556,6 +538,57 @@
 
                 video.load();
             }
+        });
+    </script>
+    <!-- JavaScript for Typewriter Effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = [
+                { letter: 'I', meaning: '{{ __("lang.i_meaning") }}', icon: 'fa-lightbulb' },
+                { letter: 'C', meaning: '{{ __("lang.c1_meaning") }}', icon: 'fa-users' },
+                { letter: 'T', meaning: '{{ __("lang.t_meaning") }}', icon: 'fa-cogs' },
+                { letter: 'C', meaning: '{{ __("lang.c2_meaning") }}', icon: 'fa-rocket' }
+            ];
+
+            const textElement = document.getElementById('typewriter-text');
+            const iconElement = document.getElementById('typewriter-icon');
+            let currentIndex = 0;
+
+            function typeWriter(text, element, speed, callback) {
+                let i = 0;
+                element.textContent = '';
+                function type() {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    } else {
+                        callback();
+                    }
+                }
+                type();
+            }
+
+            function animateItem() {
+                const current = items[currentIndex];
+                const fullText = `${current.letter}: ${current.meaning}`;
+
+                // Update icon
+                iconElement.className = `fa-solid ${current.icon} fa-2x me-2 text-primary`;
+                iconElement.setAttribute('aria-label', `${current.letter} icon`);
+
+                // Type full text (letter + meaning)
+                typeWriter(fullText, textElement, 50, () => {
+                    // Pause before moving to next item
+                    setTimeout(() => {
+                        currentIndex = (currentIndex + 1) % items.length;
+                        animateItem();
+                    }, 2000); // Pause for 2 seconds
+                });
+            }
+
+            // Start the animation
+            animateItem();
         });
     </script>
 @endpush

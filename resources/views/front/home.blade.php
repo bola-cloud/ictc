@@ -37,15 +37,22 @@
             overflow: hidden;
         }
 
-        /* Responsive adjustments */
+        /* Fix for small screens */
         @media (max-width: 576px) {
-            .display-2 {
-                font-size: 2.5rem !important;
+            #typewriter-text {
+                white-space: normal; /* Allow wrapping */
+                word-break: break-word;
             }
+
+            .display-2 {
+                font-size: 2.2rem !important; /* Smaller headline */
+            }
+
             .fa-2x {
-                font-size: 1.5rem !important;
+                font-size: 1.2rem !important;
             }
         }
+
     </style>
 
 

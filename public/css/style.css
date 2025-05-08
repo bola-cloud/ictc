@@ -52,7 +52,7 @@ body {
   line-height: 1.6em;
   color: #656565;
   overflow-x: hidden;
-  background: #f3eed4 !important;
+  /* background: #f3eed4 !important; */
 }
 
 a {
@@ -3865,4 +3865,16 @@ strong {
 }
 .section-background{
     background: whitesmoke !important ;
+    /* background: #f9f9f9 !important; */
+}
+
+.section-animate {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.8s ease;
+}
+
+.section-animate.visible {
+    opacity: 1;
+    transform: translateX(0);
 }

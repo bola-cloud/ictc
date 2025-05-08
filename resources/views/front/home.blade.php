@@ -49,7 +49,7 @@
     </style>
 
 
-    <section id="gallery" class="section-background" style="padding: 50px 0;">
+    <section id="gallery" class="section-background" style="padding: 50px 0;" data-aos="fade-left" data-aos-delay="200">
         <div class="container">
             <div class="section-title text-center" style="margin-bottom: 30px;">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -98,7 +98,7 @@
         </div>
     </section>
 
-    <section id="scope-of-work" class="section-background" style="padding: 60px 0;">
+    <section id="scope-of-work" class="section-background" style="padding: 60px 0;" data-aos="fade-left" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -131,7 +131,7 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about-section" class="section-background" class="content">
+    <section id="about-section" class="section-background" class="content" data-aos="fade-left" data-aos-delay="200">
         <div class="container">
             <div class="row">
                 <!-- Image Section -->
@@ -183,7 +183,7 @@
         ];
     @endphp
     <!-- Why ICTC Section -->
-    <section id="why-ictc" class="section-background" style="padding: 50px 0;">
+    <section id="why-ictc" class="section-background" style="padding: 50px 0;" data-aos="fade-left" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -211,7 +211,7 @@
         </div>
     </section>
 
-    <section class="news-section section-background">
+    <section class="news-section section-background" data-aos="fade-left" data-aos-delay="200">
         <div class="container">
             <div class="row">
             <div class="col-12 text-center mb-2">

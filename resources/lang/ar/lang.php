@@ -580,4 +580,7 @@ return [
     'c1_meaning' => 'مقررة من المجتمع',
     't_meaning' => 'الحلول التكنولوجية',
     'c2_meaning' => 'القدرات',
+    'welcome_message' => 'مرحبًا بك في آي سي تي سي، ',
+    'custom_orange' => 'البرتقالي',
+    'select_color' => 'اختر اللون',
 ];

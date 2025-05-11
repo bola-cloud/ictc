@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Empowerment Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        .custom-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .custom-card:hover {
+            transform: scale(1.02);
+        }
+
+        .card-image {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 200px;
+            transition: opacity 0.4s ease;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .custom-card:hover .card-image {
+            opacity: 0.1;
+        }
+
+        .custom-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content h5 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .card-footer {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.75rem;
+            border-radius: 0 0 1rem 1rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="row g-4">
+        <!-- Card Example -->
+        <div class="col-md-4">
+            <div class="custom-card">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/600x400?text=Social+Empowerment');"></div>
+                <div class="card-overlay bg-success">
+                    <div class="overlay-content text-center text-white">
+                        <i class="fas fa-hands-helping fa-3x mb-3"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-success text-white">
+                    Social Empowerment
+                </div>
+            </div>
+        </div>
+
+        <!-- Repeat for other cards -->
+
+        <div class="col-md-4">
+            <div class="custom-card">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/600x400?text=Economic+Empowerment');"></div>
+                <div class="card-overlay bg-danger">
+                    <div class="overlay-content text-center text-white">
+                        <i class="fas fa-chart-line fa-3x mb-3"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-danger text-white">Economic Empowerment</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="custom-card">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/600x400?text=Education');"></div>
+                <div class="card-overlay bg-info">
+                    <div class="overlay-content text-center text-white">
+                        <i class="fas fa-graduation-cap fa-3x mb-3"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-info text-white">Education</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="custom-card">
+                <div class="card-image" style="background-image: url('https://sawirisfoundation.org/wp-content/uploads/2024/08/4.-Scholarships.webp');"></div>
+                <div class="card-overlay bg-primary">
+                    <div class="overlay-content text-center text-white">
+                        <i class="fas fa-user-graduate fa-3x mb-3"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-primary text-white">Scholarships</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="custom-card">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/600x400?text=Cultural+Award');"></div>
+                <div class="card-overlay bg-warning">
+                    <div class="overlay-content text-center text-dark">
+                        <i class="fas fa-award fa-3x mb-3"></i>
+                    </div>
+                </div>
+                <div class="card-footer bg-warning text-dark">Sawiris Cultural Award</div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="custom-card">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/600x400?text=NGOs+Capacity+Building');"></div>
+                <div class="card-overlay" style="background-color: #f7941d;">
+                    <div class="overlay-content text-center text-white">
+                        <i class="fas fa-users-cog fa-3x mb-3"></i>
+                    </div>
+                </div>
+                <div class="card-footer text-white" style="background-color: #f7941d;">NGOs Capacity Building</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

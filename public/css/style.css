@@ -51,7 +51,7 @@ body {
   font-weight: 400;
   line-height: 1.6em;
   color: #656565;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   /* background: #f3eed4 !important; */
 }
 
@@ -3877,4 +3877,25 @@ strong {
 .section-animate.visible {
     opacity: 1;
     transform: translateX(0);
+}
+#typewriter-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Fix for small screens */
+@media (max-width: 576px) {
+    #typewriter-text {
+        white-space: normal; /* Allow wrapping */
+        word-break: break-word;
+    }
+
+    .display-2 {
+        font-size: 2.2rem !important; /* Smaller headline */
+    }
+
+    .fa-2x {
+        font-size: 1.2rem !important;
+    }
 }

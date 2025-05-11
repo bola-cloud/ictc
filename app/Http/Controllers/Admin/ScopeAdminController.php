@@ -27,9 +27,12 @@ class ScopeAdminController extends Controller
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
             'icon' => 'required|string|max:255',
-            'color' => 'required|in:primary,success,warning,danger,info,secondary,dark',
+            'color' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
-
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('scopes', 'public');
+        }
         Scope::create($request->all());
 
         return redirect()->route('admin.scopes.index')->with('success', __('lang.scope_added'));
@@ -48,13 +51,24 @@ class ScopeAdminController extends Controller
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
             'icon' => 'required|string|max:255',
-            'color' => 'required|in:primary,success,warning,danger,info,secondary,dark',
+            'color' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ]);
 
-        $scope->update($request->all());
+        $data = $request->only([
+            'ar_title', 'en_title', 'ar_description', 'en_description', 'icon', 'color'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('scopes', 'public');
+            $data['image'] = $path;
+        }
+
+        $scope->update($data);
 
         return redirect()->route('admin.scopes.index')->with('success', __('lang.scope_updated'));
     }
+
 
     public function destroy(Scope $scope)
     {

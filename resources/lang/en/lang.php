@@ -573,6 +573,9 @@ return [
     'c1_meaning' => 'Community Based',
     't_meaning' => 'Technological Solutions',
     'c2_meaning' => 'Capabilities',
+    'welcome_message' => 'Welcome to ICTC',
+    'custom_orange' => 'Custom Orange',
+    'select_color' => 'Select Color',
 ];
 
 

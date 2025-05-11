@@ -21,6 +21,11 @@
         <!-- Typewriter Content Overlay -->
         <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; display: flex; align-items: center; justify-content: center;">
             <div class="container text-center">
+                <h3>
+                    <span class="text-primary" style="font-size: 3rem; font-weight: bold;">
+                        {{ __('lang.welcome_message') }}
+                    </span>
+                </h3>
                 <h1 class="text-primary display-2 fw-bold mb-4" style="font-size: 4rem;">
                     <i id="typewriter-icon" class="fa-solid fa-2x me-2" role="img" aria-label="ICTC icon"></i>
                     <span id="typewriter-text"></span>
@@ -29,34 +34,7 @@
         </div>
     </section>
 
-    <!-- Custom CSS for Typewriter Effect -->
-    <style>
-        #typewriter-text {
-            display: inline-block;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        /* Fix for small screens */
-        @media (max-width: 576px) {
-            #typewriter-text {
-                white-space: normal; /* Allow wrapping */
-                word-break: break-word;
-            }
-
-            .display-2 {
-                font-size: 2.2rem !important; /* Smaller headline */
-            }
-
-            .fa-2x {
-                font-size: 1.2rem !important;
-            }
-        }
-
-    </style>
-
-
-    <section id="gallery" class="section-background" style="padding: 50px 0;" data-aos="fade-left" data-aos-delay="200">
+    <section id="gallery" class="section-background" style="padding: 50px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="section-title text-center" style="margin-bottom: 30px;">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -105,11 +83,11 @@
         </div>
     </section>
 
-    <section id="scope-of-work" class="section-background" style="padding: 60px 0;" data-aos="fade-left" data-aos-delay="200">
+    <section id="scope-of-work" class="section-background" style="padding: 60px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                    <strong> {{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</strong>
+                    <strong>{{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</strong>
                 </h2>
                 <p style="font-size: 1.1rem; color: #666;">
                     {{ __('lang.scope_subtitle') }}
@@ -119,17 +97,17 @@
             <div class="row g-4">
                 @foreach ($scopes as $scope)
                     <div class="col-md-4">
-                        <div class="service-card text-center p-4 h-100" style="background: #fff; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s;">
-                            <i class="ico icon-circled icon-bg{{ $scope->color }} {{ $scope->icon }} icon-4x mb-3"></i>
-                            <h4 class="fw-bold mb-3" style="color: #333;">
+                        <div class="custom-card">
+                            <div class="card-image" style="background-image: url('{{ asset('storage/' . $scope->image) }}');">
+                            </div>
+                            <div class="card-overlay" style="background-color: {{ $scope->color }};">
+                                <div class="overlay-content text-center text-white">
+                                    <i class="{{ $scope->icon }} fa-3x mb-3"></i>
+                                </div>
+                            </div>
+                            <div class="card-footer text-white" style="background-color: {{ $scope->color }};padding: 18px;">
                                 {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}
-                            </h4>
-                            <p style="color: #555;">
-                                {{ app()->getLocale() === 'ar' ? $scope->ar_description : $scope->en_description }}
-                            </p>
-                            <a href="{{ route('scope.projects', $scope->id) }}" class="btn btn-{{ $scope->color }} mt-3">
-                                {{ __('lang.show_projects') }}
-                            </a>
+                            </div>
                         </div>
                     </div>
                 @endforeach
@@ -137,8 +115,68 @@
         </div>
     </section>
 
+    <style>
+        .custom-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .custom-card:hover {
+            transform: scale(1.02);
+        }
+
+        .card-image {
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 200px;
+            transition: opacity 0.4s ease;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .custom-card:hover .card-image {
+            opacity: 0.1;
+        }
+
+        .custom-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .overlay-content h5 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .card-footer {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 0.75rem;
+            border-radius: 0 0 1rem 1rem;
+        }
+    </style>
+
     <!-- About Us Section -->
-    <section id="about-section" class="section-background" class="content" data-aos="fade-left" data-aos-delay="200">
+    <section id="about-section" class="section-background" class="content" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="row">
                 <!-- Image Section -->
@@ -190,7 +228,7 @@
         ];
     @endphp
     <!-- Why ICTC Section -->
-    <section id="why-ictc" class="section-background" style="padding: 50px 0;" data-aos="fade-left" data-aos-delay="200">
+    <section id="why-ictc" class="section-background" style="padding: 50px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -218,7 +256,7 @@
         </div>
     </section>
 
-    <section class="news-section section-background" data-aos="fade-left" data-aos-delay="200">
+    <section class="news-section section-background" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="row">
             <div class="col-12 text-center mb-2">
@@ -559,6 +597,12 @@
 
             const textElement = document.getElementById('typewriter-text');
             const iconElement = document.getElementById('typewriter-icon');
+
+            if (!textElement || !iconElement) {
+                console.warn("❌ Typewriter elements not found. Make sure #typewriter-text and #typewriter-icon exist in the DOM.");
+                return;
+            }
+
             let currentIndex = 0;
 
             function typeWriter(text, element, speed, callback) {
@@ -569,7 +613,7 @@
                         element.textContent += text.charAt(i);
                         i++;
                         setTimeout(type, speed);
-                    } else {
+                    } else if (typeof callback === 'function') {
                         callback();
                     }
                 }
@@ -580,22 +624,21 @@
                 const current = items[currentIndex];
                 const fullText = `${current.letter}: ${current.meaning}`;
 
-                // Update icon
+                // Update icon safely
                 iconElement.className = `fa-solid ${current.icon} fa-2x me-2 text-primary`;
                 iconElement.setAttribute('aria-label', `${current.letter} icon`);
 
                 // Type full text (letter + meaning)
                 typeWriter(fullText, textElement, 50, () => {
-                    // Pause before moving to next item
                     setTimeout(() => {
                         currentIndex = (currentIndex + 1) % items.length;
                         animateItem();
-                    }, 2000); // Pause for 2 seconds
+                    }, 2000);
                 });
             }
 
-            // Start the animation
-            animateItem();
+            // Optional: delay to ensure everything is ready
+            setTimeout(animateItem, 300);
         });
     </script>
 @endpush

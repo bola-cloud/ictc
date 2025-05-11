@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Scope extends Model
 {
     use HasFactory;
-    protected $fillable = ['ar_title', 'en_title', 'ar_description', 'en_description', 'icon', 'color'];
+    protected $fillable = ['ar_title', 'en_title', 'ar_description', 'en_description', 'icon', 'color', 'image'];
 
     // Relationship with Project
     public function projects()

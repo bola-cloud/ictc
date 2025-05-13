@@ -3,9 +3,9 @@
 @section('content')
 <div class="container">
     <div class="card p-4">
-        <h1 class="mb-3">{{ __('lang.add_project') }} - {{ $scope->en_title }}</h1>
+        <h1 class="mb-3">{{ __('lang.add_program') }} to {{ $scope->en_title }}</h1>
 
-        <form action="{{ route('admin.projects.store', $scope->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.programs.store', $scope->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="form-group">
@@ -52,8 +52,8 @@
         </form>
     </div>
 </div>
-@endsection
 
+@endsection
 
 @push('js')
 <!-- jQuery 3.5.1 (compatible with Bootstrap 4) -->

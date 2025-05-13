@@ -1,0 +1,8 @@
+.social-media-sidebar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    left: auto;
+    transform: translateY(-50%);
+    z-index: 9999;
+}

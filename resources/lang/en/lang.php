@@ -576,6 +576,51 @@ return [
     'welcome_message' => 'Welcome to ICTC',
     'custom_orange' => 'Custom Orange',
     'select_color' => 'Select Color',
+
+
+
+        // General
+    'edit' => 'Edit',
+    'delete' => 'Delete',
+    'save' => 'Save',
+    'update' => 'Update',
+    'view' => 'View',
+    'actions' => 'Actions',
+    'confirm_delete' => 'Are you sure you want to delete this item?',
+
+    // Program related
+    'programs_list_for_scope' => 'Programs List for Scope',
+    'add_program' => 'Add Program',
+    'en_title' => 'English Title',
+    'ar_title' => 'Arabic Title',
+    'icon' => 'Icon',
+    'color' => 'Color',
+    'program_description' => 'Program Description',
+    'targeted_beneficiaries' => 'Targeted Beneficiaries',
+    'total_budget' => 'Total Budget',
+    'project_duration' => 'Project Duration',
+    'related_scope' => 'Related Scope',
+    'add_program' => 'Add Program to',
+    'image' => 'Program Image',
+
+    // Validation
+    'required' => ':attribute is required.',
+    'min' => ':attribute must be at least :min characters.',
+    'max' => ':attribute cannot be more than :max characters.',
+    'image' => ':attribute must be a valid image.',
+    'mimes' => ':attribute must be a file of type: :values.',
+    'size' => ':attribute must be less than :size kilobytes.',
+    // English translations
+    'our_history' => 'OUR HISTORY',
+    'our_history_description' => 'Established in 2021 (CR No. 162810), ICTC was founded by a group of development experts aiming to deliver innovative solutions to key development challenges in Egypt and the MENA region.',
+    'our_history_description_two' => 'ICTC provides consulting, training, and project implementation services. Our founders and board members bring extensive experience in education, grants management, research, financial and economic development, monitoring and evaluation, governance, organizational development, and risk management.',
+
+    'our_vision' => 'OUR VISION',
+    'our_vision_description' => 'To advance sustainable development by integrating training, research, institutional building, and technology as tools to design, implement, and evaluate impactful solutions across key development sectors.',
+
+    'our_mission' => 'OUR MISSION',
+    'our_mission_description' => 'We partner with organizations and communities to strengthen capacities, generate evidence, and deliver tailored development interventions—utilizing technology and institutional support to drive lasting, meaningful change.',
+    'statics' => 'Statistics',
 ];
 
 

@@ -22,11 +22,11 @@
         <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; display: flex; align-items: center; justify-content: center;">
             <div class="container text-center">
                 <h3>
-                    <span class="text-primary" style="font-size: 3rem; font-weight: bold;">
+                    <span class="typewriter-header" style="font-size: 3rem; font-weight: bold;">
                         {{ __('lang.welcome_message') }}
                     </span>
                 </h3>
-                <h1 class="text-primary display-2 fw-bold mb-4" style="font-size: 4rem;">
+                <h1 class="typewriter-header display-2 fw-bold mb-4" style="font-size: 4rem;">
                     <i id="typewriter-icon" class="fa-solid fa-2x me-2" role="img" aria-label="ICTC icon"></i>
                     <span id="typewriter-text"></span>
                 </h1>
@@ -34,7 +34,7 @@
         </div>
     </section>
 
-    <section id="gallery" class="section-background" style="padding: 50px 0;" data-aos="fade-up" data-aos-delay="200">
+    {{-- <section id="gallery" class="section-background" style="padding: 50px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="section-title text-center" style="margin-bottom: 30px;">
                 <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -81,14 +81,89 @@
                 </div>
             </div>
         </div>
+    </section> --}}
+
+    <section id="new-about mt-5 mb-5">
+        <div class="history-section">
+            <div class="container">
+                <div class="section-header d-flex justify-content-center align-items-center mb-4">
+                    <h2 class="section-title"><span>{{ __('lang.our_history') }}</span></h2>
+                </div>
+
+                <p class="section-description">
+                    {{ __('lang.our_history_description') }}
+                </p>
+
+                <p class="section-description">
+                    {{ __('lang.our_history_description_two') }}
+                </p>
+
+                <div class="vision-mission">
+                    <div class="vision">
+                        <h3 class="vision-title">{{ __('lang.our_vision') }}</h3>
+                        <p class="vision-text">
+                            {{ __('lang.our_vision_description') }}
+                        </p>
+                    </div>
+
+                    <div class="mission">
+                        <h3 class="mission-title">{{ __('lang.our_mission') }}</h3>
+                        <p class="mission-text">
+                            {{ __('lang.our_mission_description') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="statics">
+        <div class="container mt-5 mb-5">
+            <div class="section-header d-flex justify-content-center align-items-center mb-4">
+                <h2 class="section-title"><span>{{ __('lang.statics') }}</span></h2>
+            </div>
+            <div class="row g-4">
+                <!-- Projects Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.projects_value') }}</h3>
+                        <p style="font-size: 1.2rem;">{{ __('lang.projects_title') }}</p>
+                    </div>
+                </div>
+                <!-- Partners Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.partners_value') }}</h3>
+                        <p style="font-size: 1.2rem;">{{ __('lang.partners_titles') }}</p>
+                    </div>
+                </div>
+                <!-- Beneficiaries Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.beneficiaries_value') }}</h3>
+                        <p style="font-size: 1.2rem;">{{ __('lang.beneficiaries_title') }}</p>
+                    </div>
+                </div>
+                <!-- Governorates Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.governorates_value') }}</h3>
+                        <p style="font-size: 1.2rem;">{{ __('lang.governorates_title') }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="scope-of-work" class="section-background" style="padding: 60px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+                <div class="section-header d-flex justify-content-center align-items-center mb-4">
+                    <h2 class="section-title"><span>{{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</span></h2>
+                </div>
+                {{-- <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
                     <strong>{{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</strong>
-                </h2>
+                </h2> --}}
                 <p style="font-size: 1.1rem; color: #666;">
                     {{ __('lang.scope_subtitle') }}
                 </p>
@@ -100,12 +175,12 @@
                         <div class="custom-card">
                             <div class="card-image" style="background-image: url('{{ asset('storage/' . $scope->image) }}');">
                             </div>
-                            <div class="card-overlay" style="background-color: {{ $scope->color }};">
+                            <div class="card-overlay" style="background-color: #40537d;">
                                 <div class="overlay-content text-center text-white">
                                     <i class="{{ $scope->icon }} fa-3x mb-3"></i>
                                 </div>
                             </div>
-                            <div class="card-footer text-white" style="background-color: {{ $scope->color }};padding: 18px;">
+                            <div class="card-footer text-white" style="background-color: #40537d;padding: 18px;">
                                 {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}
                             </div>
                         </div>
@@ -136,7 +211,7 @@
             background-size: cover;
             background-position: center;
             width: 100%;
-            height: 200px;
+            height: 32vh;
             transition: opacity 0.4s ease;
         }
 
@@ -145,7 +220,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 200px;
+            height: 32vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -231,9 +306,12 @@
     <section id="why-ictc" class="section-background" style="padding: 50px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+                <div class="section-header d-flex justify-content-center align-items-center mb-4">
+                    <h2 class="section-title"><span>{{ __('lang.why_ictc_title') }} {{ __('lang.why_ictc_title_strong') }}</span></h2>
+                </div>
+                {{-- <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
                     <strong> {{ __('lang.why_ictc_title') }} {{ __('lang.why_ictc_title_strong') }}</strong>
-                </h2>
+                </h2> --}}
                 <p style="font-size: 1.1rem; color: #666;">
                     {{ __('lang.why_ictc_subtitle') }}
                 </p>
@@ -241,12 +319,12 @@
             <div class="row text-center">
                 @for ($i = 1; $i <= 8; $i++)
                     <div class="col-md-3 mb-4">
-                        <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #fff; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-                            <i class="fa {{ $icons[$i-1] }} fa-3x text-primary mb-3"></i>
-                            <h4 class="mb-2" style="font-weight: bold;">
+                        <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #40537d; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                            <i class="fa {{ $icons[$i-1] }} fa-3x feature-icon mb-3"></i>
+                            <h4 class="mb-2" style="font-weight: bolder;color: #f8ecd4 !important;">
                                 {{ __('lang.feature_' . $i . '_title') }}
                             </h4>
-                            <p style="font-size: 0.9rem; color: #555;">
+                            <p style="font-size: 0.9rem; color: #f8ecd4 !important;">
                                 {{ __('lang.feature_' . $i . '_description') }}
                             </p>
                         </div>
@@ -256,7 +334,7 @@
         </div>
     </section>
 
-    <section class="news-section section-background" data-aos="fade-up" data-aos-delay="200">
+    {{-- <section class="news-section section-background" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="row">
             <div class="col-12 text-center mb-2">
@@ -306,7 +384,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
 
     {{-- <section id="content">
@@ -540,14 +618,17 @@
         </div>
     </section> --}}
 
-    <section id="partners" class="partners-section">
+    <section id="partners" class="partners-section section-background">
         <div class="container">
             <div class="title-container">
-                <h3 class="title">
+                <div class="section-header d-flex justify-content-center align-items-center mb-4 w-50">
+                    <h2 class="section-title w-100"><span>{{ __('lang.partners_title') }} {{ __('lang.partners_title_strong') }}</span></h2>
+                </div>
+                {{-- <h3 class="title">
                     <strong>{{ __('lang.partners_title') }} {{ __('lang.partners_title_strong') }}</strong>
-                </h3>
+                </h3> --}}
             </div>
-            <div class="swiper partners-slider-unique">
+            <div class="swiper partners-slider-unique mt-5">
                 <div class="swiper-wrapper">
                     @foreach($partners as $partner)
                         <div class="swiper-slide">
@@ -589,14 +670,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const items = [
-                { letter: 'I', meaning: '{{ __("lang.i_meaning") }}', icon: 'fa-lightbulb' },
-                { letter: 'C', meaning: '{{ __("lang.c1_meaning") }}', icon: 'fa-users' },
-                { letter: 'T', meaning: '{{ __("lang.t_meaning") }}', icon: 'fa-cogs' },
-                { letter: 'C', meaning: '{{ __("lang.c2_meaning") }}', icon: 'fa-rocket' }
+                { letter: 'I', meaning: '{{ __("lang.i_meaning") }}'},
+                { letter: 'C', meaning: '{{ __("lang.c1_meaning") }}' },
+                { letter: 'T', meaning: '{{ __("lang.t_meaning") }}'},
+                { letter: 'C', meaning: '{{ __("lang.c2_meaning") }}' }
             ];
 
             const textElement = document.getElementById('typewriter-text');
             const iconElement = document.getElementById('typewriter-icon');
+            const currentLocale = '{{ app()->getLocale() }}'; // Get the current locale from Laravel
 
             if (!textElement || !iconElement) {
                 console.warn("❌ Typewriter elements not found. Make sure #typewriter-text and #typewriter-icon exist in the DOM.");
@@ -607,10 +689,25 @@
 
             function typeWriter(text, element, speed, callback) {
                 let i = 0;
-                element.textContent = '';
+                element.innerHTML = '';
+                const isEnglish = currentLocale === 'en'; // Check if the locale is English
+                const firstLetter = text.charAt(0);
+                const restOfText = text.slice(1);
+
+                // Prepare the initial text with underline if English
+                let displayText = text;
+                if (isEnglish) {
+                    displayText = `<u>${firstLetter}</u>${restOfText}`;
+                }
+
                 function type() {
                     if (i < text.length) {
-                        element.textContent += text.charAt(i);
+                        // Display the text up to the current character
+                        if (isEnglish) {
+                            element.innerHTML = `<u>${firstLetter}</u>${restOfText.slice(0, i)}`;
+                        } else {
+                            element.innerHTML = text.slice(0, i + 1);
+                        }
                         i++;
                         setTimeout(type, speed);
                     } else if (typeof callback === 'function') {
@@ -622,14 +719,14 @@
 
             function animateItem() {
                 const current = items[currentIndex];
-                const fullText = `${current.letter}: ${current.meaning}`;
+                const meaningText = current.meaning;
 
                 // Update icon safely
                 iconElement.className = `fa-solid ${current.icon} fa-2x me-2 text-primary`;
                 iconElement.setAttribute('aria-label', `${current.letter} icon`);
 
-                // Type full text (letter + meaning)
-                typeWriter(fullText, textElement, 50, () => {
+                // Type the meaning with underlining only for English
+                typeWriter(meaningText, textElement, 50, () => {
                     setTimeout(() => {
                         currentIndex = (currentIndex + 1) % items.length;
                         animateItem();

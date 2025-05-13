@@ -34,9 +34,10 @@
 
     <!-- Add Google Fonts -->
     @if(app()->getLocale() === 'ar')
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+        <link href="{{asset('css/ar.css')}}" rel="stylesheet" />
     @else
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     @endif
 
     <style>
@@ -129,7 +130,7 @@
                         <div class="dropdown">
                             <button
                                 class="btn btn-light dropdown-toggle p-2"
-                                type="button"
+                                type="button" style="background: #f8ecd4!important; color: #000 !important;"
                                 id="languageDropdown"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
@@ -242,9 +243,26 @@
         </div>
         <div class="share-container">
             <!-- Share Icon -->
-            <button class="share__button">
+            {{-- <button class="share__button">
                 <i class="fa-solid fa-share-nodes"></i>
-            </button>
+            </button> --}}
+
+            <!-- Share Icons -->
+            <div class="social-media-sidebar">
+                <a href="{{ !empty($settings->youtube) ? $settings->youtube : '#' }}" target="_blank" class="social-icon instagram">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="{{ !empty($settings->facebook) ? $settings->facebook : '#' }}" target="_blank" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="{{ !empty($settings->whatsapp) ? 'https://wa.me/' . $settings->whatsapp : '#' }}" target="_blank" class="social-icon twitter">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="{{ !empty($settings->linkedin) ? $settings->linkedin : '#' }}" target="_blank" class="social-icon linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+
 
             <!-- Social Icons -->
             <ul class="share__icons">
@@ -389,7 +407,7 @@
         </footer>
 
     </div>
-    <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x active"></i></a>
+    <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x" style="background: #40537d;color: #f8ecd4;"></i></a>
 
     <!-- javascript
       ================================================== -->
@@ -461,7 +479,7 @@
             allowTouchMove: false, // Disable manual sliding
             breakpoints: {
                 768: {
-                slidesPerView: 5, // Adjust for tablet
+                slidesPerView: 4, // Adjust for tablet
                 },
                 480: {
                 slidesPerView: 2, // Adjust for mobile

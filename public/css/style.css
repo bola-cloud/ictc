@@ -53,6 +53,7 @@ body {
   color: #656565;
   overflow-x: hidden !important;
   /* background: #f3eed4 !important; */
+    background-color: #f8ecd4 !important;
 }
 
 a {
@@ -186,16 +187,17 @@ header {
   width: 100%;
   position: fixed;
   z-index: 2000;
-  background: transparent; /* Initially transparent */
+  background: #404b62; /* Initially transparent */
   box-shadow: none;
   transition: background-color 0.5s ease, box-shadow 0.5s ease, padding 0.3s ease;
 }
 
 /* Navbar Style on Scroll */
 header.scrolled {
-  background: #0000008c; /* Light dark background */
-  box-shadow: 0 2px 4px -2px #aaa;
-  padding: 1.5vh 3vh; /* Slightly reduce padding */
+    background: #404b62;
+    /* background: #0000008c; */
+    box-shadow: 0 2px 4px -2px #aaa;
+    padding: 1.5vh 3vh; /* Slightly reduce padding */
 }
 
 header .top {
@@ -306,9 +308,10 @@ header ul.nav li a {
 }
 
 .navbar .nav>li>a {
-  font-size: 13px;
-  color: white;
-  text-shadow: none;
+    font-size: 15px;
+    color: #f8ecd4;
+    text-shadow: none;
+    font-weight: 700;
 }
 
 header ul.nav li a i {
@@ -619,7 +622,9 @@ select.selectmenu {
   overflow: hidden;
   margin: 20px 0 0 0;
 }
-
+.feature-icon{
+    color:  #f8ecd4 !important;;
+}
 .features .feat {
   width: 50%;
   float: left;
@@ -2975,11 +2980,11 @@ h3.title:hover::after {
 }
 
 .partners-slider-unique .swiper-slide img {
-  max-height: 80px;
   margin: 0 auto;
   display: block;
   /* filter: grayscale(100%); */
   transition: filter 0.3s ease-in-out;
+  height: 16vh;
 }
 
 .partners-slider-unique .swiper-slide img:hover {
@@ -3179,8 +3184,13 @@ header .logo img {
 .carousel-indicators{
   align-items: flex-end !important;
 }
-.overlay{
+/* .overlay{
   background-color: rgba(4, 23, 46, 0.55);
+} */
+
+.typewriter-header{
+    font-size: xxx-large !important;
+    color: #404b62 !important;
 }
 .head-video{
   position: relative; height: 100vh; overflow: hidden;
@@ -3864,7 +3874,7 @@ strong {
     transition: 0.3s ease;
 }
 .section-background{
-    background: whitesmoke !important ;
+    background-color: #f8ecd4 !important;
     /* background: #f9f9f9 !important; */
 }
 
@@ -3898,4 +3908,126 @@ strong {
     .fa-2x {
         font-size: 1.2rem !important;
     }
+}
+
+/* Social media icons sidebar */
+.social-media-sidebar {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.social-icon {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    transition: background-color 0.3s;
+    color: black;
+}
+
+.social-icon:hover {
+    color: #40537d;
+}
+
+/* Styling the History Section */
+.history-section {
+    background-color: #F8ECD4 !important;
+    padding: 50px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-family: 'Arial', sans-serif;
+    color: #003366; /* Dark Blue */
+    font-weight: bold;
+    position: relative;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.section-title span::before,
+.section-title span::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 2px;
+    background-color: #003366; /* Dark Blue */
+    transform: translateY(-50%);
+}
+
+.section-title span::before {
+    right: 100%;  /* Adjust for right side */
+    margin-right: 10px;
+}
+
+.section-title span::after {
+    left: 100%;  /* Adjust for left side */
+    margin-left: 10px;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.vision, .mission {
+    width: 48%;
+}
+
+.vision-title, .mission-title {
+    font-size: 28px;
+    color: #003366; /* Dark Blue */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.vision-text, .mission-text {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .vision-mission {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vision, .mission {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+#new-about{
+    background-color: #F8ECD4 !important;
 }

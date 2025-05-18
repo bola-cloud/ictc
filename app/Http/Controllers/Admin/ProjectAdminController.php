@@ -25,9 +25,9 @@ class ProjectAdminController extends Controller
         $request->validate([
             'ar_name' => 'required|string|max:255',
             'en_name' => 'required|string|max:255',
-            'ar_description' => 'nullable|string',
-            'en_description' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'ar_description' => 'required|string',
+            'en_description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         // Handle file upload

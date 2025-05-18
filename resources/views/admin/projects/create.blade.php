@@ -9,17 +9,17 @@
             @csrf
 
             <div class="form-group">
-                <label>{{ __('lang.en_title') }}</label>
-                <input type="text" name="en_title" class="form-control @error('en_title') is-invalid @enderror" value="{{ old('en_title') }}" required>
-                @error('en_title')
+                <label>{{ __('lang.en_name') }}</label>
+                <input type="text" name="en_name" class="form-control @error('en_name') is-invalid @enderror" value="{{ old('en_name') }}" required>
+                @error('en_name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
 
             <div class="form-group">
-                <label>{{ __('lang.ar_title') }}</label>
-                <input type="text" name="ar_title" class="form-control @error('ar_title') is-invalid @enderror" value="{{ old('ar_title') }}" required>
-                @error('ar_title')
+                <label>{{ __('lang.ar_name') }}</label>
+                <input type="text" name="ar_name" class="form-control @error('ar_name') is-invalid @enderror" value="{{ old('ar_name') }}" required>
+                @error('ar_name')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

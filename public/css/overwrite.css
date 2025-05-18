@@ -837,8 +837,8 @@ a.btn.btn-theme,.btn.btn-theme,a.btn.btn-theme i,a.btn.btn-primary i ,a.btn.btn-
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: #fff;
-  background: #0d6efd !important; /* Active background color */
+  color: black !important; /* Change text color for active state */
+  background: #f8ecd4 !important; /* Active background color */
   border-color: #0d6efd !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-decoration: none;

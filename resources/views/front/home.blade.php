@@ -98,7 +98,7 @@
                     {{ __('lang.our_history_description_two') }}
                 </p>
 
-                <div class="vision-mission">
+                <div class="vision-mission section-margin">
                     <div class="vision">
                         <h3 class="vision-title">{{ __('lang.our_vision') }}</h3>
                         <p class="vision-text">
@@ -117,7 +117,7 @@
         </div>
     </section>
 
-    <section id="statics">
+    <section id="statics" class="section-margin">
         <div class="container mt-5 mb-5">
             <div class="section-header d-flex justify-content-center align-items-center mb-4">
                 <h2 class="section-title"><span>{{ __('lang.statics') }}</span></h2>
@@ -155,11 +155,11 @@
         </div>
     </section>
 
-    <section id="scope-of-work" class="section-background" style="padding: 60px 0;" data-aos="fade-up" data-aos-delay="200">
+    <section id="scope-of-work" class="section-background section-margin" style="padding: 60px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
                 <div class="section-header d-flex justify-content-center align-items-center mb-4">
-                    <h2 class="section-title"><span>{{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</span></h2>
+                    <h2 class="section-title"><span>{{ __('lang.scope_work_title') }}</span></h2>
                 </div>
                 {{-- <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
                     <strong>{{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</strong>
@@ -191,67 +191,11 @@
     </section>
 
     <style>
-        .custom-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 1rem;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
 
-        .custom-card:hover {
-            transform: scale(1.02);
-        }
-
-        .card-image {
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 32vh;
-            transition: opacity 0.4s ease;
-        }
-
-        .card-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 32vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .custom-card:hover .card-image {
-            opacity: 0.1;
-        }
-
-        .custom-card:hover .card-overlay {
-            opacity: 1;
-        }
-
-        .overlay-content h5 {
-            margin: 0;
-            font-size: 1.25rem;
-        }
-
-        .card-footer {
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.1rem;
-            padding: 0.75rem;
-            border-radius: 0 0 1rem 1rem;
-        }
     </style>
 
     <!-- About Us Section -->
-    <section id="about-section" class="section-background" class="content" data-aos="fade-up" data-aos-delay="200">
+    {{-- <section id="about-section" class="section-background" class="content" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="row">
                 <!-- Image Section -->
@@ -288,7 +232,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     @php
         $icons = [
@@ -303,7 +247,7 @@
         ];
     @endphp
     <!-- Why ICTC Section -->
-    <section id="why-ictc" class="section-background" style="padding: 50px 0;" data-aos="fade-up" data-aos-delay="200">
+    <section id="why-ictc" class="section-background section-margin" style="padding: 50px 0;" data-aos="fade-up" data-aos-delay="200">
         <div class="container">
             <div class="text-center mb-5">
                 <div class="section-header d-flex justify-content-center align-items-center mb-4">

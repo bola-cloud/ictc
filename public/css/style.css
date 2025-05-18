@@ -3716,8 +3716,9 @@ i.fa.fa-bars{
 
 /* Hover State */
 .dropdown-item:hover {
-  background-color: #007bff !important ; /* Hover background color (blue) */
-  color: white !important; /* Contrasting text color */
+  background-color: #40537d !important ; /* Hover background color (blue) */
+  color: #f8ecd4 !important; /* Contrasting text color */
+  
 }
 
 
@@ -4031,3 +4032,64 @@ strong {
 #new-about{
     background-color: #F8ECD4 !important;
 }
+
+
+/* New card design */
+.custom-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.custom-card:hover {
+    transform: scale(1.02);
+}
+
+.card-image {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 32vh;
+    transition: opacity 0.4s ease;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.custom-card:hover .card-image {
+    opacity: 0.1;
+}
+
+.custom-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.overlay-content h5 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.card-footer {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    border-radius: 0 0 1rem 1rem;
+}
+

@@ -34,6 +34,10 @@ Route::group([
     Route::post('/contact', [\App\Http\Controllers\MessageController::class, 'store'])->name('messages.store');
     Route::get('scopes/{id}/projects', [App\Http\Controllers\HomeController::class, 'showScopeProjects'])->name('scope.projects');
     Route::get('all/projects', [App\Http\Controllers\HomeController::class, 'allProjects'])->name('all-projects');
+    Route::get('/scope/{slug}', [App\Http\Controllers\ServiceController::class, 'showProjects'])->name('frontend.scope.show');
+
+    Route::get('/project-details/{scopeSlug}/{projectSlug}', [App\Http\Controllers\ProjectController::class, 'show'])
+    ->name('frontend.project.show');
 
     Route::get('/contact', function () {
         return view('front.contact');
@@ -76,4 +80,6 @@ Route::group([
     Route::resource('/partner_categories', App\Http\Controllers\Admin\PartnerCategoryController::class)->names('admin.partner_categories');
     Route::get('/settings', [App\Http\Controllers\Admin\SettingController::class, 'index'])->name('admin.settings.index');
     Route::post('/settings/update', [App\Http\Controllers\Admin\SettingController::class, 'update'])->name('admin.settings.update');
+    Route::resource('/team_sections', \App\Http\Controllers\Admin\TeamSectionController::class)->names('admin.team_sections');
+    Route::resource('/team-members', \App\Http\Controllers\Admin\TeamMemberController::class)->names('admin.team_members');
 });

@@ -310,8 +310,6 @@ return [
     'why_آي سي تي سي_title' => '',
     'why_آي سي تي سي_title_strong' => 'لماذا آي سي تي سي؟',
 
-    'scope_work_title' => '',
-    'scope_work_title_strong' => 'مجال العمل',
 
     'latest_news_title' => '',
     'latest_news_title_strong' => 'أحدث الأخبار',
@@ -421,8 +419,7 @@ return [
     'color' => 'اللون',
 
     // عناوين نطاق العمل
-    'scope_work_title' => 'نطاق العمل',
-    'scope_work_title_strong' => 'المجالات',
+    'scope_work_title' => 'نطاق اعمالنا',
     'scope_subtitle' => 'نحن نركز على عدة مجالات لتقديم خدمات عالية الجودة.',
 
     // فئات النطاق
@@ -509,8 +506,6 @@ return [
     'project_added' => 'تمت إضافة المشروع بنجاح!',
     'show_projects' => 'عرض المشاريع',
 
-    'scope_work_title' => 'نطاق العمل',
-    'scope_work_title_strong' => 'المشاريع',
     'scope_subtitle' => 'اكتشف مختلف مجالات العمل والمشاريع التابعة لها.',
     'view_projects' => 'عرض المشاريع',
     'projects_for_scope' => 'المشاريع تحت',
@@ -626,4 +621,65 @@ return [
     'our_mission' => 'مهمتنا',
     'our_mission_description' => 'نحن نتعاون مع المنظمات والمجتمعات لتعزيز القدرات، وتوليد الأدلة، وتقديم تدخلات تنموية مخصصة—باستخدام التكنولوجيا والدعم المؤسسي لتحقيق التغيير الدائم والمستدام.',
     'statics'=>'الإحصائيات',
+
+    'nav_history' => 'التاريخ',
+    'nav_vision_mission' => 'الرؤية والرسالة',
+    'nav_philosophy' => 'الفلسفة',
+    'nav_strategy' => 'الاستراتيجية',
+    'nav_our_team' => 'فريق العمل',
+
+    'our_philosophy' => 'فلسفتنا',
+    'our_philosophy_description' => 'نؤمن بتمكين الأفراد والمؤسسات من خلال استراتيجيات تنموية شاملة قائمة على البيانات ومراعية للسياق المحلي.',
+
+    'our_strategy' => 'استراتيجيتنا',
+    'our_strategy_description' => 'تجمع استراتيجيتنا بين التفاعل المجتمعي، والابتكار القابل للتوسع، والشراكات طويلة الأمد لتحقيق تأثير مستدام.',
+
+    'team_sections_title' => 'أقسام الفريق',
+    'add_team_section' => 'إضافة قسم',
+    'edit_team_section' => 'تعديل القسم',
+    'create_team_section' => 'إنشاء قسم',
+    'title' => 'العنوان',
+    'layout' => 'التخطيط',
+    'layout_grid' => 'شبكي',
+    'layout_pyramid' => 'هرمي',
+    'actions' => 'الإجراءات',
+    'edit' => 'تعديل',
+    'save' => 'حفظ',
+    'save_changes' => 'حفظ التغييرات',
+    'section_created' => 'تم إنشاء القسم بنجاح.',
+    'section_updated' => 'تم تحديث القسم بنجاح.',
+
+
+    'team_members_title' => 'أعضاء الفريق',
+    'add_team_member' => 'إضافة عضو جديد',
+    'create_team_member' => 'إنشاء عضو فريق',
+    'edit_team_member' => 'تعديل عضو الفريق',
+    'en_name' => 'الاسم (بالإنجليزية)',
+    'ar_name' => 'الاسم (بالعربية)',
+    'en_position' => 'المنصب (بالإنجليزية)',
+    'ar_position' => 'المنصب (بالعربية)',
+    'section' => 'القسم',
+    'order' => 'الترتيب',
+    'image' => 'الصورة',
+    'layout' => 'التخطيط',
+    'actions' => 'الإجراءات',
+    'save' => 'حفظ',
+    'edit' => 'تعديل',
+    'save_changes' => 'حفظ التغييرات',
+    'member_created' => 'تم إنشاء العضو بنجاح.',
+    'member_updated' => 'تم تحديث بيانات العضو بنجاح.',
+
+    'member_deleted' => 'تم حذف العضو بنجاح.',
+    'delete_team_member' => 'حذف عضو الفريق',
+    'confirm_delete_member' => 'هل أنت متأكد من حذف :name؟',
+    'cancel' => 'إلغاء',
+    'confirm_delete' => 'نعم، احذف',
+    'delete' => 'حذف',
+
+    'team_administration' => 'إدارة الفريق',
+    'team_sections_index' => 'أقسام الفريق',
+    'team_members_index' => 'أعضاء الفريق',
+    'our_work' => 'أعمالنا',
+    'no_projects_found' => 'لم يتم العثور على مشاريع.',
+    'projects' => 'المشاريع',
 ];

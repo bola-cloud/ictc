@@ -146,7 +146,7 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="">
                                 <i class="la la-tv"></i> <!-- Changed icon to represent TVs -->
                                 <span class="menu-title" data-i18n="nav.dash.main">{{ __('lang.gallery_administration') }}</span>
@@ -159,9 +159,9 @@
                                     <a class="menu-item" href="{{ route('admin.galleries.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="#">
                                 <i class="la la-newspaper-o"></i> <!-- News icon -->
                                 <span class="menu-title" data-i18n="nav.dash.main">{{ __('lang.news_administration') }}</span>
@@ -174,7 +174,7 @@
                                     <a class="menu-item" href="{{ route('admin.news.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a href="#">
@@ -250,6 +250,22 @@
                                 </li>
                                 <li class="{{ Route::currentRouteName() == 'admin.services.create' ? 'active' : '' }}">
                                     <a class="menu-item" href="{{ route('admin.services.create') }}" data-i18n="nav.services.create">{{ __('lang.create') }}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 🔽 New Team Management Section -->
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="la la-users"></i> <!-- Team Icon -->
+                                <span class="menu-title" data-i18n="nav.team.main">{{ __('lang.team_administration') }}</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class="{{ Route::currentRouteName() == 'admin.team_sections.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.team_sections.index') }}" data-i18n="nav.team_sections.index">{{ __('lang.team_sections_index') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.team_members.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.team_members.index') }}" data-i18n="nav.team_members.index">{{ __('lang.team_members_index') }}</a>
                                 </li>
                             </ul>
                         </li>

@@ -306,9 +306,6 @@ return [
     'why_ictc_title' => 'Why',
     'why_ictc_title_strong' => 'ICTC?',
 
-    'scope_work_title' => 'Scope of',
-    'scope_work_title_strong' => 'Work',
-
     'latest_news_title' => 'Latest',
     'latest_news_title_strong' => 'News',
     // Gallery Section
@@ -415,8 +412,7 @@ return [
     'color' => 'Color',
 
     // Scope Work Titles
-    'scope_work_title' => 'Scope of Work',
-    'scope_work_title_strong' => 'Areas',
+    'scope_work_title' => 'Our Scope of Work',
     'scope_subtitle' => 'We focus on multiple areas to provide quality services.',
 
     // Scope Categories
@@ -503,8 +499,6 @@ return [
     'project_added'=> 'Project added successfully!',
     'show_projects' => 'Show Projects',
 
-    'scope_work_title' => 'Scope of Work',
-    'scope_work_title_strong' => 'Projects',
     'scope_subtitle' => 'Explore the different scopes of work and their projects.',
     'view_projects' => 'View Projects',
     'projects_for_scope' => 'Projects under',
@@ -621,6 +615,66 @@ return [
     'our_mission' => 'OUR MISSION',
     'our_mission_description' => 'We partner with organizations and communities to strengthen capacities, generate evidence, and deliver tailored development interventions—utilizing technology and institutional support to drive lasting, meaningful change.',
     'statics' => 'Statistics',
+
+    'nav_history' => 'History',
+    'nav_vision_mission' => 'Vision & Mission',
+    'nav_philosophy' => 'Philosophy',
+    'nav_strategy' => 'Strategy',
+    'nav_our_team' => 'Our Team',
+
+    'our_philosophy' => 'Our Philosophy',
+    'our_philosophy_description' => 'We believe in empowering individuals and institutions through inclusive, data-driven, and context-specific development strategies.',
+
+    'our_strategy' => 'Our Strategy',
+    'our_strategy_description' => 'Our approach combines grassroots engagement, scalable innovation, and long-term partnerships to achieve sustainable impact.',
+
+    'team_sections_title' => 'Team Sections',
+    'add_team_section' => 'Add Team Section',
+    'edit_team_section' => 'Edit Team Section',
+    'create_team_section' => 'Create Team Section',
+    'title' => 'Title',
+    'layout' => 'Layout',
+    'layout_grid' => 'Grid',
+    'layout_pyramid' => 'Pyramid',
+    'actions' => 'Actions',
+    'edit' => 'Edit',
+    'save' => 'Save',
+    'save_changes' => 'Save Changes',
+    'section_created' => 'Section created successfully.',
+    'section_updated' => 'Section updated successfully.',
+
+    'team_members_title' => 'Team Members',
+    'add_team_member' => 'Add Team Member',
+    'create_team_member' => 'Create Team Member',
+    'edit_team_member' => 'Edit Team Member',
+    'en_name' => 'Name (English)',
+    'ar_name' => 'Name (Arabic)',
+    'en_position' => 'Position (English)',
+    'ar_position' => 'Position (Arabic)',
+    'section' => 'Section',
+    'order' => 'Order',
+    'image' => 'Image',
+    'layout' => 'Layout',
+    'actions' => 'Actions',
+    'save' => 'Save',
+    'edit' => 'Edit',
+    'save_changes' => 'Save Changes',
+    'member_created' => 'Member created successfully.',
+    'member_updated' => 'Member updated successfully.',
+    'member_deleted' => 'Member deleted successfully.',
+    'delete_team_member' => 'Delete Team Member',
+    'confirm_delete_member' => 'Are you sure you want to delete :name?',
+    'cancel' => 'Cancel',
+    'confirm_delete' => 'Yes, delete',
+    'delete' => 'Delete',
+
+    'team_administration' => 'Team Management',
+    'team_sections_index' => 'Team Sections',
+    'team_members_index' => 'Team Members',
+    'our_work' => 'Our Work',
+    'no_projects_found' => 'No projects found.',
+    'projects' => 'Projects',
+
 ];
 
 

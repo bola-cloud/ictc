@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Project extends Model
 {
@@ -26,5 +27,13 @@ class Project extends Model
     // Image Accessor (Optional)
     public function getImageUrlAttribute() {
         return $this->image ? asset('storage/' . $this->image) : asset('img/default-project.png');
+    }
+
+    public function getSlugUrlAttribute()
+    {
+        return route('frontend.project.show', [
+            'scopeSlug' => Str::slug($this->scope->en_title),
+            'projectSlug' => Str::slug($this->en_name),
+        ]);
     }
 }

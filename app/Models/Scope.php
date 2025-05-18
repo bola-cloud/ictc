@@ -27,7 +27,7 @@ class Scope extends Model
         return app()->getLocale() == 'ar' ? $this->ar_description : $this->en_description;
     }
 
-        public function programs()
+    public function programs()
     {
         return $this->hasMany(Program::class);
     }

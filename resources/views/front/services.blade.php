@@ -10,7 +10,7 @@
     </div>
 </section>
 
-<section id="statistics" style="padding: 60px 0; background-color: #f8f9fa;">
+{{-- <section id="statistics" style="padding: 60px 0; background-color: #f8f9fa;">
     <div class="container">
         <div class="text-center mb-5">
             <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
@@ -51,34 +51,71 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 
-<section id="services" style="padding: 60px 0; background-color: #fff;">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                {{ __('lang.services_title') }}
-            </h2>
-            <p style="font-size: 1.1rem; color: #666;">
-                {{ __('lang.services_subtitle') }}
-            </p>
-        </div>
-        <div class="row g-4">
-            @foreach($services as $service)
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-                        <h4 class="fw-bold">
-                            {{ app()->getLocale() == 'ar' ? $service->ar_title : $service->en_title }}
-                        </h4>
-                        <p>
-                            {{ app()->getLocale() == 'ar' ? $service->ar_description : $service->en_description }}
-                        </p>
-                    </div>
+    <section id="scope-of-work" class="section-background" style="padding: 60px 0;" data-aos="fade-up" data-aos-delay="200">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-header d-flex justify-content-center align-items-center mb-4">
+                    <h2 class="section-title"><span>{{ __('lang.scope_work_title') }}</span></h2>
                 </div>
-            @endforeach
+                {{-- <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+                    <strong>{{ __('lang.scope_work_title') }} {{ __('lang.scope_work_title_strong') }}</strong>
+                </h2> --}}
+                <p style="font-size: 1.1rem; color: #666;">
+                    {{ __('lang.scope_subtitle') }}
+                </p>
+            </div>
+
+            <div class="row g-4">
+                @foreach ($scopes as $scope)
+
+                    <div class="col-md-4">
+                        <a href="{{ route('frontend.scope.show', Str::slug($scope->en_title)) }}" class="text-decoration-none">
+                            <div class="custom-card">
+                                <div class="card-image" style="background-image: url('{{ asset('storage/' . $scope->image) }}');">
+                                </div>
+                                <div class="card-overlay" style="background-color: #40537d;">
+                                    <div class="overlay-content text-center text-white">
+                                        <i class="{{ $scope->icon }} fa-3x mb-3"></i>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-white" style="background-color: #40537d;padding: 18px;">
+                                    {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+    {{-- <section id="services" style="padding: 60px 0; background-color: #fff;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
+                    {{ __('lang.services_title') }}
+                </h2>
+                <p style="font-size: 1.1rem; color: #666;">
+                    {{ __('lang.services_subtitle') }}
+                </p>
+            </div>
+            <div class="row g-4">
+                @foreach($services as $service)
+                    <div class="col-md-6 col-lg-4">
+                        <div class="service-card text-center p-4" style="background: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <h4 class="fw-bold">
+                                {{ app()->getLocale() == 'ar' ? $service->ar_title : $service->en_title }}
+                            </h4>
+                            <p>
+                                {{ app()->getLocale() == 'ar' ? $service->ar_description : $service->en_description }}
+                            </p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section> --}}
 
 @endsection

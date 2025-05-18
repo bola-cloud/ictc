@@ -17,6 +17,7 @@
     <link href="{{asset('css/camera.css')}}" rel="stylesheet" />
     <link href="{{asset('css/jquery.bxslider.css')}}" rel="stylesheet" />
     <link href="{{asset('css/style.css')}}" rel="stylesheet" />
+    <link href="{{asset('css/about.css')}}" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     <!-- Theme skin -->
@@ -98,14 +99,14 @@
                                     </li>
                                     <li class="dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
                                         <a href="{{ route('services') }}" class="nav-btn {{ request()->routeIs('services') ? 'btn-highlight' : '' }}">
-                                            {{ __('lang.services') }}
+                                            {{ __('lang.our_work') }}
                                         </a>
                                     </li>
-                                    <li class="dropdown {{ request()->routeIs('all-projects') ? 'active' : '' }}">
+                                    {{-- <li class="dropdown {{ request()->routeIs('all-projects') ? 'active' : '' }}">
                                         <a href="{{ route('all-projects') }}" class="nav-btn {{ request()->routeIs('all-projects') ? 'btn-highlight' : '' }}">
                                             {{ __('lang.projects') }}
                                         </a>
-                                    </li>
+                                    </li> --}}
                                     <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery','latest.news']) ? 'active' : '' }}">
                                         <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
                                         <ul class="dropdown-menu" style="top: 60% !important;">
@@ -184,11 +185,11 @@
                             <a href="{{ route('about') }}">{{ __('lang.about') }}</a>
                         </li>
                         <li class="dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
-                            <a href="{{ route('services') }}">{{ __('lang.services') }}</a>
+                            <a href="{{ route('services') }}">{{ __('lang.our_work') }}</a>
                         </li>
-                        <li class="dropdown {{ request()->routeIs('all-projects') ? 'active' : '' }}">
+                        {{-- <li class="dropdown {{ request()->routeIs('all-projects') ? 'active' : '' }}">
                             <a href="{{ route('all-projects') }}">{{ __('lang.projects') }}</a>
-                        </li>
+                        </li> --}}
                         <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery','latest.news']) ? 'active' : '' }}">
                             <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -307,7 +308,7 @@
                             <a href="{{route('dashboard')}}">
                                 <img src="{{ asset($settings->logo ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
                             </a>
-                            <p style="margin: 0;">
+                            <p style="margin: 0; color: #f8ecd4;">
                                 {{ __('lang.company_name') }}
                             </p>
                         </div>
@@ -354,8 +355,8 @@
 
                     <!-- Right Column: Contact Info -->
                     <div class="col-md-4">
-                        <h5 style="color: #fff; font-weight: bold;">{{ __('lang.contact') }}</h5>
-                        <p>
+                        <h5 style="color: #f8ecd4; font-weight: bold;">{{ __('lang.contact') }}</h5>
+                        <p style="color: #f8ecd4;">
                             <i class="fa fa-phone"></i> {{ __('lang.support') }}&nbsp; :&nbsp; 020000000<br>
                             <i class="fa fa-envelope"></i> {{ __('lang.email') }}&nbsp; : &nbsp;contact@ictc-egy.com
                         </p>
@@ -396,9 +397,9 @@
                 <!-- Footer Bottom -->
                 <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
                     {{-- <p style="margin: 0; color: #ccc;">{{ __('lang.copyright') }}</p> --}}
-                    <p style="margin: 5px 0 0; color: #ccc;">
+                    <p style="margin: 5px 0 0; color: #f8ecd4;">
                         {{ __('lang.developed_by') }}
-                        <a href="https://wa.me/201555622169" target="_blank" style="color: #25D366; text-decoration: none;">
+                        <a href="https://wa.me/201555622169" target="_blank" style="color: #e0cda7; text-decoration: none;">
                             <strong>Eng: Bola Eshaq</strong>
                         </a>
                     </p>

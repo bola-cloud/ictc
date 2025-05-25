@@ -12,7 +12,7 @@
         </section>
 
         <!-- Page Header -->
-        <section id="inner-headline">
+        <section id="inner-headline" class="section-background" style="background-color: #f8f9fa; padding: 20px 0;color:#404b62 !important">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -24,7 +24,7 @@
                                 </li>
                                 <li class="active">&nbsp; {{ __('lang.latest_news') }}</li>
                             </ul>
-                            <h2 class="mt-3">{{ __('lang.latest_news') }}</h2>
+                            {{-- <h2 class="mt-3" style="padding: 20px 0;color:#404b62 !important">{{ __('lang.latest_news') }}</h2> --}}
                         </div>
                     </div>
                 </div>
@@ -32,13 +32,13 @@
         </section>
 
         <!-- News Section -->
-        <section class="news-section py-5">
+        <section class="news-section section-background py-5">
             <div class="container">
                 <!-- Section Title -->
                 <div class="row">
-                    <div class="col-12 text-center mb-4">
-                        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-                            {{ __('lang.latest_news_title') }} <strong>{{ __('lang.latest_news_title_strong') }}</strong>
+                    <div class="col-12 text-center section-header mb-4">
+                        <h2 class="section-title" style="font-size: 2.5rem; font-weight: bold;">
+                            <span>{{ __('lang.latest_news_title') }} {{ __('lang.latest_news_title_strong') }}</span>
                         </h2>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="row justify-content-center">
                     @forelse ($news as $item)
                         <div class="col-lg-6 col-md-6 mb-4 d-flex align-items-stretch mt-3">
-                            <div class="card news-card p-2 shadow-sm">
+                            <div class="card news-card p-2 shadow-sm dark-custom-card">
                                 <div class="news-images">
                                     <img src="{{ asset('storage/' . $item->image1_path) }}" alt="{{ $item->ar_title }}" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 10px;">
                                     {{-- @if ($item->image2_path)
@@ -55,13 +55,13 @@
                                     @endif --}}
                                 </div>
                                 <div class="card-body news-card-body">
-                                    <h3 class="news-card-title" style="font-size: 1.5rem; font-weight: bold; color: #333;">
-                                        <strong>{{ app()->getLocale() === 'ar' ? $item->ar_title : $item->en_title }}</strong>
+                                    <h3 class="news-card-title" style="font-size: 1.5rem; font-weight: bold; color: #f8ecd4;">
+                                        <strong style="color: #f8ecd4 !important;">{{ app()->getLocale() === 'ar' ? $item->ar_title : $item->en_title }}</strong>
                                     </h3>
-                                    <p class="news-card-text" style="font-size: 1rem; color: #555;">
+                                    <p class="news-card-text" style="font-size: 1rem; color: #f8ecd4;">
                                         {{ app()->getLocale() === 'ar' ? $item->ar_subtitle : $item->en_subtitle }}
                                     </p>
-                                    <a href="{{ route('news-details', ['id' => $item->id]) }}" class="news-read-more" style="color: #007bff; text-decoration: none; font-weight: bold;">
+                                    <a href="{{ route('news-details', ['id' => $item->id]) }}" class="news-read-more" style="color: #f8ecd4; text-decoration: none; font-weight: bold;">
                                         {{ __('lang.read_more') }} &raquo;
                                     </a>
                                 </div>

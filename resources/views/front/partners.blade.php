@@ -13,12 +13,12 @@
     </div>
 </section>
 
-<section class="partners-section">
+<section class="partners-section section-background">
     <div class="container">
         <!-- Title -->
-        <div class="text-center mb-4">
-            <h3 class="title">
-                {{ __('lang.partners_section_title') }} <strong>{{ __('lang.partners_section_strong') }}</strong>
+        <div class="text-center mb-5 section-header">
+            <h3 class="section-title">
+               <span> {{ __('lang.partners_section_title') }} {{ __('lang.partners_section_strong') }}</span>
             </h3>
         </div>
 
@@ -32,7 +32,7 @@
                     <div class="row">
                         @foreach ($category->partners as $partner)
                             <div class="col-md-3 col-sm-6 mb-4">
-                                <div class="card">
+                                <div class="card dark-custom-card">
                                     <img src="{{ asset($partner->image_path) }}" class="card-img-top" alt="Partner">
                                 </div>
                             </div>

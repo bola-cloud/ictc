@@ -3718,7 +3718,7 @@ i.fa.fa-bars{
 .dropdown-item:hover {
   background-color: #40537d !important ; /* Hover background color (blue) */
   color: #f8ecd4 !important; /* Contrasting text color */
-  
+
 }
 
 
@@ -4093,3 +4093,63 @@ strong {
     border-radius: 0 0 1rem 1rem;
 }
 
+.work-withus-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.work-withus-card:hover {
+    transform: scale(1.02);
+}
+.work-withus-card:hover .card-image {
+    opacity: 0.9;
+}
+.work-withus-card .card-image {
+    height: 40vh !important;
+}
+.job-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #404b62 !important;
+    margin-bottom: 10px;
+}
+
+.dark-custom-card{
+    background: #40537d !important;
+    border: 1px solid #ddd !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #f8ecd4 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .dropdown-responsive{
+        display: none;
+    }
+}
+.baige-news-card{
+    background-color: #40537d !important;
+    padding: 20px !important;
+    color: #f8ecd4 !important;
+    border: 2px solid #40537d !important;
+}
+.baige-news-card-body{
+    padding: 20px !important;
+    border: 2px solid #40537d !important;
+    border-radius: 0 0 8px 8px !important;
+    color: #40537d !important;
+}
+.dark-news-card-body{
+    padding: 20px !important;
+    border: 2px solid #40537d !important;
+    border-radius: 0 0 8px 8px !important;
+    color: #f8ecd4 !important;
+    background-color: #40537d !important;
+}

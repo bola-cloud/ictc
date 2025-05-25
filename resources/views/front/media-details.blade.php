@@ -19,7 +19,7 @@
     </svg>
 
     <!-- Page Header -->
-    <section id="inner-headline">
+    <section id="inner-headline" class="section-background" >
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -43,9 +43,9 @@
     </section>
 
 
-    <div class="text-center mb-5 mt-3">
-        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-            {{ __('lang.photos_gallery_title') }} <strong>{{ __('lang.photos_gallery_title_strong') }}</strong>
+    <div class="text-center mb-5 mt-3 section-header">
+        <h2 style="font-size: 2.5rem; font-weight: bold;" class="section-title">
+            <span>{{ __('lang.photos_gallery_title') }} {{ __('lang.photos_gallery_title_strong') }}</span>
         </h2>
     </div>
     <!-- Gallery Section -->
@@ -54,12 +54,12 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">
                 @forelse ($images as $index => $image)
                     <div class="col">
-                        <div class="card gallery-card position-relative">
+                        <div class="card gallery-card position-relative dark-custom-card">
                             <a href="#" data-index="{{ $index }}" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightbox-modal">
                                 <img src="{{ asset('storage/' . $image->image_path) }}" alt="{{ __('lang.news_title') }}">
                             </a>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">
+                            <div class="card-body text-center dark-news-card-body">
+                                <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">
                                     {{ app()->getLocale() === 'ar' ? $image->ar_subtitle : $image->en_subtitle }}
                                 </h5>
                             </div>
@@ -75,18 +75,18 @@
     <!-- Lightbox Modal -->
     <div class="modal fade" id="lightbox-modal" tabindex="-1" aria-labelledby="lightboxLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
+            <div class="modal-content dark-custom-card">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal-body p-0">
+                <div class="modal-body p-4">
                     <!-- Swiper -->
-                    <div class="swiper-container">
+                    <div class="swiper-container dark-custom-card">
                         <div class="swiper-wrapper">
                             @foreach ($images as $image)
                                 <div class="swiper-slide">
                                     <img src="{{ asset('storage/' . $image->image_path) }}" class="img-fluid"
                                      alt="{{ $image->ar_subtitle }}" style="max-height: unset !important;">
                                     <div class="text-center mt-2">
-                                        <h5>{{ app()->getLocale() === 'ar' ? $image->ar_subtitle : $image->en_subtitle }}</h5>
+                                        <h5 style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">{{ app()->getLocale() === 'ar' ? $image->ar_subtitle : $image->en_subtitle }}</h5>
                                     </div>
                                 </div>
                             @endforeach

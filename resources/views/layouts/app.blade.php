@@ -42,6 +42,13 @@
     @endif
 
     <style>
+        .side-nav.open {
+            background: #f8ecd4 !important;
+            color: #404b62 !important;
+        }
+        i.fa.fa-bars {
+            color: #f6ebd8 !important;
+        }
         body {
             font-family: {{ app()->getLocale() === 'ar' ? "'Tajawal', sans-serif" : "'Roboto', sans-serif" }};
             direction: {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }};
@@ -107,6 +114,11 @@
                                             {{ __('lang.projects') }}
                                         </a>
                                     </li> --}}
+                                    <li class="dropdown {{ request()->routeIs('work-withus') ? 'active' : '' }}">
+                                        <a href="{{ route('work-withus') }}" class="nav-btn {{ request()->routeIs('work-withus') ? 'btn-highlight' : '' }}">
+                                            {{ __('lang.work_with_us') }}
+                                        </a>
+                                    </li>
                                     <li class="dropdown {{ request()->routeIs(['image-gallery', 'video-gallery','latest.news']) ? 'active' : '' }}">
                                         <a href="#" class="nav-btn">{{ __('lang.media') }} <i class="icon-angle-down"></i></a>
                                         <ul class="dropdown-menu" style="top: 60% !important;">
@@ -128,7 +140,7 @@
 
                     <div class="col-md-1 d-flex align-items-center justify-content-end lang">
                         <!-- Language Dropdown -->
-                        <div class="dropdown">
+                        <div class="dropdown dropdown-responsive">
                             <button
                                 class="btn btn-light dropdown-toggle p-2"
                                 type="button" style="background: #f8ecd4!important; color: #000 !important;"
@@ -186,6 +198,9 @@
                         </li>
                         <li class="dropdown {{ request()->routeIs('services') ? 'active' : '' }}">
                             <a href="{{ route('services') }}">{{ __('lang.our_work') }}</a>
+                        </li>
+                        <li class="dropdown {{ request()->routeIs('work-withus') ? 'active' : '' }}">
+                            <a href="{{ route('work-withus') }}">{{ __('lang.work_with_us') }}</a>
                         </li>
                         {{-- <li class="dropdown {{ request()->routeIs('all-projects') ? 'active' : '' }}">
                             <a href="{{ route('all-projects') }}">{{ __('lang.projects') }}</a>

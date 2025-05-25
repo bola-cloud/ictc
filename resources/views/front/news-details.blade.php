@@ -14,11 +14,11 @@
 
     </section>
 
-    <section class="news-section py-5" style="background-color: #f8f9fa;">
+    <section class="news-section section-background py-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 mb-4" style="text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};">
-                    <h1 class="fw-bolder fs-4" style="color: #0d6efd; font-weight: 900;">
+                    <h1 class="fw-bolder fs-4" style="color: #404b62 !important; font-weight: 900;">
                         {{ app()->getLocale() === 'ar' ? $news->ar_title : $news->en_title }}
                     </h1>
                     <p class="text-muted">
@@ -29,10 +29,10 @@
             <div class="row">
                 <div class="col-lg-8 mb-4">
                     <div class="card border-0 shadow-sm">
-                        <div class="card-header bg-primary text-white text-center fs-4 fw-bold">
+                        <div class="card-header text-center fs-4 fw-bold baige-news-card">
                             {{ app()->getLocale() === 'ar' ? $news->ar_head : $news->en_head }}
                         </div>
-                        <div class="card-body">
+                        <div class="card-body section-background baige-news-card-body">
                             <p class="fs-5 text-{{ app()->getLocale() === 'ar' ? 'end' : 'start' }}">
                                 {{ app()->getLocale() === 'ar' ? $news->ar_content : $news->en_content }}
                             </p>

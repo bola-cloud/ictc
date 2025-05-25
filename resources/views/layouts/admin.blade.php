@@ -146,7 +146,7 @@
                             </a>
                         </li>
 
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a href="">
                                 <i class="la la-tv"></i> <!-- Changed icon to represent TVs -->
                                 <span class="menu-title" data-i18n="nav.dash.main">{{ __('lang.gallery_administration') }}</span>
@@ -159,9 +159,9 @@
                                     <a class="menu-item" href="{{ route('admin.galleries.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
 
-                        {{-- <li class="nav-item">
+                        <li class="nav-item">
                             <a href="#">
                                 <i class="la la-newspaper-o"></i> <!-- News icon -->
                                 <span class="menu-title" data-i18n="nav.dash.main">{{ __('lang.news_administration') }}</span>
@@ -174,7 +174,7 @@
                                     <a class="menu-item" href="{{ route('admin.news.create') }}" data-i18n="nav.dash.sales">{{ __('lang.create') }}</a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>
 
                         <li class="nav-item">
                             <a href="#">
@@ -269,6 +269,45 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <!-- 🔽 Interest Administration Section -->
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="la la-file-alt"></i> <!-- Icon for Interests -->
+                                <span class="menu-title" data-i18n="nav.interests.main">{{ __('lang.interest_administration') }}</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class="{{ Route::currentRouteName() == 'admin.interests.jobs.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.interests.jobs.index') }}" data-i18n="nav.interests.jobs">{{ __('lang.job_interests') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.interests.consultancies.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.interests.consultancies.index') }}" data-i18n="nav.interests.consultancies">{{ __('lang.consultancy_interests') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.interests.internships.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.interests.internships.index') }}" data-i18n="nav.interests.internships">{{ __('lang.internship_interests') }}</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- 🔽 Vacancy Administration Section -->
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="la la-briefcase"></i> <!-- Icon for Vacancies -->
+                                <span class="menu-title" data-i18n="nav.vacancies.main">{{ __('lang.vacancy_administration') }}</span>
+                            </a>
+                            <ul class="menu-content">
+                                <li class="{{ Route::currentRouteName() == 'admin.jobs.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.jobs.index') }}" data-i18n="nav.vacancies.jobs">{{ __('lang.job_vacancies') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.consultancies.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.consultancies.index') }}" data-i18n="nav.vacancies.consultancies">{{ __('lang.consultancy_vacancies') }}</a>
+                                </li>
+                                <li class="{{ Route::currentRouteName() == 'admin.internships.index' ? 'active' : '' }}">
+                                    <a class="menu-item" href="{{ route('admin.internships.index') }}" data-i18n="nav.vacancies.internships">{{ __('lang.internship_vacancies') }}</a>
+                                </li>
+                            </ul>
+                        </li>
+
 
                         <li class="nav-item {{ Route::currentRouteName() == 'admin.messages.index' ? 'active' : '' }}">
                             <a href="{{ route('admin.messages.index') }}">

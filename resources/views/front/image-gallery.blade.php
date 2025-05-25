@@ -19,7 +19,7 @@
     </svg>
 
     <!-- Page Header -->
-    <section id="inner-headline">
+    <section id="inner-headline" class="section-background" style="background-color: #f8f9fa; padding: 20px 0;color:#404b62 !important">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -39,19 +39,19 @@
         </div>
     </section>
 
-    <div class="text-center mb-5 mt-3">
-        <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-            {{ __('lang.photos_gallery_title') }} <strong>{{ __('lang.photos_gallery_title_strong') }}</strong>
+    <div class="text-center mb-5 mt-3 section-header">
+        <h2 style="font-size: 2.5rem; font-weight: bold;" class="section-title">
+             <span>{{ __('lang.photos_gallery_title') }} {{ __('lang.photos_gallery_title_strong') }}</span>
         </h2>
     </div>
 
 
-    <section class="photo-gallery">
+    <section class="photo-gallery section-backgroundmt-5">
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">
                 @forelse ($galleries as $gallery)
                     <div class="col">
-                        <div class="card gallery-card position-relative">
+                        <div class="card gallery-card position-relative dark-custom-card">
                             <a href="{{ route('media-details', $gallery->id) }}">
                                 @if ($gallery->featuredImage)
                                     <img src="{{ asset('storage/' . $gallery->featuredImage->image_path) }}" class="card-img-top" alt="{{ __('lang.news_title') }}">
@@ -60,8 +60,8 @@
                                 @endif
                                 <span class="image-counter badge">{{ $gallery->images()->count() }}</span>
                             </a>
-                            <div class="card-body text-center">
-                                <h5 class="card-title">
+                            <div class="card-body text-center dark-news-card-body">
+                                <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">
                                     {{ app()->getLocale() === 'ar' ? $gallery->ar_title : $gallery->en_title }}
                                 </h5>
                             </div>

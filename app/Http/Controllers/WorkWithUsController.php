@@ -46,12 +46,13 @@ class WorkWithUsController extends Controller
 
         $cvPath = $request->file('cv')->store('cvs', 'public');
 
-        EmploymentInterest::create([
+        \App\Models\Interest::create([
             'full_name' => $request->full_name,
             'email' => $request->email,
             'field' => $request->field,
             'brief' => $request->brief,
             'cv_path' => $cvPath,
+            'type' => 'Job',
         ]);
 
         return back()->with('success', __('lang.application_received'));

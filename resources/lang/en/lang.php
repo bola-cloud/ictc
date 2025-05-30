@@ -116,7 +116,7 @@ return [
 
     //front home
     'home' => 'Home',
-    'about' => 'About',
+    'about' => 'About Us',
     'services' => 'Working Area',
     'photos_gallery' => 'Photos Gallery',
     'videos_gallery' => 'Videos Gallery',
@@ -129,7 +129,7 @@ return [
     'partners' => 'Partners',
     'photos_gallery' => 'Photos Gallery',
     'videos_gallery' => 'Videos Gallery',
-    'latest_news' => 'Latest News',
+    'latest_news' => 'Press Release',
     'contact_us' => 'Contact Us',
     'contact' => 'Contact Us',
     'support' => 'Support',
@@ -330,7 +330,6 @@ return [
     'nav_core_values' => 'Core Values',
     'nav_scope' => 'Scope of Work',
     'nav_experience' => 'Experience',
-    'latest_news' => 'Latest News',
     'news_details_title' => 'News Details',
     'news_details_subtitle' => 'Stay updated with the latest news',
     'breadcrumb_videos_gallery' => 'Videos Gallery',
@@ -616,11 +615,10 @@ return [
 
     'nav_history' => 'History',
     'nav_vision_mission' => 'Vision & Mission',
-    'nav_philosophy' => 'Philosophy',
-    'nav_strategy' => 'Strategy',
+    'nav_philosophy' => 'Core Values',
+    'nav_strategy' => 'Services',
     'nav_our_team' => 'Our Team',
 
-    'our_philosophy' => 'Our Philosophy',
     'our_philosophy_description' => 'We believe in empowering individuals and institutions through inclusive, data-driven, and context-specific development strategies.',
 
     'our_strategy' => 'Our Strategy',
@@ -773,7 +771,26 @@ return [
     'consultancy_vacancy_created' => 'Consultancy vacancy created successfully.',
     'consultancy_vacancy_updated' => 'Consultancy vacancy updated successfully.',
     'consultancy_vacancy_deleted' => 'Consultancy vacancy deleted successfully.',
-
+    'our_philosophy' => 'Our Core Values',
+    'our_philosophy_description' => 'Our core values shape everything we do and guide our mission.',
+    'integrity' => 'Integrity',
+    'development' => 'Development',
+    'empowerment' => 'Empowerment',
+    'responsibility' => 'Responsibility',
+    'innovation' => 'Innovation',
+    'team_work' => 'Team Work',
+    'quality' => 'Quality',
+    'commitment' => 'Commitment',
+    'our_services' => 'Our Services',
+    'our_services_description' => 'We offer a wide range of services to meet the needs of our clients and partners.',
+    'about_image' => 'About Section Image',
+    'news_image' => 'News Section Image',
+    'work_image' => 'Work Section Image',
+    'work_with_us_image' => 'Work With Us Section Image',
+    'gallery_image' => 'Gallery Section Image',
+    'partners_image' => 'Partners Section Image',
+    'contact_image' => 'Contact Section Image',
+    'enable_background_overlay' => 'Enable Background Overlay',
 ];
 
 

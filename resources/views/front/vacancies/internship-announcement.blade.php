@@ -16,15 +16,15 @@
     <div class="container">
         <div class="text-center mb-5">
             <div class="section-header d-flex justify-content-center align-items-center mb-4">
-                <h2 class="section-title" style="font-family: 'Georgia', serif; font-weight: bold; font-size: 2.8rem; color: #333;">
-                    <span style="border-bottom: 4px solid #3e4756; padding-bottom: 5px;">{{ __('lang.internship_vacancies') }}</span>
+                <h2 class="section-title" style="font-family: 'Georgia', serif; font-weight: bold; font-size: 2.8rem;">
+                    <span style="  padding-bottom: 5px;">{{ __('lang.internship_vacancies') }}</span>
                 </h2>
             </div>
         </div>
 
         @forelse($vacancies as $vacancy)
             <div class="mb-5 p-5" style="background-color: #404b62; border-radius: 60px;">
-                <div style="background-color: #f8ecd4; padding: 40px; border-radius: 10px; font-size: 1rem; color: #333; font-family: Georgia, serif;">
+                <div style="background-color: #f8ecd4; padding: 40px; border-radius: 10px; font-size: 1rem; font-family: Georgia, serif;">
                     <p><strong>{{ __('lang.job_title') }}:</strong> {{ app()->getLocale() === 'ar' ? $vacancy->ar_title : $vacancy->en_title }}</p>
                     <p><strong>{{ __('lang.location') }}:</strong> {{ $vacancy->location ?? __('lang.not_specified') }}</p>
                     <p><strong>{{ __('lang.job_type') }}:</strong> {{ $vacancy->job_type ?? __('lang.not_specified') }}</p>

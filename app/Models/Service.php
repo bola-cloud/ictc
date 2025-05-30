@@ -11,7 +11,6 @@ class Service extends Model
     protected $fillable = [
         'en_title',
         'ar_title',
-        'en_description',
-        'ar_description',
+        'image',
     ];
 }

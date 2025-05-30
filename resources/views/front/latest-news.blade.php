@@ -3,13 +3,17 @@
 @section('content')
     <div class="container-fluid p-0">
         <!-- Address Section -->
-        <section class="address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
-            <div class="container">
+        <section class="address" style="
+            background: {{ isset($settings['news_background_enabled']) && $settings['news_background_enabled'] == '1' ? 'linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),' : '' }}
+            url('{{ asset($settings['news_image'] ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}');">
+            <div class="container" style="padding-top: 120px; padding-bottom: 60px;">
                 <div class="col-lg-12 text-center">
                     <h3 class="address-h3">{{ __('lang.latest_news') }}</h3>
                 </div>
             </div>
         </section>
+
+
 
         <!-- Page Header -->
         <section id="inner-headline" class="section-background" style="background-color: #f8f9fa; padding: 20px 0;color:#404b62 !important">

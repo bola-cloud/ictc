@@ -16,13 +16,12 @@
             @foreach($services as $service)
                 <div class="col-md-6 col-lg-4 d-flex mt-3">
                     <div class="card shadow-sm border-0 w-100 h-100 d-flex flex-column">
-                        <div class="card-body d-flex flex-column">
+                        <div class="card-body d-flex flex-column text-center">
+                            @if($service->image)
+                                <img src="{{ asset($service->image) }}" alt="Service Image" class="mb-3" style="max-height: 120px; object-fit: contain;">
+                            @endif
                             <h5 class="card-title fw-bold">{{ $service->en_title }} / {{ $service->ar_title }}</h5>
-                            <p class="card-text text-muted flex-grow-1">
-                                {{ Str::limit($service->en_description, 100) }} <br>
-                                {{ Str::limit($service->ar_description, 100) }}
-                            </p>
-                            <div class="mt-auto d-flex justify-content-between">
+                            <div class="mt-3 d-flex justify-content-between">
                                 <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-warning">{{ __('lang.edit') }}</a>
                                 <form action="{{ route('admin.services.destroy', $service->id) }}" method="POST">
                                     @csrf @method('DELETE')
@@ -36,7 +35,7 @@
         </div>
 
         <div class="mt-4 d-flex justify-content-center">
-            {{ $services->links('pagination::bootstrap-4') }} <!-- Bootstrap 4 Pagination -->
+            {{ $services->links('pagination::bootstrap-4') }}
         </div>
     </div>
 </div>

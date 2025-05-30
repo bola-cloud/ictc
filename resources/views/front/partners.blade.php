@@ -3,15 +3,19 @@
 @section('content')
 
 <!-- Address Section -->
-<section class="address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
-    <div class="container">
-        <div class="col-lg-12 text-center">
-            <h3 class="address-h3">
-                {{ __('lang.partners_heading') }}
-            </h3>
-        </div>
+<section class="page-header address" style="
+    background: {{ isset($settings['contact_background_enabled']) && $settings['contact_background_enabled'] == '1' ? 'linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),' : '' }}
+    url('{{ asset($settings['contact_image'] ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}');">
+    <div class="container text-center" style="padding-top: 120px; padding-bottom: 60px;">
+        <h3 class="address-h3" style="font-size: 2.5rem; font-weight: bold;">
+            {{ __('lang.contact_us_title') }}
+        </h3>
+        <p style="font-size: 1.2rem; margin-top: 10px;">
+            {{ __('lang.contact_us_subtitle') }}
+        </p>
     </div>
 </section>
+
 
 <section class="partners-section section-background">
     <div class="container">

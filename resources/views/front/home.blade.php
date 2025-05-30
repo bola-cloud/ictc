@@ -20,7 +20,7 @@
 
         <!-- Typewriter Content Overlay -->
         <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; display: flex; align-items: center; justify-content: center;">
-            <div class="container text-center">
+            <div class="container text-center d-flex flex-column align-items-start justify-content-start" style="z-index: 20; color: #f8ecd4; padding: 20px;">
                 <h3>
                     <span class="typewriter-header" style="font-size: 3rem; font-weight: bold;">
                         {{ __('lang.welcome_message') }}
@@ -54,7 +54,7 @@
                             @else
                                 <img src="https://via.placeholder.com/600x400?text=No+Image+Available" class="img-fluid" alt="No Image Available">
                             @endif
-                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color: #f8ecd4; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
                                 <h2>{{ __('lang.photo_gallery') }}</h2>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             @else
                                 <img src="https://via.placeholder.com/600x400?text=No+Video+Available" class="img-fluid" alt="No Video Available">
                             @endif
-                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color: #f8ecd4; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
                                 <h2>{{ __('lang.video_gallery') }}</h2>
                             </div>
                         </div>
@@ -125,28 +125,28 @@
             <div class="row g-4">
                 <!-- Projects Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
                         <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.projects_value') }}</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.projects_title') }}</p>
                     </div>
                 </div>
                 <!-- Partners Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
                         <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.partners_value') }}</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.partners_titles') }}</p>
                     </div>
                 </div>
                 <!-- Beneficiaries Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
                         <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.beneficiaries_value') }}</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.beneficiaries_title') }}</p>
                     </div>
                 </div>
                 <!-- Governorates Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #fff;">
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
                         <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.governorates_value') }}</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.governorates_title') }}</p>
                     </div>
@@ -180,7 +180,7 @@
                                     <i class="{{ $scope->icon }} fa-3x mb-3"></i>
                                 </div>
                             </div>
-                            <div class="card-footer text-white" style="background-color: #40537d;padding: 18px;">
+                            <div class="card-footer" style="background-color: #40537d;padding: 18px; color: #f8ecd4;">
                                 {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}
                             </div>
                         </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Scope;
 use Illuminate\Support\Str;
+use App\Models\PartnerCategory;
 
 class ServiceController extends Controller
 {
@@ -14,9 +15,10 @@ class ServiceController extends Controller
         // Retrieve all services from the database
         $services = Service::all();
         $scopes = Scope::all();
+        $categories = PartnerCategory::with('partners')->get();
 
         // Return the services view with the data
-        return view('front.services', compact('services', 'scopes'));
+        return view('front.services', compact('services', 'scopes', 'categories'));
     }
 
     public function showProjects($slug)

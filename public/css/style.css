@@ -3327,12 +3327,20 @@ transform: scale(0.9);
 }
 /* cover image */
 .address {
-  background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.qodra-egy.net/img/about/ab_4.jpg);
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  padding: 160px 0 60px 0;
-  /* background: #292c31; */
+    /* background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://www.qodra-egy.net/img/about/ab_4.jpg); */
+    background-size: cover !important;
+    background-position: center !important;
+    color: #fff;
+    padding: 97px 0 31px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    /* background: #292c31; */
+}
+.address .container {
+    padding-top: 12px;
+    padding-bottom: 60px;
 }
 
 /* Grow Pulse Spinner */
@@ -3557,8 +3565,8 @@ i.fa.fa-bars{
 }
 
 .dropdown-menu li a:hover {
-  background-color: #f0f0f0;
-  color: #f0f0f0;
+  background-color: #40537d !important; /* Hover background color (blue) */
+  color: #f8ecd4 !important; /* Contrasting text color */
   border-radius: 25px !important;
 }
 
@@ -3875,7 +3883,7 @@ strong {
     transition: 0.3s ease;
 }
 .section-background{
-    background-color: #f8ecd4 !important;
+    background-color: #F3EED4 !important;
     /* background: #f9f9f9 !important; */
 }
 
@@ -3914,7 +3922,7 @@ strong {
 /* Social media icons sidebar */
 .social-media-sidebar {
     position: fixed;
-    top: 50%;
+    top: 62%;
     left: 0;
     transform: translateY(-50%);
     z-index: 9999;
@@ -3922,16 +3930,16 @@ strong {
 
 .social-icon {
     display: block;
-    margin: 10px 0;
-    padding: 10px;
+    margin: 4px 0;
+    padding: 2px;
     border-radius: 50%;
     color: white;
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     width: 50px;
     height: 50px;
     transition: background-color 0.3s;
-    color: black;
+    color: #40537d;
 }
 
 .social-icon:hover {
@@ -4152,4 +4160,61 @@ strong {
     border-radius: 0 0 8px 8px !important;
     color: #f8ecd4 !important;
     background-color: #40537d !important;
+}
+
+@media (max-width: 769px) {
+    .nav-menu {
+        display: contents !important; /* Ensure the nav menu displays correctly on smaller screens */
+    }
+    nav.custom-navbar {
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .nav-item a {
+        text-decoration: none;
+        font-size: 10px !important;
+        font-weight: bold;
+        color: #003366;
+        padding: 8px 7px !important;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+}
+@media (max-width: 991px) {
+    .navbar .nav > li > a {
+        float: none;
+        margin-left: 4px !important;
+        margin-right: 0;
+        text-decoration: none;
+        text-shadow: none;
+        color: #fff;
+        padding: 8px 8px;
+        border-radius: 25px;
+        transition: all 0.3s ease-in-out;
+        font-size: 11px;
+        color: #f8ecd4;
+        text-shadow: none;
+        font-weight: 700;
+    }
+    ul.nav.topnav.bold {
+        display: flex;
+        gap: 0px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+@media (min-width: 991px) and (max-width: 1200px) {
+    ul.nav.topnav.bold {
+        display: flex;
+        gap: 0px !important;
+    }
+}
+@media (max-width: 450px) {
+    .typewriter-header{
+        font-size: xx-large !important;
+    }
+    #typewriter-text {
+        font-size: x-large !important;
+    }
 }

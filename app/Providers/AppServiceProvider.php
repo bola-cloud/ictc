@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $settings = Setting::first();
+        $settings = Setting::pluck('value', 'key')->toArray();
         View::share('settings', $settings);
     }
 }

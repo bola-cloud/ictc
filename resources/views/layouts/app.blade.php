@@ -85,7 +85,7 @@
                     <div class="col-md-3 d-flex justify-content-center">
                         <div class="logo">
                             <a href="{{ route('home') }}" class="d-flex">
-                                <img src="{{ asset($settings->logo ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px;">
+                                <img src="{{ asset($settings['logo'] ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px;">
                             </a>
                         </div>
                     </div>
@@ -127,9 +127,9 @@
                                             <li><a href="{{ route('latest.news') }}">{{ __('lang.latest_news') }}</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">
+                                    {{-- <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">
                                         <a href="{{ route('partners') }}" class="nav-btn">{{ __('lang.partners') }}</a>
-                                    </li>
+                                    </li> --}}
                                     <li class="dropdown {{ request()->routeIs('contact') ? 'active' : '' }}">
                                         <a href="{{ route('contact') }}" class="nav-btn">{{ __('lang.contact') }}</a>
                                     </li>
@@ -213,9 +213,9 @@
                                 <li><a href="{{ route('latest.news') }}">{{ __('lang.latest_news') }}</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">
+                        {{-- <li class="dropdown {{ request()->routeIs('partners') ? 'active' : '' }}">
                             <a href="{{ route('partners') }}">{{ __('lang.partners') }}</a>
-                        </li>
+                        </li> --}}
                         <li class="dropdown {{ request()->routeIs('contact') ? 'active' : '' }}">
                             <a href="{{ route('contact') }}">{{ __('lang.contact') }}</a>
                         </li>
@@ -263,21 +263,21 @@
                 <i class="fa-solid fa-share-nodes"></i>
             </button> --}}
 
-            <!-- Share Icons -->
             <div class="social-media-sidebar">
-                <a href="{{ !empty($settings->youtube) ? $settings->youtube : '#' }}" target="_blank" class="social-icon instagram">
+                <a href="{{ !empty($settings['youtube']) ? $settings['youtube'] : '#' }}" target="_blank" class="social-icon instagram">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="{{ !empty($settings->facebook) ? $settings->facebook : '#' }}" target="_blank" class="social-icon facebook">
+                <a href="{{ !empty($settings['facebook']) ? $settings['facebook'] : '#' }}" target="_blank" class="social-icon facebook">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="{{ !empty($settings->whatsapp) ? 'https://wa.me/' . $settings->whatsapp : '#' }}" target="_blank" class="social-icon twitter">
+                <a href="{{ !empty($settings['whatsapp']) ? 'https://wa.me/' . $settings['whatsapp'] : '#' }}" target="_blank" class="social-icon twitter">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="{{ !empty($settings->linkedin) ? $settings->linkedin : '#' }}" target="_blank" class="social-icon linkedin">
+                <a href="{{ !empty($settings['linkedin']) ? $settings['linkedin'] : '#' }}" target="_blank" class="social-icon linkedin">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
             </div>
+
 
 
             <!-- Social Icons -->
@@ -321,7 +321,7 @@
                     <div class="col-md-4">
                         <div>
                             <a href="{{route('dashboard')}}">
-                                <img src="{{ asset($settings->logo ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
+                                <img src="{{ asset($settings['logo'] ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
                             </a>
                             <p style="margin: 0; color: #f8ecd4;">
                                 {{ __('lang.company_name') }}
@@ -375,36 +375,26 @@
                             <i class="fa fa-phone"></i> {{ __('lang.support') }}&nbsp; :&nbsp; 020000000<br>
                             <i class="fa fa-envelope"></i> {{ __('lang.email') }}&nbsp; : &nbsp;contact@ictc-egy.com
                         </p>
-                        <div style="display: flex; gap: 10px;">
-                            <!-- Facebook -->
-                            <a href="{{ !empty($settings->facebook) ? $settings->facebook : '#' }}" target="_blank"
-                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa-brands fa-facebook"></i>
-                            </a>
+                        <div class="social-media-inline d-flex justify-content-start align-items-center mt-3">
+                            @php
+                                $contacts = [
+                                    'facebook' => ['icon' => 'fa-brands fa-facebook', 'prefix' => '', 'class' => 'facebook'],
+                                    'whatsapp' => ['icon' => 'fa-brands fa-whatsapp', 'prefix' => 'https://wa.me/', 'class' => 'whatsapp'],
+                                    'email' => ['icon' => 'fa fa-envelope', 'prefix' => 'mailto:', 'class' => 'email'],
+                                    'linkedin' => ['icon' => 'fa-brands fa-linkedin', 'prefix' => '', 'class' => 'linkedin'],
+                                    'youtube' => ['icon' => 'fa-brands fa-youtube', 'prefix' => '', 'class' => 'youtube'],
+                                ];
+                            @endphp
 
-                            <!-- WhatsApp -->
-                            <a href="{{ !empty($settings->whatsapp) ? 'https://wa.me/' . $settings->whatsapp : '#' }}" target="_blank"
-                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </a>
-
-                            <!-- Email -->
-                            <a href="{{ !empty($settings->email) ? 'mailto:' . $settings->email : '#' }}" target="_blank"
-                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa fa-envelope"></i>
-                            </a>
-
-                            <!-- LinkedIn -->
-                            <a href="{{ !empty($settings->linkedin) ? $settings->linkedin : '#' }}" target="_blank"
-                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa-brands fa-linkedin"></i>
-                            </a>
-
-                            <!-- YouTube -->
-                            <a href="{{ !empty($settings->youtube) ? $settings->youtube : '#' }}" target="_blank"
-                                style="color: #fff; background-color: #2f2f2f; border-radius: 50%; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fa-brands fa-youtube"></i>
-                            </a>
+                            @foreach ($contacts as $key => $data)
+                                @php
+                                    $value = $settings[$key] ?? null;
+                                    $url = $value ? $data['prefix'] . $value : '#';
+                                @endphp
+                                <a href="{{ $url }}" target="_blank" class="social-icon {{ $data['class'] }}">
+                                    <i class="{{ $data['icon'] }}"></i>
+                                </a>
+                            @endforeach
                         </div>
                     </div>
                 </div>

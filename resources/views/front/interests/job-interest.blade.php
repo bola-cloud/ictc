@@ -24,8 +24,8 @@
 
         <div class="text-center mb-5">
             <div class="section-header d-flex justify-content-center align-items-center mb-4">
-                <h2 class="section-title" style="font-family: 'Georgia', serif; font-weight: bold; font-size: 2.8rem; color: #333;">
-                    <span style="border-bottom: 4px solid #3e4756; padding-bottom: 5px;">{{ __('lang.fill_form') }}</span>
+                <h2 class="section-title" style="font-family: 'Georgia', serif; font-weight: bold; font-size: 2.8rem;">
+                    <span style="  padding-bottom: 5px;">{{ __('lang.fill_form') }}</span>
                 </h2>
             </div>
         </div>

@@ -2,7 +2,9 @@
 
 @section('content')
     <!-- Page Header -->
-    <section class="page-header address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
+    <section class="address" style="
+        background: {{ isset($settings['news_background_enabled']) && $settings['news_background_enabled'] == '1' ? 'linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),' : '' }}
+        url('{{ asset($settings['news_image'] ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}');">
         <div class="container text-center">
             <h2 class="address-h3" style="font-size: 2.5rem; font-weight: bold;">
                 {{ __('lang.news_details_title') }}

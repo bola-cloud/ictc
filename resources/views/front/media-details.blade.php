@@ -2,15 +2,16 @@
 
 @section('content')
 
-    <section class="address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
-        <div class="container">
+    <section class="address" style="
+        background: {{ isset($settings['gallery_background_enabled']) && $settings['gallery_background_enabled'] == '1' ? 'linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),' : '' }}
+        url('{{ asset($settings['gallery_image'] ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}');">
+        <div class="container" style="padding-top: 120px; padding-bottom: 60px;">
             <div class="col-lg-12 text-center">
-                <h3 class="address-h3">
-                    {{ __('lang.gallery_section_title') }}
-                </h3>
+                <h3 class="address-h3">{{ __('lang.gallery_section_title') }}</h3>
             </div>
         </div>
     </section>
+
 
     <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
     <symbol id="enlarge" viewBox="0 0 16 16">

@@ -3,16 +3,19 @@
 @section('content')
 
 <!-- Page Header -->
-<section class="page-header address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
-  <div class="container text-center">
-    <h3 class="address-h3" style="font-size: 2.5rem; font-weight: bold;">
-      {{ __('lang.contact_us_title') }}
-    </h3>
-    <p style="font-size: 1.2rem; margin-top: 10px;">
-      {{ __('lang.contact_us_subtitle') }}
-    </p>
-  </div>
+<section class="page-header address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('{{ asset($settings->contact_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}');">
+    <div class="container text-center" style="padding-top: 120px; padding-bottom: 60px;">
+        <h3 class="address-h3" style="font-size: 2.5rem; font-weight: bold;">
+            {{ __('lang.contact_us_title') }}
+        </h3>
+        <p style="font-size: 1.2rem; margin-top: 10px;">
+            {{ __('lang.contact_us_subtitle') }}
+        </p>
+    </div>
 </section>
+
+
 
 <!-- Contact Information Section -->
 <section id="contact-info" class="contact-info-section section-background" style="padding: 60px 0; background-color: #f8f9fa;">
@@ -25,7 +28,7 @@
         {{ __('lang.contact_info_subtitle') }}
       </p>
     </div>
-    <div class="row g-4">
+    <div class="row g-4 d-flex justify-content-center">
       <!-- Address Card -->
       <div class="col-md-6 col-lg-3">
         <div class="card text-center shadow-sm p-4 h-100 dark-custom-card" style="border-radius: 15px; background-color: #fff;">
@@ -57,7 +60,7 @@
         </div>
       </div>
       <!-- Website Card -->
-      <div class="col-md-6 col-lg-3">
+      {{-- <div class="col-md-6 col-lg-3">
         <div class="card text-center shadow-sm p-4 h-100 dark-custom-card" style="border-radius: 15px; background-color: #fff;">
           <div class="icon mb-3" style="font-size: 3rem;">
             <i class="fa fa-globe"></i>
@@ -65,7 +68,7 @@
           <h5 class="fw-bold">{{ __('lang.contact_website_title') }}</h5>
           <p style="font-size: 1rem;">{{ __('lang.contact_website_description') }}</p>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </section>

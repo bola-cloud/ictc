@@ -5,13 +5,17 @@
 
     <div class="container-fluid m-0 p-0">
         <!-- Address Section -->
-        <section class="address" style="background: linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ asset($settings->cover_image ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}'); background-size: cover; background-position: center;">
-            <div class="container">
+        <section class="address" style="
+            background: {{ isset($settings['about_background_enabled']) && $settings['about_background_enabled'] == '1' ? 'linear-gradient(60deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),' : '' }}
+            url('{{ asset($settings['about_image'] ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}');">
+            <div class="container" style="padding-top: 120px; padding-bottom: 60px;">
                 <div class="col-lg-12 text-center">
-                    <h3 class="address-h3">{{ __('lang.address_title') }}</h3>
+                    <h3 class="address-h3">{{ __('lang.about_us') }}</h3>
                 </div>
             </div>
         </section>
+
+
 
         <nav class="custom-navbar">
             <ul class="nav-menu">
@@ -69,27 +73,75 @@
                         <h2 class="section-title"><span>{{ __('lang.our_philosophy') }}</span></h2>
                     </div>
 
-                    <p class="section-description">
+                    <p class="section-description text-center mb-5">
                         {{ __('lang.our_philosophy_description') }}
                     </p>
+
+                    <div class="row g-4 justify-content-center">
+                        @foreach ([
+                            ['icon' => 'integrity.png', 'label' => 'integrity'],
+                            ['icon' => 'development.png', 'label' => 'development'],
+                            ['icon' => 'empowerment.png', 'label' => 'empowerment'],
+                            ['icon' => 'responsibility.png', 'label' => 'responsibility'],
+                            ['icon' => 'innovation.png', 'label' => 'innovation'],
+                            ['icon' => 'teamwork.png', 'label' => 'team_work'],
+                            ['icon' => 'quality.png', 'label' => 'quality'],
+                            ['icon' => 'commitment.png', 'label' => 'commitment'],
+                        ] as $item)
+                            <div class="col-md-3 col-sm-6">
+                                <div class="work-withus-card text-center h-100">
+                                    <div class="card-image d-flex justify-content-center align-items-center"
+                                        style="background-image: url('{{ asset('img/icons/' . $item['icon']) }}'); height: 13vh !important; background-size: contain; background-repeat: no-repeat; background-position: center;">
+                                    </div>
+                                    <div class="card-footer text-white" style="background-color: #40537d; padding: 18px;">
+                                        {{ __('lang.' . $item['label']) }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- OUR STRATEGY Section -->
+        <!-- OUR SERVICES Section -->
         <section id="strategy" class="section-spacing section-margin scroll-section">
             <div class="history-section">
                 <div class="container">
                     <div class="section-header d-flex justify-content-center align-items-center mb-4">
-                        <h2 class="section-title"><span>{{ __('lang.our_strategy') }}</span></h2>
+                        <h2 class="section-title">
+                            <span>{{ __('lang.our_services') }}</span>
+                        </h2>
                     </div>
 
-                    <p class="section-description">
-                        {{ __('lang.our_strategy_description') }}
+                    <p class="section-description text-center mb-5">
+                        {{ __('lang.our_services_description') }}
                     </p>
+
+                    <div class="row g-4 justify-content-center">
+                        @foreach ($services as $service)
+                            <div class="col-md-3 col-sm-6">
+                                <div class="work-withus-card text-center h-100">
+                                    <div class="card-image d-flex justify-content-center align-items-center"
+                                        style="
+                                            height: 13vh !important;
+                                            background-size: contain;
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                            background-image: url('{{ asset($service->image) }}');
+                                        ">
+                                    </div>
+                                    <div class="card-footer text-white" style="background-color: #40537d; padding: 18px;">
+                                        {{ app()->getLocale() === 'ar' ? $service->ar_title : $service->en_title }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </section>
+
 
         <section id="team" class="team-section section-spacing section-margin scroll-section">
             <div class="container">
@@ -116,7 +168,7 @@
                                 <div class="row justify-content-center mb-4 team-margin">
                                     @for ($i = 0; $i < $rowSize && $index < $members->count(); $i++, $index++)
                                         @php $member = $members[$index]; @endphp
-                                        <div class="col-md-{{ 12 / $rowSize }} col-sm-6 mb-4 d-flex justify-content-center">
+                                        <div class="col-md-{{ 12 / $rowSize }} col-sm-6 mb-4 d-flex justify-content-center" style="margin-top: 5vh;">
                                             <div class="team-member text-center">
                                                 <div class="image-wrapper position-relative">
                                                     <img src="{{ $member->image ? asset('storage/' . $member->image) : asset('img/default-avatar.png') }}"
@@ -141,7 +193,7 @@
                         @else
                             <div class="row d-flex justify-content-center mb-4">
                                 @foreach ($members as $member)
-                                    <div class="col-md-3 col-sm-6 mb-4 d-flex justify-content-center">
+                                    <div class="col-md-3 col-sm-6 mb-4 d-flex justify-content-center" style="margin-top: 5vh;">
                                         <div class="team-member text-center">
                                             <div class="image-wrapper position-relative">
                                                 <img src="{{ $member->image ? asset('storage/' . $member->image) : asset('img/default-avatar.png') }}"

@@ -1,5 +1,5 @@
 .custom-navbar {
-    background-color: #f6ebd8; /* Same as section background for cohesion */
+    background-color:  #F3EED4; /* Same as section background for cohesion */
     padding: 15px 0;
     text-align: center;
     border-bottom: 1px solid #ccc;
@@ -47,7 +47,7 @@
 }
 /* Main section background */
 #new-about {
-    background-color: #f6ebd8 !important; /* Updated to match image 2 */
+    background-color:  #F3EED4 !important; /* Updated to match image 2 */
 }
 
 /* History section container */
@@ -165,7 +165,7 @@
 /* Team section */
 
 .team-section {
-    background-color: #f6ebd8;
+    background-color:  #F3EED4;
     padding: 60px 0;
 }
 

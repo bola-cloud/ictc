@@ -47,7 +47,7 @@
             color: #404b62 !important;
         }
         i.fa.fa-bars {
-            color: #f6ebd8 !important;
+            color:  #F3EED4 !important;
         }
         body {
             font-family: {{ app()->getLocale() === 'ar' ? "'Tajawal', sans-serif" : "'Roboto', sans-serif" }};

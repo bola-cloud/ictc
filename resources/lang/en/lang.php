@@ -240,7 +240,7 @@ return [
     'projects_title' => 'Projects',
     'partners_value' => '45',
     'partners_title' => 'Partners',
-    'beneficiaries_value' => '25,000+',
+    'beneficiaries_value' => '25000',
     'beneficiaries_title' => 'Beneficiaries',
     'governorates_value' => '18',
     'governorates_title' => 'Governorates',
@@ -560,11 +560,11 @@ return [
     'no_logo' => 'No Logo Uploaded',
     'no_cover' => 'No Cover Image Uploaded',
     'success_setting_updated' => 'Settings updated successfully!',
-    'i_meaning' => 'Innovative development interventions',
-    'c1_meaning' => 'Community Based',
-    't_meaning' => 'Technological Solutions',
-    'c2_meaning' => 'Capabilities',
-    'welcome_message' => 'Welcome to ICTC',
+    'i_meaning' => 'Innovative development interventions.',
+    'c1_meaning' => 'Community Based.',
+    't_meaning' => 'Technological Solutions.',
+    'c2_meaning' => 'Capabilities.',
+    'welcome_message' => 'Welcome to ICTC.',
     'custom_orange' => 'Custom Orange',
     'select_color' => 'Select Color',
 
@@ -791,6 +791,8 @@ return [
     'partners_image' => 'Partners Section Image',
     'contact_image' => 'Contact Section Image',
     'enable_background_overlay' => 'Enable Background Overlay',
+    'internship_interests' => 'Internship Interests',
+    'consultancy_interest' => 'Consultancy Interests',
 ];
 
 

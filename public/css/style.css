@@ -3189,8 +3189,13 @@ header .logo img {
 } */
 
 .typewriter-header{
-    font-size: xxx-large !important;
+    /* font-size: xxx-large !important; */
     color: #404b62 !important;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 .head-video{
   position: relative; height: 100vh; overflow: hidden;
@@ -3343,7 +3348,6 @@ transform: scale(0.9);
     padding-bottom: 60px;
 }
 
-/* Grow Pulse Spinner */
 .spinner-overlay {
   position: fixed;
   top: 0;
@@ -3351,7 +3355,7 @@ transform: scale(0.9);
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1050; /* Ensure it stays above other content */
+  z-index: 1050;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3364,6 +3368,27 @@ transform: scale(0.9);
   visibility: visible;
   opacity: 1;
 }
+
+/* Spinner animation (optional placeholder) */
+.grow-pulse {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+}
+
 
 .grow-pulse {
   width: 50px;
@@ -4212,9 +4237,36 @@ strong {
 }
 @media (max-width: 450px) {
     .typewriter-header{
-        font-size: xx-large !important;
+        font-size: x-large !important;
     }
     #typewriter-text {
-        font-size: x-large !important;
+        font-size: xx-large !important;
+    }
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 13px 34px !important;
+    background-color: #f8ecd4 !important; /* Blue background */
+    color: #003366 !important; /* Light text color */
+    border-radius: 25px;
+    text-decoration: none;
+    /* font-weight: bold !important; */
+    font-size: large !important;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border: 1px solid #003366 !important; /* Blue border */
+}
+.learn-more-btn:hover {
+    background-color: #003366 !important; /* Darker blue on hover */
+    color: #f8ecd4 !important; /* Lighter text color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+@media (max-width: 991px) {
+    .learn-more-btn {
+        padding: 10px 20px !important;
+        font-size: medium !important;
+    }
+    .container.text-center.d-flex.flex-column.align-items-start.justify-content-start{
+        padding-top: 11vh !important;
     }
 }

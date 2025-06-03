@@ -12,20 +12,24 @@
         </div>
     </section>
 
-
+    <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="enlarge" viewBox="0 0 16 16">
+            <path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z"/>
+        </symbol>
+    </svg>
 
 
     <!-- Page Header -->
-    <section id="inner-headline">
+    <section id="inner-headline" class="section-background" style="background-color: #f8f9fa; padding: 20px 0;color:#404b62 !important">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="inner-heading">
                         <ul class="breadcrumb">
-                            <li>
+                            {{-- <li>
                                 <a href="{{ route('home') }}">{{ __('lang.breadcrumb_home') }}</a>
                                 <i class="icon-angle-right"></i>
-                            </li>
+                            </li> --}}
                             <li class="active">
                                 &nbsp; {{ __('lang.breadcrumb_videos_gallery') }}
                             </li>
@@ -36,9 +40,9 @@
         </div>
     </section>
 
-<div class="text-center mb-5 mt-3">
-    <h2 style="font-size: 2.5rem; font-weight: bold; color: #333;">
-        {{ __('lang.photos_gallery_title') }} <strong>{{ __('lang.video_gallery') }}</strong>
+<div class="text-center mb-5 mt-3 section-header">
+    <h2 style="font-size: 2.5rem; font-weight: bold;" class="section-title">
+        <span>{{ __('lang.photos_gallery_title') }}  {{ __('lang.video_gallery') }}</span>
     </h2>
 </div>
 <section class="video-gallery">
@@ -46,16 +50,16 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             @forelse ($videos as $video)
             <div class="col">
-                <div class="card h-100">
-                    <button class="video-item btn btn-link p-0" data-bs-toggle="modal" data-bs-target="#video-modal"
+                <div class="card gallery-card position-relative dark-custom-card">
+                    <button class="video-item btn btn-link p-2 d-flex justify-content-center align-content-center" data-bs-toggle="modal" data-bs-target="#video-modal"
                         data-video="{{ asset('storage/' . $video->image_path) }}"
                         data-title="{{ app()->getLocale() === 'ar' ? $video->ar_subtitle : $video->en_subtitle }}">
                         <!-- Thumbnail generated dynamically -->
                         <canvas class="video-thumbnail img-fluid" data-video-src="{{ asset('storage/' . $video->image_path) }}"></canvas>
                     </button>
-                    <div class="card-body text-center">
+                    <div class="card-body text-center dark-news-card-body">
                         <!-- Display video title -->
-                        <h5 class="card-title">
+                        <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">
                             {{ app()->getLocale() === 'ar' ? $video->ar_subtitle : $video->en_subtitle }}
                         </h5>
                     </div>
@@ -72,8 +76,8 @@
 
 <!-- Video Modal -->
 <div class="modal fade" id="video-modal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered modal-lg p-5">
+        <div class="modal-content dark-custom-card">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             <div class="modal-header">
                 <!-- Title displayed dynamically -->
@@ -86,7 +90,7 @@
                 </video>
                 <!-- Display video title below the video -->
                 <div class="text-center mt-3">
-                    <h5 id="modal-video-title-below" class="text-muted"></h5>
+                    <h5 id="modal-video-title-below" style="font-weight: bold; color: #f8ecd4 !important;" class="text-muted"></h5>
                 </div>
             </div>
         </div>

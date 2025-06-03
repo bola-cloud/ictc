@@ -564,41 +564,36 @@
         // Show spinner on page load
         document.addEventListener('DOMContentLoaded', () => {
             const spinner = document.getElementById('loadingSpinner');
+
+            // Show spinner initially (for direct entry)
             spinner.classList.add('active');
 
-            // Hide spinner after page fully loads
-            window.addEventListener('load', () => {
+            // Hide spinner after full load or on bfcache restore
+            window.addEventListener('pageshow', (event) => {
                 spinner.classList.remove('active');
             });
 
-            // Handle route changes for Single Page Applications (SPAs)
-            if (window.history.pushState) {
-                document.addEventListener('click', (e) => {
-                    const target = e.target.closest('a'); // Find the closest anchor tag
-                    if (
-                        target &&
-                        target.href &&
-                        target.target !== '_blank' &&
-                        target.getAttribute('href') !== '#' &&
-                        target.getAttribute('href') !== ''
-                    ) {
-                        e.preventDefault(); // Prevent default navigation
-                        spinner.classList.add('active'); // Show spinner
+            // Handle internal link clicks
+            document.addEventListener('click', (e) => {
+                const target = e.target.closest('a');
+                if (
+                    target &&
+                    target.href &&
+                    target.target !== '_blank' &&
+                    !target.href.startsWith('javascript:') &&
+                    target.getAttribute('href') !== '#' &&
+                    !target.hasAttribute('data-no-spinner') &&
+                    target.origin === location.origin
+                ) {
+                    spinner.classList.add('active');
+                }
+            });
 
-                        // Simulate loading (replace this part with your actual page navigation logic)
-                        setTimeout(() => {
-                            window.location.href = target.href; // Perform navigation
-                        }, 1000); // Adjust the delay as needed
-                    }
-                });
-            }
-
-            // Hide spinner on popstate (back/forward button)
-            window.addEventListener('popstate', () => {
-                spinner.classList.remove('active');
+            // Ensure spinner appears during unload (just in case)
+            window.addEventListener('beforeunload', () => {
+                spinner.classList.add('active');
             });
         });
-
 
         // Toggle the side navigation
         $(document).ready(function () {

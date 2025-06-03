@@ -22,7 +22,7 @@
         <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; display: flex; align-items: center; justify-content: center;">
             <div class="container text-center d-flex flex-column align-items-start justify-content-start" style="z-index: 20; color: #f8ecd4; padding: 20px;">
                 <h3>
-                    <span class="typewriter-header" style="font-size: 3rem; font-weight: bold;">
+                    <span class="typewriter-header" style="font-size: 3rem;">
                         {{ __('lang.welcome_message') }}
                     </span>
                 </h3>
@@ -30,6 +30,10 @@
                     <i id="typewriter-icon" class="fa-solid fa-2x me-2" role="img" aria-label="ICTC icon"></i>
                     <span id="typewriter-text"></span>
                 </h1>
+                <!-- 🔽 New Button -->
+                <a href="{{ route('about')}}" class="btn mt-5 learn-more-btn">
+                    {{ __('lang.learn_more') }}
+                </a>
             </div>
         </div>
     </section>
@@ -126,28 +130,28 @@
                 <!-- Projects Card -->
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.projects_value') }}</h3>
+                        <h3 class="fw-bold counter" data-target="{{ __('lang.projects_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.projects_title') }}</p>
                     </div>
                 </div>
                 <!-- Partners Card -->
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.partners_value') }}</h3>
+                        <h3 class="fw-bold counter" data-target="{{ __('lang.partners_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.partners_titles') }}</p>
                     </div>
                 </div>
                 <!-- Beneficiaries Card -->
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.beneficiaries_value') }}</h3>
+                        <h3 class="fw-bold counter" data-target="{{ __('lang.beneficiaries_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.beneficiaries_title') }}</p>
                     </div>
                 </div>
                 <!-- Governorates Card -->
                 <div class="col-md-6 col-lg-3">
                     <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold" style="font-size: 2.5rem;">{{ __('lang.governorates_value') }}</h3>
+                        <h3 class="fw-bold counter" data-target="{{ __('lang.governorates_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.governorates_title') }}</p>
                     </div>
                 </div>
@@ -680,6 +684,37 @@
 
             // Optional: delay to ensure everything is ready
             setTimeout(animateItem, 300);
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counters = document.querySelectorAll('.counter');
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 1500; // in ms
+                const frameRate = 30;
+                const steps = Math.ceil(duration / frameRate);
+                let count = 0;
+                const increment = target / steps;
+
+                const updateCounter = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCounter, frameRate);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCounter();
+            };
+
+            counters.forEach(counter => {
+                animateCounter(counter);
+            });
         });
     </script>
 @endpush

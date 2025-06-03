@@ -16,7 +16,7 @@
 
 
         <!-- Page Header -->
-        <section id="inner-headline" class="section-background" style="background-color: #f8f9fa; padding: 20px 0;color:#404b62 !important">
+        {{-- <section id="inner-headline" class="section-background" style="background-color: #f8f9fa; padding: 20px 0;color:#404b62 !important">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -28,12 +28,12 @@
                                 </li>
                                 <li class="active">&nbsp; {{ __('lang.latest_news') }}</li>
                             </ul>
-                            {{-- <h2 class="mt-3" style="padding: 20px 0;color:#404b62 !important">{{ __('lang.latest_news') }}</h2> --}}
+                            <h2 class="mt-3" style="padding: 20px 0;color:#404b62 !important">{{ __('lang.latest_news') }}</h2>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <!-- News Section -->
         <section class="news-section section-background py-5">
@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-12 text-center section-header mb-4">
                         <h2 class="section-title" style="font-size: 2.5rem; font-weight: bold;">
-                            <span>{{ __('lang.latest_news_title') }} {{ __('lang.latest_news_title_strong') }}</span>
+                            <span>{{ __('lang.latest_news') }}</span>
                         </h2>
                     </div>
                 </div>

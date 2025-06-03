@@ -27,10 +27,10 @@
                 <div class="col-md-12">
                     <div class="inner-heading">
                         <ul class="breadcrumb">
-                            <li>
+                            {{-- <li>
                                 <a href="{{ route('home') }}">{{ __('lang.breadcrumb_home') }}</a>
                                 <i class="icon-angle-right"></i>
-                            </li>
+                            </li> --}}
                             <li class="active">
                                 &nbsp; {{ __('lang.breadcrumb_photos_gallery') }}
                             </li>

@@ -11,9 +11,9 @@ class ProjectController extends Controller
 {
     public function show($scopeSlug, $projectSlug)
     {
-        $scope = Scope::whereRaw("LOWER(?) = ?", [Str::slug($scopeSlug), Str::slug($scope->en_title)])->firstOrFail();
+        $scope = Scope::whereRaw("LOWER(?) = REPLACE(LOWER(en_title), ' ', '-')", [Str::slug($scopeSlug)])->firstOrFail();
         $project = Project::where('scope_id', $scope->id)
-                         ->whereRaw("LOWER(?) = ?", [Str::slug($projectSlug), Str::slug($project->en_name)])
+                         ->whereRaw("LOWER(?) = REPLACE(LOWER(en_name), ' ', '-')", [Str::slug($projectSlug)])
                          ->firstOrFail();
 
         return view('front.project-details', compact('project', 'scope'));

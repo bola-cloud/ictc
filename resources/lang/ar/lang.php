@@ -804,4 +804,5 @@ return [
     'enable_background_overlay' => 'تفعيل تراكب الخلفية',
     'internship_interests' => 'طلبات التدريب',
     'consultancy_interest' => 'طلبات الاستشارة',
+    'project_updated' => 'تم تحديث المشروع بنجاح!',
 ];

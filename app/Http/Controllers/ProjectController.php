@@ -11,11 +11,19 @@ class ProjectController extends Controller
 {
     public function show($scopeSlug, $projectSlug)
     {
-        $scope = Scope::whereRaw("REGEXP_REPLACE(LOWER(en_title), '[^a-z0-9 ]', '') = ?", [str_replace('-', ' ', $scopeSlug)])
-                      ->firstOrFail();
-        $project = Project::where('scope_id', $scope->id)
-                         ->whereRaw("REGEXP_REPLACE(LOWER(en_name), '[^a-z0-9 ]', '') = ?", [str_replace('-', ' ', $projectSlug)])
-                         ->firstOrFail();
+        // Find the scope in memory using slug comparison
+        $scope = Scope::all()->first(function ($s) use ($scopeSlug) {
+            return Str::slug($s->en_title) === $scopeSlug;
+        });
+
+        abort_if(!$scope, 404);
+
+        // Find the project within that scope, using slug logic
+        $project = $scope->projects->first(function ($p) use ($projectSlug) {
+            return Str::slug($p->en_name) === $projectSlug;
+        });
+
+        abort_if(!$project, 404);
 
         return view('front.project-details', compact('project', 'scope'));
     }

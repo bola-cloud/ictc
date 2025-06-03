@@ -793,6 +793,7 @@ return [
     'enable_background_overlay' => 'Enable Background Overlay',
     'internship_interests' => 'Internship Interests',
     'consultancy_interest' => 'Consultancy Interests',
+    'project_updated' => 'Project updated successfully.',
 ];
 
 

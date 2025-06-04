@@ -168,10 +168,13 @@
             color:  #F3EED4 !important;
         }
         body {
-            font-family: {{ app()->getLocale() === 'ar' ? "'Tajawal', sans-serif" : "'Roboto', sans-serif" }};
+            /* font-family: {{ app()->getLocale() === 'ar' ? "'Tajawal', sans-serif" : "'Roboto', sans-serif" }};
             direction: {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }};
             text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};
-            font-size: {{ app()->getLocale() === 'ar' ? '1.1rem' : '1rem' }};
+            font-size: {{ app()->getLocale() === 'ar' ? '1.1rem' : '1rem' }}; */
+            color: #f8ecd4;
+            font-family: '{{ app()->getLocale() == "ar" ? "29LT Bukra" : "Yu Mincho" }}', sans-serif !important;
+            font-weight: 400;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -179,6 +182,7 @@
             letter-spacing: {{ app()->getLocale() === 'ar' ? '0.5px' : 'normal' }};
             word-spacing: {{ app()->getLocale() === 'ar' ? '2px' : 'normal' }};
             font-size: {{ app()->getLocale() === 'ar' ? '1.2em' : '1em' }};
+            font-family: '{{ app()->getLocale() == "ar" ? "29LT Bukra" : "Yu Mincho" }}', sans-serif;
         }
 
         p {

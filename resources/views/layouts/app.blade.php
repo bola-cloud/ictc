@@ -151,6 +151,13 @@
             font-size: 14px;
             line-height: 1.6;
         }
+        .chatbot-msg small {
+            display: block;
+            font-size: 12px;
+            color: #e6dfc5;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
 
 
         .side-nav.open {
@@ -441,6 +448,7 @@
                     <button class="suggested-btn" onclick="handleQuestion('mission')">{{ __('lang.our_mission') }}</button>
                     <button class="suggested-btn" onclick="handleQuestion('services')">{{ app()->getLocale() == 'ar' ? 'خدماتنا' : 'Our Services' }}</button>
                     <button class="suggested-btn" onclick="handleQuestion('contact')">{{ app()->getLocale() == 'ar' ? 'تواصل معنا' : 'Contact' }}</button>
+                    <button class="suggested-btn" onclick="handleQuestion('projects')">{{ app()->getLocale() == 'ar' ? 'مشروعاتنا' : 'Our Projects' }}</button>
                 </div>
                 <input type="text" id="chat-input" placeholder="{{ app()->getLocale() == 'ar' ? 'اكتب هنا...' : 'Type here...' }}" disabled />
             </div>
@@ -791,6 +799,7 @@
                 case 'mission': return '{{ __("lang.our_mission") }}';
                 case 'services': return '{{ app()->getLocale() == "ar" ? "خدماتنا" : "Our Services" }}';
                 case 'contact': return '{{ app()->getLocale() == "ar" ? "تواصل معنا" : "Contact" }}';
+                case 'projects': return '{{ app()->getLocale() == "ar" ? "مشروعاتنا" : "Our Projects" }}';
             }
         }
 
@@ -801,6 +810,15 @@
                 case 'mission': return `{{ __('lang.our_mission_description') }}`;
                 case 'services': return `<ul>@foreach(\App\Models\Service::all() as $service)<li>{{ app()->getLocale() == 'ar' ? $service->ar_title : $service->en_title }}</li>@endforeach</ul>`;
                 case 'contact': return `<b>Email:</b> contact@ictc-egy.com/<br><b>Phone:</b> +20123456789<br><b>Location:</b> Cairo, Egypt`;
+                case 'projects': return `<ul>
+                    @foreach(\App\Models\Project::limit(5)->get() as $project)
+                        <li>
+                            <b>{{ app()->getLocale() == 'ar' ? $project->ar_name : $project->en_name }}</b><br>
+                            <small>{{ Str::limit(strip_tags(app()->getLocale() == 'ar' ? $project->ar_description : $project->en_description), 80) }}</small>
+                        </li>
+                    @endforeach
+                    </ul>`;
+
             }
             return '';
         }

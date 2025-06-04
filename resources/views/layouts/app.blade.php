@@ -813,7 +813,7 @@
                 case 'projects': return `<ul>
                     @foreach(\App\Models\Project::limit(5)->get() as $project)
                         <li>
-                            <b>{{ app()->getLocale() == 'ar' ? $project->ar_name : $project->en_name }}</b><br>
+                            <b> - {{ app()->getLocale() == 'ar' ? $project->ar_name : $project->en_name }}</b><br>
                             <small>{{ Str::limit(strip_tags(app()->getLocale() == 'ar' ? $project->ar_description : $project->en_description), 80) }}</small>
                         </li>
                     @endforeach

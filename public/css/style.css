@@ -4270,3 +4270,6 @@ strong {
         padding-top: 11vh !important;
     }
 }
+.project-description {
+    padding: 0 50px;
+}

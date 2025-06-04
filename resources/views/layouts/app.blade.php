@@ -42,6 +42,117 @@
     @endif
 
     <style>
+        #chatbot-container {
+            position: fixed;
+            bottom: 93px;
+            @if(app()->getLocale() == 'ar') left: 70px; @else right: 70px; @endif
+            width: 320px;
+            max-height: 500px;
+            background: #f8ecd4;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            z-index: 9999;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: 'Cairo', sans-serif !important;
+        }
+
+        #chatbot-header {
+            background: #40537d;
+            color: #f8ecd4;
+            padding: 12px 16px;
+            font-weight: bold;
+        }
+
+        #chatbot-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f8ecd4;
+            min-height: 31vh;
+        }
+
+        .chatbot-msg {
+            background: #40537d;
+            padding: 8px 12px;
+            border-radius: 12px;
+            max-width: 80%;
+            align-self: flex-start;
+            color: #f8ecd4;
+        }
+
+        .user-msg {
+            background: #40537dbf;
+            align-self: flex-end;
+            color: #f8ecd4;
+        }
+
+        #chatbot-footer {
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .suggested-btn {
+            background: #40537d;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            cursor: pointer;
+            margin-right: 5px;
+            color: #f8ecd4;
+            margin-top: 6px;
+        }
+
+        #chat-input {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+        #chatbot-toggle {
+            position: fixed;
+            bottom: 30px;
+            @if(app()->getLocale() == 'ar') left: 70px; @else right: 70px; @endif
+            background: white;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 10000;
+        }
+
+        #chatbot-toggle img {
+            width: 36px;
+        }
+
+        .chatbot-msg ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .chatbot-msg li {
+            margin-bottom: 6px;
+            list-style-type: disc;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .chatbot-msg p {
+            margin-bottom: 6px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
         .side-nav.open {
             background: #f8ecd4 !important;
             color: #404b62 !important;
@@ -312,6 +423,28 @@
             </ul>
         </div>
 
+        <!-- Floating Chatbot Toggle Button -->
+        <button id="chatbot-toggle">
+            <img src="{{ asset('img/chatbot-icon.png') }}" alt="Chatbot">
+        </button>
+
+        <!-- Chatbot Panel -->
+        <div id="chatbot-container" style="display: none;">
+            <div id="chatbot-header">{{ __('lang.our_mission') }}</div>
+            <div id="chatbot-body">
+                <div class="chatbot-msg">{{ app()->getLocale() === 'ar' ? 'مرحباً! كيف يمكنني مساعدتك؟' : 'Hello! How can I help you?' }}</div>
+            </div>
+            <div id="chatbot-footer">
+                <div>
+                    <button class="suggested-btn" onclick="handleQuestion('about')">{{ __('lang.our_history') }}</button>
+                    <button class="suggested-btn" onclick="handleQuestion('vision')">{{ __('lang.our_vision') }}</button>
+                    <button class="suggested-btn" onclick="handleQuestion('mission')">{{ __('lang.our_mission') }}</button>
+                    <button class="suggested-btn" onclick="handleQuestion('services')">{{ app()->getLocale() == 'ar' ? 'خدماتنا' : 'Our Services' }}</button>
+                    <button class="suggested-btn" onclick="handleQuestion('contact')">{{ app()->getLocale() == 'ar' ? 'تواصل معنا' : 'Contact' }}</button>
+                </div>
+                <input type="text" id="chat-input" placeholder="{{ app()->getLocale() == 'ar' ? 'اكتب هنا...' : 'Type here...' }}" disabled />
+            </div>
+        </div>
 
         <footer style="background-color:#1a2333; color: #fff; padding: 40px 0;">
             <div class="container">
@@ -618,6 +751,59 @@
             easing: 'ease-in-out',
             once: true, // animation happens only once
         });
+    </script>
+    <script>
+        const botToggle = document.getElementById('chatbot-toggle');
+        const chatContainer = document.getElementById('chatbot-container');
+        const chatBody = document.getElementById('chatbot-body');
+
+        botToggle.addEventListener('click', () => {
+            chatContainer.style.display = chatContainer.style.display === 'none' ? 'flex' : 'none';
+        });
+
+        function handleQuestion(key) {
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chatbot-msg user-msg';
+            userMsg.innerText = keyToLabel(key);
+            chatBody.appendChild(userMsg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            const botTyping = document.createElement('div');
+            botTyping.className = 'chatbot-msg';
+            botTyping.innerText = '...';
+            chatBody.appendChild(botTyping);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            setTimeout(() => {
+                botTyping.remove();
+                const botReply = document.createElement('div');
+                botReply.className = 'chatbot-msg';
+                botReply.innerHTML = getReply(key);
+                chatBody.appendChild(botReply);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+        }
+
+        function keyToLabel(key) {
+            switch (key) {
+                case 'about': return '{{ __("lang.our_history") }}';
+                case 'vision': return '{{ __("lang.our_vision") }}';
+                case 'mission': return '{{ __("lang.our_mission") }}';
+                case 'services': return '{{ app()->getLocale() == "ar" ? "خدماتنا" : "Our Services" }}';
+                case 'contact': return '{{ app()->getLocale() == "ar" ? "تواصل معنا" : "Contact" }}';
+            }
+        }
+
+        function getReply(key) {
+            switch (key) {
+                case 'about': return `{{ __('lang.our_history_description') }}<br>{{ __('lang.our_history_description_two') }}`;
+                case 'vision': return `{{ __('lang.our_vision_description') }}`;
+                case 'mission': return `{{ __('lang.our_mission_description') }}`;
+                case 'services': return `<ul>@foreach(\App\Models\Service::all() as $service)<li>{{ app()->getLocale() == 'ar' ? $service->ar_title : $service->en_title }}</li>@endforeach</ul>`;
+                case 'contact': return `<b>Email:</b> contact@ictc-egy.com/<br><b>Phone:</b> +20123456789<br><b>Location:</b> Cairo, Egypt`;
+            }
+            return '';
+        }
     </script>
 
     @stack('js')

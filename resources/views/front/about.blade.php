@@ -41,8 +41,7 @@
                     <p class="section-description">
                         {{ __('lang.our_history_description_two') }}
                     </p>
-
-
+                    
                 </div>
             </div>
         </section>

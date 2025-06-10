@@ -119,16 +119,11 @@
 
                     <div class="row g-4 justify-content-center align-items-stretch">
                         @foreach ($services as $service)
-                            <div class="col-md-3 col-sm-6">
-                                <div class="work-withus-card text-center h-100">
+                            <div class="col-md-3 col-sm-6 d-flex">
+                                <div class="work-withus-card text-center w-100 d-flex flex-column">
                                     <div class="card-image d-flex justify-content-center align-items-center"
-                                        style="
-                                            height: 13vh !important;
-                                            background-size: contain;
-                                            background-repeat: no-repeat;
-                                            background-position: center;
-                                            background-image: url('{{ asset($service->image) }}');
-                                        ">
+                                        style="height: 20vh !important; background-size: contain; background-repeat: no-repeat; background-position: center;
+                                                background-image: url('{{ asset($service->image) }}');">
                                     </div>
                                     <div class="card-footer text-white" style="background-color: #40537d; padding: 18px;">
                                         {{ app()->getLocale() === 'ar' ? $service->ar_title : $service->en_title }}

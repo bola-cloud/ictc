@@ -210,3 +210,12 @@
 .team-margin{
     margin-top: 4vh !important;
 }
+
+.card-footer.text-white {
+    background-color: #40537d;
+    padding: 18px;
+    white-space: normal;         /* Allow wrapping */
+    word-wrap: break-word;       /* Break long words */
+    line-height: 1.4;            /* Improve readability */
+    min-height: 60px;            /* Optional: Ensure consistent height */
+}

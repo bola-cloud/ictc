@@ -41,7 +41,7 @@
                     <p class="section-description">
                         {{ __('lang.our_history_description_two') }}
                     </p>
-                    
+
                 </div>
             </div>
         </section>
@@ -117,7 +117,7 @@
                         {{ __('lang.our_services_description') }}
                     </p>
 
-                    <div class="row g-4 justify-content-center">
+                    <div class="row g-4 justify-content-center align-items-stretch">
                         @foreach ($services as $service)
                             <div class="col-md-3 col-sm-6">
                                 <div class="work-withus-card text-center h-100">

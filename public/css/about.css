@@ -211,27 +211,27 @@
     margin-top: 4vh !important;
 }
 
+
+.work-withus-card {
+    background-color: #fef3dc; /* Same as current */
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .card-footer.text-white {
     background-color: #40537d;
     padding: 18px;
     white-space: normal;
     word-wrap: break-word;
     line-height: 1.4;
-    border-bottom-left-radius: 1rem;   /* Fix border radius */
+    border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    margin-top: auto;                  /* Push footer to the bottom */
     text-align: center;
-}
-
-.work-withus-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Make content spread out vertically */
-    height: 100%;
+    margin-top: auto; /* Push to bottom */
+    min-height: 60px;  /* Optional for uniform footer height */
 }

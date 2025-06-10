@@ -214,8 +214,24 @@
 .card-footer.text-white {
     background-color: #40537d;
     padding: 18px;
-    white-space: normal;         /* Allow wrapping */
-    word-wrap: break-word;       /* Break long words */
-    line-height: 1.4;            /* Improve readability */
-    min-height: 60px;            /* Optional: Ensure consistent height */
+    white-space: normal;
+    word-wrap: break-word;
+    line-height: 1.4;
+    border-bottom-left-radius: 1rem;   /* Fix border radius */
+    border-bottom-right-radius: 1rem;
+    margin-top: auto;                  /* Push footer to the bottom */
+    text-align: center;
+}
+
+.work-withus-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Make content spread out vertically */
+    height: 100%;
 }

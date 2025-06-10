@@ -228,10 +228,13 @@
     padding: 18px;
     white-space: normal;
     word-wrap: break-word;
+    text-align: center;
     line-height: 1.4;
+    height: 70px; /* Fixed height — adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
-    text-align: center;
-    margin-top: auto; /* Push to bottom */
-    min-height: 60px;  /* Optional for uniform footer height */
+    overflow: hidden;
 }

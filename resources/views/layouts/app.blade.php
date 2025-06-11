@@ -728,7 +728,8 @@
                     !target.href.startsWith('javascript:') &&
                     target.getAttribute('href') !== '#' &&
                     !target.hasAttribute('data-no-spinner') &&
-                    target.origin === location.origin
+                    target.origin === location.origin &&
+                    target.pathname !== location.pathname // 🚨 This prevents anchor #links from triggering spinner
                 ) {
                     spinner.classList.add('active');
                 }

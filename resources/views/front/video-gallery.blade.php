@@ -59,7 +59,7 @@
                     </button>
                     <div class="card-body text-center dark-news-card-body">
                         <!-- Display video title -->
-                        <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">
+                        <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color:  #F3EED4;">
                             {{ app()->getLocale() === 'ar' ? $video->ar_subtitle : $video->en_subtitle }}
                         </h5>
                     </div>
@@ -90,7 +90,7 @@
                 </video>
                 <!-- Display video title below the video -->
                 <div class="text-center mt-3">
-                    <h5 id="modal-video-title-below" style="font-weight: bold; color: #f8ecd4 !important;" class="text-muted"></h5>
+                    <h5 id="modal-video-title-below" style="font-weight: bold; color:  #F3EED4 !important;" class="text-muted"></h5>
                 </div>
             </div>
         </div>

@@ -80,7 +80,7 @@
         <!-- Contact Form -->
         <div class="col-md-6">
             <div class="contact-form shadow p-4 rounded" style="border-radius: 20px !important; background-color: #40537d;">
-                <h3 style="font-size: 1.8rem; font-weight: bold; color: #f8ecd4; margin-bottom: 20px;">
+                <h3 style="font-size: 1.8rem; font-weight: bold; color:  #F3EED4; margin-bottom: 20px;">
                     {{ __('lang.contact_form_title') }}
                 </h3>
 
@@ -91,21 +91,21 @@
                 <form action="{{ route('messages.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
-                        <label for="name" class="form-label" style="font-weight: bold; color: #f8ecd4;">
+                        <label for="name" class="form-label" style="font-weight: bold; color:  #F3EED4;">
                             {{ __('lang.contact_form_name_label') }}
                         </label>
                         <input type="text" name="name" id="name" class="form-control" placeholder="{{ __('lang.contact_form_name_placeholder') }}" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="email" class="form-label" style="font-weight: bold; color: #f8ecd4;">
+                        <label for="email" class="form-label" style="font-weight: bold; color:  #F3EED4;">
                             {{ __('lang.contact_form_email_label') }}
                         </label>
                         <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('lang.contact_form_email_placeholder') }}" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="message" class="form-label" style="font-weight: bold; color: #f8ecd4;">
+                        <label for="message" class="form-label" style="font-weight: bold; color:  #F3EED4;">
                             {{ __('lang.contact_form_message_label') }}
                         </label>
                         <textarea name="message" id="message" class="form-control" rows="5" placeholder="{{ __('lang.contact_form_message_placeholder') }}" required></textarea>

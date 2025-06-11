@@ -20,7 +20,7 @@
 
         <!-- Typewriter Content Overlay -->
         <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; display: flex; align-items: center; justify-content: center;">
-            <div class="container text-center d-flex flex-column align-items-start justify-content-start" style="z-index: 20; color: #f8ecd4; padding: 20px;">
+            <div class="container text-center d-flex flex-column align-items-start justify-content-start" style="z-index: 20; color:  #F3EED4; padding: 20px;">
                 <h3>
                     <span class="typewriter-header" style="font-size: 3rem;">
                         {{ __('lang.welcome_message') }}
@@ -58,7 +58,7 @@
                             @else
                                 <img src="https://via.placeholder.com/600x400?text=No+Image+Available" class="img-fluid" alt="No Image Available">
                             @endif
-                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color: #f8ecd4; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color:  #F3EED4; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
                                 <h2>{{ __('lang.photo_gallery') }}</h2>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                             @else
                                 <img src="https://via.placeholder.com/600x400?text=No+Video+Available" class="img-fluid" alt="No Video Available">
                             @endif
-                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color: #f8ecd4; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); color:  #F3EED4; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
                                 <h2>{{ __('lang.video_gallery') }}</h2>
                             </div>
                         </div>
@@ -129,29 +129,29 @@
             <div class="row g-4">
                 <!-- Projects Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold counter" data-target="{{ __('lang.projects_value') }}" style="font-size: 2.5rem;">0</h3>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.projects_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.projects_title') }}</p>
                     </div>
                 </div>
                 <!-- Partners Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold counter" data-target="{{ __('lang.partners_value') }}" style="font-size: 2.5rem;">0</h3>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.partners_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.partners_titles') }}</p>
                     </div>
                 </div>
                 <!-- Beneficiaries Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold counter" data-target="{{ __('lang.beneficiaries_value') }}" style="font-size: 2.5rem;">0</h3>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.beneficiaries_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.beneficiaries_title') }}</p>
                     </div>
                 </div>
                 <!-- Governorates Card -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #f8ecd4;">
-                        <h3 class="fw-bold counter" data-target="{{ __('lang.governorates_value') }}" style="font-size: 2.5rem;">0</h3>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.governorates_value') }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.governorates_title') }}</p>
                     </div>
                 </div>
@@ -184,7 +184,7 @@
                                     <i class="{{ $scope->icon }} fa-3x mb-3"></i>
                                 </div>
                             </div>
-                            <div class="card-footer" style="background-color: #40537d;padding: 18px; color: #f8ecd4;">
+                            <div class="card-footer" style="background-color: #40537d;padding: 18px; color:  #F3EED4;">
                                 {{ app()->getLocale() === 'ar' ? $scope->ar_title : $scope->en_title }}
                             </div>
                         </div>
@@ -269,10 +269,10 @@
                     <div class="col-md-3 mb-4">
                         <div class="feature-box h-100 d-flex flex-column justify-content-between p-4" style="background: #40537d; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
                             <i class="fa {{ $icons[$i-1] }} fa-3x feature-icon mb-3"></i>
-                            <h4 class="mb-2" style="font-weight: bolder;color: #f8ecd4 !important;">
+                            <h4 class="mb-2" style="font-weight: bolder;color:  #F3EED4 !important;">
                                 {{ __('lang.feature_' . $i . '_title') }}
                             </h4>
-                            <p style="font-size: 0.9rem; color: #f8ecd4 !important;">
+                            <p style="font-size: 0.9rem; color:  #F3EED4 !important;">
                                 {{ __('lang.feature_' . $i . '_description') }}
                             </p>
                         </div>
@@ -691,9 +691,20 @@
         document.addEventListener('DOMContentLoaded', () => {
             const counters = document.querySelectorAll('.counter');
 
+            const arabicToEnglishDigits = (str) => {
+                if (!str) return '';
+                const arabicNums = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+                return str.toString().split('').map(c => {
+                    const index = arabicNums.indexOf(c);
+                    return index > -1 ? index : c;
+                }).join('');
+            };
+
             const animateCounter = (counter) => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 1500; // in ms
+                const raw = counter.getAttribute('data-target');
+                const target = parseInt(arabicToEnglishDigits(raw));
+
+                const duration = 1500;
                 const frameRate = 30;
                 const steps = Math.ceil(duration / frameRate);
                 let count = 0;
@@ -712,8 +723,20 @@
                 updateCounter();
             };
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        counter.innerText = '0'; // optional reset
+                        animateCounter(counter);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
             counters.forEach(counter => {
-                animateCounter(counter);
+                observer.observe(counter);
             });
         });
     </script>

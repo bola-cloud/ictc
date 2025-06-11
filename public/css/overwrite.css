@@ -827,7 +827,7 @@ a.btn.btn-theme,.btn.btn-theme,a.btn.btn-theme i,a.btn.btn-primary i ,a.btn.btn-
 .navbar .nav > li > a:hover,
 .navbar .nav > li > a:focus {
   color: black !important; /* Change text color on hover */
-  background: #f8ecd4 !important; /* Highlight background */
+  background:  #F3EED4 !important; /* Highlight background */
   border-color: #0d6efd !important; /* Border color matches hover background */
   text-decoration: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Light shadow for depth */
@@ -838,7 +838,7 @@ a.btn.btn-theme,.btn.btn-theme,a.btn.btn-theme i,a.btn.btn-primary i ,a.btn.btn-
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
   color: black !important; /* Change text color for active state */
-  background: #f8ecd4 !important; /* Active background color */
+  background:  #F3EED4 !important; /* Active background color */
   border-color: #0d6efd !important;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-decoration: none;

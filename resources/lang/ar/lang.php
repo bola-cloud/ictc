@@ -241,13 +241,13 @@ return [
     // Statistics Section
     'statistics_title' => 'الإحصائيات الرئيسية',
     'statistics_subtitle' => 'اكتشف الأرقام التي تعرّف تأثيرنا.',
-    'projects_value' => '١٢٠',
+    'projects_value' => '120',
     'projects_title' => 'المشاريع',
-    'partners_value' => '٤٥',
+    'partners_value' => '45',
     'partners_title' => 'الشركاء',
-    'beneficiaries_value' => '٢٥٠٠٠',
+    'beneficiaries_value' => '25000',
     'beneficiaries_title' => 'المستفيدون',
-    'governorates_value' => '١٨',
+    'governorates_value' => '18',
     'governorates_title' => 'المحافظات',
     // Services Section
     'services_title' => 'خدماتنا',

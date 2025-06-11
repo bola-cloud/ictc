@@ -23,7 +23,7 @@
         </div>
         @forelse($vacancies as $vacancy)
             <div class="mb-5 p-5" style="background-color: #404b62; border-radius: 60px;">
-                <div style="background-color: #f8ecd4; padding: 40px; border-radius: 10px; font-size: 1rem; font-family: Georgia, serif;">
+                <div style="background-color:  #F3EED4; padding: 40px; border-radius: 10px; font-size: 1rem; font-family: Georgia, serif;">
                     <p><strong class="job-title">{{ __('lang.job_title') }}:</strong>
                         {{ app()->getLocale() === 'ar' ? $vacancy->ar_title : $vacancy->en_title }}
                     </p>

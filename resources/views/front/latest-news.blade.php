@@ -59,13 +59,13 @@
                                     @endif --}}
                                 </div>
                                 <div class="card-body news-card-body">
-                                    <h3 class="news-card-title" style="font-size: 1.5rem; font-weight: bold; color: #f8ecd4;">
-                                        <strong style="color: #f8ecd4 !important;">{{ app()->getLocale() === 'ar' ? $item->ar_title : $item->en_title }}</strong>
+                                    <h3 class="news-card-title" style="font-size: 1.5rem; font-weight: bold; color:  #F3EED4;">
+                                        <strong style="color:  #F3EED4 !important;">{{ app()->getLocale() === 'ar' ? $item->ar_title : $item->en_title }}</strong>
                                     </h3>
-                                    <p class="news-card-text" style="font-size: 1rem; color: #f8ecd4;">
+                                    <p class="news-card-text" style="font-size: 1rem; color:  #F3EED4;">
                                         {{ app()->getLocale() === 'ar' ? $item->ar_subtitle : $item->en_subtitle }}
                                     </p>
-                                    <a href="{{ route('news-details', ['id' => $item->id]) }}" class="news-read-more" style="color: #f8ecd4; text-decoration: none; font-weight: bold;">
+                                    <a href="{{ route('news-details', ['id' => $item->id]) }}" class="news-read-more" style="color:  #F3EED4; text-decoration: none; font-weight: bold;">
                                         {{ __('lang.read_more') }} &raquo;
                                     </a>
                                 </div>

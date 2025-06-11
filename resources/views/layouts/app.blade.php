@@ -48,7 +48,7 @@
             @if(app()->getLocale() == 'ar') left: 70px; @else right: 70px; @endif
             width: 320px;
             max-height: 500px;
-            background: #f8ecd4;
+            background:  #F3EED4;
             border-radius: 20px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
             z-index: 9999;
@@ -60,7 +60,7 @@
 
         #chatbot-header {
             background: #40537d;
-            color: #f8ecd4;
+            color:  #F3EED4;
             padding: 12px 16px;
             font-weight: bold;
         }
@@ -72,7 +72,7 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-            background: #f8ecd4;
+            background:  #F3EED4;
             min-height: 31vh;
         }
 
@@ -82,13 +82,13 @@
             border-radius: 12px;
             max-width: 80%;
             align-self: flex-start;
-            color: #f8ecd4;
+            color:  #F3EED4;
         }
 
         .user-msg {
             background: #40537dbf;
             align-self: flex-end;
-            color: #f8ecd4;
+            color:  #F3EED4;
         }
 
         #chatbot-footer {
@@ -107,7 +107,7 @@
             font-size: 14px;
             cursor: pointer;
             margin-right: 5px;
-            color: #f8ecd4;
+            color:  #F3EED4;
             margin-top: 6px;
         }
 
@@ -161,7 +161,7 @@
 
 
         .side-nav.open {
-            background: #f8ecd4 !important;
+            background:  #F3EED4 !important;
             color: #404b62 !important;
         }
         i.fa.fa-bars {
@@ -172,7 +172,7 @@
             direction: {{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }};
             text-align: {{ app()->getLocale() === 'ar' ? 'right' : 'left' }};
             font-size: {{ app()->getLocale() === 'ar' ? '1.1rem' : '1rem' }}; */
-            color: #f8ecd4;
+            color:  #F3EED4;
             font-family: '{{ app()->getLocale() == "ar" ? "29LT Bukra" : "Yu Mincho" }}', sans-serif !important;
             font-weight: 400;
         }
@@ -265,7 +265,7 @@
                         <div class="dropdown dropdown-responsive">
                             <button
                                 class="btn btn-light dropdown-toggle p-2"
-                                type="button" style="background: #f8ecd4!important; color: #000 !important;"
+                                type="button" style="background:  #F3EED4!important; color: #000 !important;"
                                 id="languageDropdown"
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false"
@@ -468,7 +468,7 @@
                             <a href="{{route('dashboard')}}">
                                 <img src="{{ asset($settings['logo'] ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
                             </a>
-                            <p style="margin: 0; color: #f8ecd4;">
+                            <p style="margin: 0; color:  #F3EED4;">
                                 {{ __('lang.company_name') }}
                             </p>
                         </div>
@@ -515,8 +515,8 @@
 
                     <!-- Right Column: Contact Info -->
                     <div class="col-md-4">
-                        <h5 style="color: #f8ecd4; font-weight: bold;">{{ __('lang.contact') }}</h5>
-                        <p style="color: #f8ecd4;">
+                        <h5 style="color:  #F3EED4; font-weight: bold;">{{ __('lang.contact') }}</h5>
+                        <p style="color:  #F3EED4;">
                             <i class="fa fa-phone"></i> {{ __('lang.support') }}&nbsp; :&nbsp; 020000000<br>
                             <i class="fa fa-envelope"></i> {{ __('lang.email') }}&nbsp; : &nbsp;contact@ictc-egy.com
                         </p>
@@ -547,7 +547,7 @@
                 <!-- Footer Bottom -->
                 <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 15px; text-align: center;">
                     {{-- <p style="margin: 0; color: #ccc;">{{ __('lang.copyright') }}</p> --}}
-                    <p style="margin: 5px 0 0; color: #f8ecd4;">
+                    <p style="margin: 5px 0 0; color:  #F3EED4;">
                         {{ __('lang.developed_by') }}
                         <a href="https://wa.me/201555622169" target="_blank" style="color: #e0cda7; text-decoration: none;">
                             <strong>Eng: Bola Eshaq</strong>
@@ -558,7 +558,7 @@
         </footer>
 
     </div>
-    <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x" style="background: #40537d;color: #f8ecd4;"></i></a>
+    <a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bglight icon-2x" style="background: #40537d;color:  #F3EED4;"></i></a>
 
     <!-- javascript
       ================================================== -->

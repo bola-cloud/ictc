@@ -63,7 +63,7 @@
                                 <span class="image-counter badge">{{ $gallery->images()->count() }}</span>
                             </a>
                             <div class="card-body text-center dark-news-card-body">
-                                <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">
+                                <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color:  #F3EED4;">
                                     {{ app()->getLocale() === 'ar' ? $gallery->ar_title : $gallery->en_title }}
                                 </h5>
                             </div>

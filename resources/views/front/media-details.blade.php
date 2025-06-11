@@ -60,7 +60,7 @@
                                 <img src="{{ asset('storage/' . $image->image_path) }}" alt="{{ __('lang.news_title') }}">
                             </a>
                             <div class="card-body text-center dark-news-card-body">
-                                <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">
+                                <h5 class="card-title" style="font-size: 1.2rem; font-weight: bold; color:  #F3EED4;">
                                     {{ app()->getLocale() === 'ar' ? $image->ar_subtitle : $image->en_subtitle }}
                                 </h5>
                             </div>
@@ -87,7 +87,7 @@
                                     <img src="{{ asset('storage/' . $image->image_path) }}" class="img-fluid"
                                      alt="{{ $image->ar_subtitle }}" style="max-height: unset !important;">
                                     <div class="text-center mt-2">
-                                        <h5 style="font-size: 1.2rem; font-weight: bold; color: #f8ecd4;">{{ app()->getLocale() === 'ar' ? $image->ar_subtitle : $image->en_subtitle }}</h5>
+                                        <h5 style="font-size: 1.2rem; font-weight: bold; color:  #F3EED4;">{{ app()->getLocale() === 'ar' ? $image->ar_subtitle : $image->en_subtitle }}</h5>
                                     </div>
                                 </div>
                             @endforeach

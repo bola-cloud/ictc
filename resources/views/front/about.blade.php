@@ -125,7 +125,7 @@
                                         style="height: 20vh !important; background-size: contain; background-repeat: no-repeat; background-position: center;
                                                 background-image: url('{{ asset($service->image) }}');">
                                     </div>
-                                    <div class="card-footer text-white" style="background-color: #40537d; padding: 18px;">
+                                    <div class="card-footer text-white" style="background-color: #40537d; padding: 18px;height: 75px !important; ">
                                         {{ app()->getLocale() === 'ar' ? $service->ar_title : $service->en_title }}
                                     </div>
                                 </div>

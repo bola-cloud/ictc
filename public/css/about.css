@@ -230,7 +230,6 @@
     word-wrap: break-word;
     text-align: center;
     line-height: 1.4;
-    height: 75px; /* Fixed height — adjust as needed */
     display: flex;
     align-items: center;
     justify-content: center;

@@ -3925,7 +3925,7 @@ strong {
 #typewriter-text {
     display: inline-block;
     white-space: nowrap;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 /* Fix for small screens */

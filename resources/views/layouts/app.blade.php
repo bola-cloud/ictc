@@ -517,8 +517,8 @@
                     <div class="col-md-4">
                         <h5 style="color:  #F3EED4; font-weight: bold;">{{ __('lang.contact') }}</h5>
                         <p style="color:  #F3EED4;">
-                            <i class="fa fa-phone"></i> {{ __('lang.support') }}&nbsp; :&nbsp; 020000000<br>
-                            <i class="fa fa-envelope"></i> {{ __('lang.email') }}&nbsp; : &nbsp;contact@ictc-egy.com
+                            <i class="fa fa-phone"></i> {{ __('lang.support') }}&nbsp; :&nbsp; {{$settings['phone'] ?? ''}}<br>
+                            <i class="fa fa-envelope"></i> {{ __('lang.email') }}&nbsp; : &nbsp;{{$settings['email'] ?? ''}}<br>
                         </p>
                         <div class="social-media-inline d-flex justify-content-start align-items-center mt-3">
                             @php

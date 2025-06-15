@@ -20,7 +20,8 @@ class SettingSeeder extends Seeder
             ['key' => 'linkedin', 'value' => 'https://linkedin.com/company/yourcompany'],
             ['key' => 'youtube', 'value' => 'https://youtube.com/channel/yourchannel'],
             ['key' => 'whatsapp', 'value' => '+201234567890'],
-            ['key' => 'email', 'value' => 'info@example.com'],
+            ['key' => 'phone', 'value' => '+201234567890'],
+            ['key' => 'email', 'value' => 'contact@ictc-egy.com'],
 
             // Page-specific images
             ['key' => 'about_image', 'value' => 'storage/settings/about_default.jpg'],
@@ -38,6 +39,12 @@ class SettingSeeder extends Seeder
             ['key' => 'gallery_background_enabled', 'value' => '1'],
             ['key' => 'partners_background_enabled', 'value' => '1'],
             ['key' => 'contact_background_enabled', 'value' => '1'],
+
+            ['key' => 'projects_value', 'value' => '150'],
+            ['key' => 'partners_value', 'value' => '45'],
+            ['key' => 'beneficiaries_value', 'value' => '1200'],
+            ['key' => 'governorates_value', 'value' => '10'],
+
         ];
 
         foreach ($settings as $setting) {

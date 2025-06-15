@@ -244,6 +244,8 @@ return [
     'beneficiaries_title' => 'Beneficiaries',
     'governorates_value' => '18',
     'governorates_title' => 'Governorates',
+    'statistics_section' => 'Statistics Section',
+    'count' => 'Count',
     // Services Section
     'services_title' => 'Our Services',
     'services_subtitle' => 'Explore all the services we offer across different scopes.',
@@ -298,7 +300,6 @@ return [
     'partners_section_title' => 'Our',
     'partners_section_strong' => 'Partners',
     // Titles with Strong Elements
-    'partners_title' => 'Our',
     'partners_title_strong' => 'Partners and Accreditations',
 
     'why_ictc_title' => 'Why',
@@ -314,8 +315,10 @@ return [
     'photos_gallery_title' => 'Photos',
     'photos_gallery_title_strong' => 'Gallery',
     // Gallery Section
-    'gallery_section_title' => 'ICTC Gallery',
+    'gallery_section_title' => 'Image Gallery',
 
+    'video_gallery_title' => 'Video Gallery',
+    'read_less' => 'Read Less',
     // Breadcrumb Section
     'breadcrumb_home' => 'Home',
     'breadcrumb_photos_gallery' => 'Photos Gallery',

@@ -103,6 +103,32 @@
                 @error('email') <small class="text-danger">{{ $message }}</small> @enderror
             </div>
 
+            <hr class="my-4">
+            <h4 class="fw-bold">{{ __('lang.statistics_section') }}</h4>
+
+            @php
+                $statistics = ['projects', 'partners', 'beneficiaries', 'governorates'];
+            @endphp
+
+            <div class="row">
+                @foreach($statistics as $stat)
+                    <div class="col-md-6 mt-3">
+                        <label for="{{ $stat }}_value">{{ __('lang.' . $stat . '_title') }} ({{ __('lang.count') }})</label>
+                        <input
+                            type="number"
+                            name="{{ $stat }}_value"
+                            id="{{ $stat }}_value"
+                            class="form-control"
+                            value="{{ $settings[$stat . '_value'] ?? 0 }}"
+                            min="0"
+                        >
+                        @error($stat . '_value') <small class="text-danger">{{ $message }}</small> @enderror
+                    </div>
+                @endforeach
+            </div>
+
+
+
             <button type="submit" class="btn btn-primary mt-4">{{ __('lang.save_settings') }}</button>
         </form>
     </div>

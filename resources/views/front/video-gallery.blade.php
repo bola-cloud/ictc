@@ -7,7 +7,7 @@
         url('{{ asset($settings['gallery_image'] ?? 'https://www.qodra-egy.net/img/about/ab_4.jpg') }}');">
         <div class="container" style="padding-top: 120px; padding-bottom: 60px;">
             <div class="col-lg-12 text-center">
-                <h3 class="address-h3">{{ __('lang.gallery_section_title') }}</h3>
+                <h3 class="address-h3">{{ __('lang.video_gallery_title') }}</h3>
             </div>
         </div>
     </section>

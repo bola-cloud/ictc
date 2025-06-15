@@ -127,31 +127,31 @@
                 <h2 class="section-title"><span>{{ __('lang.statics') }}</span></h2>
             </div>
             <div class="row g-4">
-                <!-- Projects Card -->
+                <!-- Projects -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
-                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.projects_value') }}" style="font-size: 2.5rem;">0</h3>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) ($settings['projects_value'] ?? 0) }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.projects_title') }}</p>
                     </div>
                 </div>
-                <!-- Partners Card -->
+                <!-- Partners -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
-                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.partners_value') }}" style="font-size: 2.5rem;">0</h3>
-                        <p style="font-size: 1.2rem;">{{ __('lang.partners_titles') }}</p>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) ($settings['partners_value'] ?? 0) }}" style="font-size: 2.5rem;">0</h3>
+                        <p style="font-size: 1.2rem;">{{ __('lang.partners_title') }}</p>
                     </div>
                 </div>
-                <!-- Beneficiaries Card -->
+                <!-- Beneficiaries -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
-                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.beneficiaries_value') }}" style="font-size: 2.5rem;">0</h3>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) ($settings['beneficiaries_value'] ?? 0) }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.beneficiaries_title') }}</p>
                     </div>
                 </div>
-                <!-- Governorates Card -->
+                <!-- Governorates -->
                 <div class="col-md-6 col-lg-3">
-                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color:  #F3EED4;">
-                        <h3 class="fw-bold counter" data-target="{{ (int) __('lang.governorates_value') }}" style="font-size: 2.5rem;">0</h3>
+                    <div class="stat-card text-center p-4" style="background: #40537d; border-radius: 15px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); color: #F3EED4;">
+                        <h3 class="fw-bold counter" data-target="{{ (int) ($settings['governorates_value'] ?? 0) }}" style="font-size: 2.5rem;">0</h3>
                         <p style="font-size: 1.2rem;">{{ __('lang.governorates_title') }}</p>
                     </div>
                 </div>

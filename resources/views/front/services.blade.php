@@ -114,7 +114,7 @@
                         <div class="row">
                             @foreach ($category->partners as $partner)
                                 <div class="col-md-3 col-sm-6 mb-4">
-                                    <div class="card dark-custom-card">
+                                    <div class="card">
                                         <img src="{{ asset($partner->image_path) }}" class="card-img-top" alt="Partner">
                                     </div>
                                 </div>

@@ -24,14 +24,14 @@
 
         @forelse($vacancies as $vacancy)
             <div class="mb-5 p-5" style="background-color: #404b62; border-radius: 60px;">
-                <div style="background-color:  #F3EED4; padding: 40px; border-radius: 10px; font-size: 1rem; font-family: Georgia, serif;">
+                <div style="background-color:  #F3EED4; padding: 40px; border-radius: 10px; font-size: 1rem; font-family: Georgia, serif;color: #404b62 !important;">
                     <p><strong>{{ __('lang.job_title') }}:</strong> {{ app()->getLocale() === 'ar' ? $vacancy->ar_title : $vacancy->en_title }}</p>
                     <p><strong>{{ __('lang.location') }}:</strong> {{ $vacancy->location ?? __('lang.not_specified') }}</p>
                     <p><strong>{{ __('lang.job_type') }}:</strong> {{ $vacancy->job_type ?? __('lang.not_specified') }}</p>
                     <p><strong>{{ __('lang.application_deadline') }}:</strong> {{ $vacancy->deadline ? \Carbon\Carbon::parse($vacancy->deadline)->format('F d, Y') : __('lang.not_specified') }}</p>
                     <p><strong>{{ __('lang.job_description') }}:</strong></p>
                     {!! app()->getLocale() === 'ar' ? $vacancy->ar_description : $vacancy->en_description !!}
-                    <p style="font-weight: bold; color: #000; margin-top: 30px;">
+                    <p style="font-weight: bold; color: #404b62 !important; margin-top: 30px;">
                         {{ __('lang.deadline_final') }}
                         {{ $vacancy->deadline ? \Carbon\Carbon::parse($vacancy->deadline)->format('F d, Y') : __('lang.not_specified') }}
                         <br>{{ __('lang.equal_opportunity_note') }}

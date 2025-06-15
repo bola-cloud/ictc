@@ -190,7 +190,8 @@ return [
     'partners_title' => 'الشركاء والاعتمادات',
     // Address Section
     'address_title' => 'عن آي سي تي سي',
-
+    'statistics_section' => 'قسم الإحصائيات',
+    'count' => 'العدد',
     // Page Header
     'breadcrumb_home' => 'الرئيسية',
     'breadcrumb_about' => 'من نحن',
@@ -302,7 +303,6 @@ return [
     'partners_section_title' => '',
     'partners_section_strong' => 'الشركاء والاعتمادات',
     // Titles with Strong Elements
-    'partners_title' => '',
     'partners_title_strong' => 'الشركاء والاعتمادات',
 
     'why_آي سي تي سي_title' => '',
@@ -319,8 +319,9 @@ return [
     'photos_gallery_title' => '',
     'photos_gallery_title_strong' => 'معرض الصور',
     // Gallery Section
-    'gallery_section_title' => 'معرض آي سي تي سي',
-
+    'gallery_section_title' => 'معرض الصور',
+    'video_gallery_title' => 'معرض الفيديو',
+    'read_less' => 'اقرأ أقل',
     // Breadcrumb Section
     'breadcrumb_home' => 'الرئيسية',
     'breadcrumb_photos_gallery' => 'معرض الصور',

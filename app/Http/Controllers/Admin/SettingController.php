@@ -35,6 +35,12 @@ class SettingController extends Controller
             'gallery_image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
             'partners_image'      => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
             'contact_image'       => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+
+            // Validate statistics (optional)
+            'projects_value'      => 'nullable|integer|min:0',
+            'partners_value'      => 'nullable|integer|min:0',
+            'beneficiaries_value' => 'nullable|integer|min:0',
+            'governorates_value'  => 'nullable|integer|min:0',
         ]);
 
         $deleteOldImage = function ($key) {
@@ -76,11 +82,20 @@ class SettingController extends Controller
             );
         }
 
-        // Save other plain inputs
+        // Save social/contact fields
         foreach (['facebook', 'linkedin', 'youtube', 'whatsapp', 'email'] as $field) {
             Setting::updateOrCreate(['key' => $field], ['value' => $request->input($field)]);
         }
 
+        // Save statistic values only (titles come from lang)
+        foreach (['projects', 'partners', 'beneficiaries', 'governorates'] as $stat) {
+            Setting::updateOrCreate(
+                ['key' => $stat . '_value'],
+                ['value' => $request->input($stat . '_value', 0)]
+            );
+        }
+
         return redirect()->back()->with('success', __('lang.success_setting_updated'));
     }
+
 }

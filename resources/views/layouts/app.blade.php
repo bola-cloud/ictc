@@ -465,7 +465,7 @@
                     <!-- Left Column: Logo and Description -->
                     <div class="col-md-4">
                         <div>
-                            <a href="{{route('dashboard')}}">
+                            <a href="{{route('home')}}">
                                 <img src="{{ asset($settings['logo'] ?? 'img/white logo.png') }}" alt="Logo" style="max-height: 60px; margin-bottom: 15px;">
                             </a>
                             <p style="margin: 0; color:  #F3EED4;">
